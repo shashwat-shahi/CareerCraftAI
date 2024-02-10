@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class HealthCheck {
+public class HealthCheckController {
     private final HealthCheckService healthCheckService;
     @Autowired
     private final HikariDataSource hikariDataSource;
 
-    public HealthCheck (HealthCheckService healthCheckService, HikariDataSource hikariDataSource) {
+    public HealthCheckController(HealthCheckService healthCheckService, HikariDataSource hikariDataSource) {
         this.healthCheckService = healthCheckService;
         this.hikariDataSource = hikariDataSource;
     }
