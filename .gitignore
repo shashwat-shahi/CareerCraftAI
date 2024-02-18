@@ -1,8 +1,8 @@
 HELP.md
 /target
 !.mvn/wrapper/maven-wrapper.jar
-!**/careercraftai/src/main/**/target/
-!**/careercraftai/src/test/**/target/
+!**/careercraftai/backend/src/main/**/target/
+!**/careercraftai/backend/src/test/**/target/
 careercraftai/.mvn/wrapper/maven-wrapper.jar
 careercraftai/mvnw
 careercraftai/mvnw.cmd
