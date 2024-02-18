@@ -28,5 +28,5 @@ jobs:
         working-directory: backend
         run: mvn clean install
       - name: Running test cases
-        working-directory: demo
+        working-directory: backend
         run: mvn test -Dtest=HealthCheckControllerTest
