@@ -1,0 +1,154 @@
+{
+  "Role": "Software Architect",
+  "Roadmap": {
+  "CoreSkills": [
+    "Java",
+    "Kotlin",
+    "Scala",
+    "Python",
+    "Ruby",
+    "Go",
+    "JavaScript",
+    "TypeScript",
+    "C#",
+    "Rust"
+  ],
+  "DistributedSystems": [
+    "CAP Theorem",
+    "Distributed Databases",
+    "Service Mesh Technologies",
+    "Microservices Architectures",
+    "Streaming Data & Real-Time Pipelines"
+  ],
+  "Frameworks": [
+    "Spring Boot (for Java)",
+    "Django (for Python)",
+    "Ruby on Rails (for Ruby)",
+    "Express.js (for Node.js)",
+    "Laravel (for PHP)",
+    "ASP.NET (for C#)",
+    "Reactive Frameworks",
+    "Domain-Driven Design Frameworks"
+  ],
+  "CloudServices": [
+    "AWS",
+    "GCP",
+    "Microsoft Azure",
+    "Docker",
+    "Kubernetes",
+    "Terraform",
+    "Serverless Frameworks"
+  ],
+  "APIs": [
+    "REST",
+    "GraphQL",
+    "SOAP",
+    "GraphQL",
+    "Real-Time WebsSockets"
+  ],
+  "DataStores": [
+    "PostgreSQL",
+    "MongoDB",
+    "Redis",
+    "MySQL",
+    "Elasticsearch",
+    "AWS DynamoDB",
+    "Cassandra"
+  ],
+  "MessagingQueues": [
+    "RabbitMQ",
+    "Kafka",
+    "AWS Kinesis",
+    "Apache ActiveMQ",
+    "Google Cloud Pub/Sub"
+  ],
+  "SecurityFrameworks": [
+    "OAuth",
+    "JWT",
+    "OWASP",
+    "Security Best Practices",
+    "API Gating & Throttling",
+    "Data Privacy and Handling"
+  ],
+  "Repositories": [
+    "GitHub",
+    "GitLab",
+    "Bitbucket"
+  ],
+  "CI_CD": [
+    "Jenkins",
+    "GitHub Actions",
+    "GitLab CI",
+    "CircleCI",
+    "Travis CI",
+    "Bamboo"
+  ],
+  "CollaborationTools": [
+    "Trello",
+    "JIRA",
+    "Slack",
+    "Asana",
+    "Confluence"
+  ],
+  "Monitoring": [
+    "Grafana",
+    "Prometheus",
+    "New Relic",
+    "Datadog",
+    "Elastic Stack",
+    "Splunk"
+  ],
+  "VersionControlSystems": [
+    "Git"
+  ],
+  "IDEs": [
+    "JetBrains Suite",
+    "Visual Studio Code",
+    "Eclipse",
+    "Sublime Text"
+  ],
+  "Databases": [
+    "RDBMS",
+    "NoSQL"
+  ],
+  "DevelopmentFrameworks": [
+    "Django",
+    "Node.js",
+    "Angular",
+    "React",
+    "Vue.js"
+  ],
+  "APIsAndIntegrations": [
+    "RESTful Services",
+    "GraphQL",
+    "SOAP",
+    "oAuth",
+    "JWT"
+  ],
+  "AgileTools": [
+    "Asana",
+    "Monday.com",
+    "Trello"
+  ],
+  "SiteReliability": [
+    "Docker",
+    "Kubernetes",
+    "Ansible"
+  ],
+  "Microservices": [
+    "Docker",
+    "Kubernetes",
+    "Istio"
+  ],
+  "IaC": [
+    "Terraform",
+    "AWS CloudFormation",
+    "Pulumi"
+  ],
+  "ReactiveProgramming": [
+    "RxJava",
+    "ReactiveX",
+    "React"
+  ]
+}
+}

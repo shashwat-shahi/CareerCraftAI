@@ -1,0 +1,146 @@
+{
+  "Role": "Devops Engineer",
+  "Roadmap": {
+    "programming_languages": [
+      "Python",
+      "Ruby",
+      "Rust",
+      "JavaScript / Node.js",
+      "Go"
+    ],
+    "operating_systems": [
+      "Nginx",
+      "Tomcat",
+      "Ubuntu / Debian",
+      "FreeBSD",
+      "SUSE Linux",
+      "OpenBSD",
+      "RHEL / Derivatives",
+      "NetBSD",
+      "IIS",
+      "Unix",
+      "Windows",
+      "Apache",
+      "Linux"
+    ],
+    "scripting_and_tools": [
+      "Learn to live in Terminal",
+      "Bash Scripting",
+      "Vim/Nano/Emacs"
+    ],
+    "web_servers_and_caching": [
+      "Caching Server",
+      "Load Balancer",
+      "Firewall",
+      "Forward Proxy",
+      "Reverse Proxy"
+    ],
+    "version_control_systems": [
+      "Git",
+      "GitHub",
+      "GitLab",
+      "Bitbucket"
+    ],
+    "networking_tools": [
+      "Networking, Security and Protocols",
+      "DNS",
+      "HTTP",
+      "HTTPS",
+      "SSL / TLS",
+      "SSH",
+      "OSI Model",
+      "Email",
+      "SMTP",
+      "DMARC",
+      "IMAPS",
+      "SPF",
+      "POP3S",
+      "Domain Keys"
+    ],
+    "containers_and_orchestration": [
+      "Docker",
+      "LXC",
+      "Kubernetes",
+      "Docker Swarm",
+      "Container Orchestration",
+      "AWS ECS / Fargate",
+      "GKE / EKS / AKS"
+    ],
+    "cloud_providers": [
+      "AWS",
+      "Google Cloud",
+      "Azure",
+      "Digital Ocean",
+      "Alibaba Cloud",
+      "Linode",
+      "Vultr",
+      "Heroku"
+    ],
+    "infrastructure_provisioning": [
+      "Terraform",
+      "CloudFormation",
+      "Pulumi",
+      "AWS CDK"
+    ],
+    "configuration_management": [
+      "Ansible",
+      "Chef",
+      "Puppet",
+      "Sealed Secrets"
+    ],
+    "ci_cd_tools": [
+      "GitHub Actions",
+      "Jenkins",
+      "Travis CI",
+      "GitLab CI",
+      "Circle CI",
+      "Drone",
+      "Azure DevOps Services",
+      "TeamCity"
+    ],
+    "secret_management": [
+      "Vault",
+      "SOPS"
+    ],
+    "infrastructure_monitoring": [
+      "Prometheus",
+      "Grafana",
+      "Zabbix",
+      "Datadog"
+    ],
+    "application_monitoring": [
+      "Jaeger",
+      "AppDynamics",
+      "New Relic",
+      "OpenTelemetry",
+      "Elastic Stack",
+      "Loki"
+    ],
+    "logs_management": [
+      "Graylog",
+      "Splunk",
+      "Papertrail"
+    ],
+    "service_mesh_and_management": [
+      "Service Mesh",
+      "Istio",
+      "Linkerd",
+      "Consul",
+      "Envoy"
+    ],
+    "artifact_management": [
+      "Artifactory",
+      "Nexus",
+      "Cloud Smith"
+    ],
+    "gitops_tools": [
+      "ArgoCD",
+      "FluxCD"
+    ],
+    "cloud_design_patterns": true,
+    "data_management": true,
+    "availability": true,
+    "design_and_implementation": true,
+    "management_and_monitoring": true
+  }
+}

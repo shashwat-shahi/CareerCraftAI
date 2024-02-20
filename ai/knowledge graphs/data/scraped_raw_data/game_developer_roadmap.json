@@ -1,0 +1,177 @@
+{
+    "Role": "Game Developer",
+    "Roadmap": {
+        "Mathematics": {
+            "LinearAlgebra": [
+                "Vector",
+                "Matrix",
+                "Geometry",
+                "Affine Space",
+                "Quaternion",
+                "Euler Angle"
+            ],
+            "MathematicsForGamePhysics": [
+                "Game Physics",
+                "Dynamics",
+                "Linear Transformation",
+                "Acceleration",
+                "Joints",
+                "Force",
+                "Restitution",
+                "Angular Velocity",
+                "Buoyancy",
+                "Friction",
+                "Orientation"
+            ]
+        },
+        "PhysicsAndDynamics": {
+            "Geometry": [
+                "Affine Transformation",
+                "Curve",
+                "Orientation",
+                "Spline",
+                "Hermite",
+                "Bezier",
+                "Catmull-Rom"
+            ],
+            "Projection": [
+                "Perspective",
+                "Orthogonal"
+            ],
+            "Topics": [
+                "Collision Detection",
+                "Spatial Partitioning",
+                "Convexity",
+                "Convex Decomposition"
+            ]
+        },
+        "CollisionDetection": {
+            "Strategies": [
+                "Narrow Phase",
+                "Broad Phase",
+                "Bounding Volume",
+                "Separating Axis Theorem (SAT)",
+                "Axis Aligned Bounding Box (AABB)",
+                "Oriented Bounding Box (OBB)",
+                "GJK",
+                "EPA"
+            ],
+            "CollisionShapes": [
+                "Convex",
+                "Concave",
+                "Hull",
+                "Decomposition"
+            ]
+        },
+        "ComputerGraphics": {
+            "ComputerGraphicsBasics": [
+                "Lighting and Shadow",
+                "Rasterization",
+                "Graphics Pipeline",
+                "Visibility and Occlusion",
+                "Shader Rendering"
+            ],
+            "RenderingTechniques": [
+                "Ray Tracing",
+                "Shadow Map",
+                "Rasterization"
+            ],
+            "LightingModels": [
+                "Directional Light",
+                "Point Light",
+                "Spot Light",
+                "Ambient Light"
+            ]
+        },
+        "ProgrammingLanguages": {
+            "Languages": [
+                "C / C++",
+                "C#",
+                "Python",
+                "Rust",
+                "GLSL (OpenGL Shading Language)",
+                "HLSL (High-Level Shading Language)"
+            ]
+        },
+        "GameEngines": {
+            "Engines": [
+                "Godot",
+                "Unreal Engine",
+                "Unity 3D"
+            ],
+            "Aspects": [
+                "Game Engine Native Programming",
+                "Spatial Partitioning",
+                "Pathfinding"
+            ]
+        },
+        "APIsAndShading": {
+            "GraphicsAPIs": [
+                "DirectX",
+                "OpenGL",
+                "Vulkan",
+                "WebGL",
+                "Metal"
+            ],
+            "AIAndMachineLearning": [
+                "Behavior Tree",
+                "Decision Making",
+                "State Machine",
+                "Artificial Neural Network"
+            ]
+        },
+        "AdvancedRendering": {
+            "Technologies": [
+                "DXR (DirectX Ray Tracing)",
+                "Vulkan Ray Tracing",
+                "NVIDIA OptiX",
+                "Metal Ray Tracing"
+            ],
+            "Techniques": [
+                "Real-Time Ray Tracing",
+                "Physically-Based Rendering",
+                "Translucency and Transparency",
+                "Microsurface Scattering"
+            ]
+        },
+        "ArtificialIntelligenceForGames": {
+            "StrategiesAndTactics": [
+                "Decision Making",
+                "Finite State Machines",
+                "Behavior Trees",
+                "Scripted AI",
+                "Learning and Adaptation",
+                "Emergent Gameplay"
+            ],
+            "MovementAndPathfinding": [
+                "Steering Behaviors",
+                "A* Pathfinding",
+                "Navigation Meshes",
+                "Crowd Simulation"
+            ],
+            "TacticalAnalysis": [
+                "Influence Maps",
+                "Target Acquisition",
+                "Squad Coordination"
+            ],
+            "AdaptiveStrategies": [
+                "Machine Learning in Games",
+                "Neural Networks",
+                "Genetic Algorithms"
+            ]
+        },
+        "OptimizationAndBestPractices": {
+            "PerformanceTuning": [
+                "GPU Optimization",
+                "CPU Memory Bound Minimization",
+                "Level of Detail (LoD) System"
+            ],
+            "CodeHealth": [
+                "SOLID Principles",
+                "Version Control Best Practices",
+                "Testing and Validation",
+                "Scriptable Architecture"
+            ]
+        }
+    }
+}
