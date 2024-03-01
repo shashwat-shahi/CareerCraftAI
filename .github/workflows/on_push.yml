@@ -23,18 +23,18 @@ jobs:
         run: docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
       - name: Build docker img
         working-directory: ./backend/
-        run: docker build -t swe-careercraftai/careercraftai .
+        run: docker build -t sarveshgaurishankarsawant/careercraftai .
       - name: Publish image to docker hub
         working-directory: ./backend/
-        run: docker push swe-careercraftai/careercraftai:latest
+        run: docker push sarveshgaurishankarsawant/careercraftai:latest
 
   deploy:
     needs: build
     runs-on: [careercraftaiec2runner]
     steps:
       - name: Pull Image from docker hub
-        run: docker pull swe-careercraftai/careercraftai:latest
+        run: docker pull sarveshgaurishankarsawant/careercraftai:latest
       - name: Delete old container
         run: docker rm -f swe-careercraftai-container
       - name: Run docker container
-        run: docker run -d -p 8080:8080 --name swe-careercraftai-container swe-careercraftai/careercraftai
+        run: docker run -d -p 8080:8080 --name swe-careercraftai-container sarveshgaurishankarsawant/careercraftai
