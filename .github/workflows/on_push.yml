@@ -30,7 +30,7 @@ jobs:
 
   deploy:
     needs: build
-    runs-on: [careercraftaiec2runner]
+    runs-on: self-hosted
     steps:
       - name: Pull Image from docker hub
         run: docker pull sarveshgaurishankarsawant/careercraftai:latest
