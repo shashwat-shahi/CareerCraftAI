@@ -1,32 +1,36 @@
-name: Git Workflows
+name: CICD
 
 on:
   push:
-    branches:
-      - main
+    branches: [deploy-springboot-app]
 
 jobs:
   build:
-    name: Java-Build
-    runs-on: ubuntu-latest
-
+    runs-on: [ubuntu-latest]
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up JDK 17
+      - name: Checkout source
+        uses: actions/checkout@v3
+      - name: Setup Java
         uses: actions/setup-java@v3
         with:
-          java-version: '17'
           distribution: 'temurin'
-          cache: maven
-      - name: Connect to PostgreSQL
-        uses: harmon758/postgresql-action@v1
-        with:
-          postgresql db: 'postgres'
-          postgresql user: 'postgres'
-          postgresql password: 'test@123'
-      - name: Build with Maven
-        working-directory: backend
-        run: mvn clean install
-      - name: Running test cases
-        working-directory: backend
-        run: mvn test -Dtest=HealthCheckControllerTest
+          java-version: '17'
+      - name: Build Project
+        run: mvn clean install -DskipTests
+      - name: Login to docker hub
+        run: docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
+      - name: Build docker image
+        run: docker build -t SWE-CareerCraftAI/CareerCraftAI .
+      - name: Publish image to docker hub
+        run: docker push SWE-CareerCraftAI/CareerCraftAI:latest
+
+  deploy:
+    needs: build
+    runs-on: [aws-ec2]
+    steps:
+      - name: Pull Image from docker hub
+        run: docker pull SWE-CareerCraftAI/CareerCraftAI:latest
+      - name: Delete old container
+        run: docker rm -f springboot-example-container
+      - name: Run docker container
+        run: docker run -d -p 8080:8080 --name springboot-example-container SWE-CareerCraftAI/CareerCraftAI
