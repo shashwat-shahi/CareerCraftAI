@@ -26,7 +26,7 @@ jobs:
 
   deploy:
     needs: build
-    runs-on: [aws-ec2]
+    runs-on: [careercraftaiec2runner]
     steps:
       - name: Pull Image from docker hub
         run: docker pull SWE-CareerCraftAI/CareerCraftAI:latest
