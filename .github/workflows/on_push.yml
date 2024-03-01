@@ -16,14 +16,16 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
       - name: Build Project
-        run: mvn clean install -DskipTests
         working-directory: ./backend/
+        run: mvn clean install -DskipTests
       - name: Login to docker hub
+        working-directory: ./backend/
         run: docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
       - name: Build docker image
-        run: docker build -t swe-careercraftai/careercraftai .
         working-directory: ./backend/
+        run: docker build -t swe-careercraftai/careercraftai .
       - name: Publish image to docker hub
+        working-directory: ./backend/
         run: docker push swe-careercraftai/careercraftai:latest
 
   deploy:
