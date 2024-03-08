@@ -1,0 +1,376 @@
+{
+  "Role": "Blockchain Developer",
+  "required": [
+    {
+      "skill": "Basic Blockchain Knowledge", "category": "basic_blockchain_knowledge"
+    },
+    {
+      "skill": "Solidity",
+      "category": "programming_languages"
+    },
+    {
+      "skill": "IDEs",
+      "category": "smart_contracts_development"
+    },
+    {
+      "skill": "Cryptowallets",
+      "category": "cryptocurrencies"
+    },
+    {
+      "skill": "C#",
+      "category": "programming_languages"
+    },
+    {
+      "skill": "Java",
+      "category": "programming_languages"
+    },
+    {
+      "skill": "Python",
+      "category": "programming_languages"
+    },
+    {
+      "skill": "Go",
+      "category": "programming_languages"
+    },
+    {
+      "skill": "JavaScript",
+      "category": "programming_languages"
+    },
+    {
+      "skill": "Rust",
+      "category": "programming_languages"
+    },
+    {
+      "skill": "Git",
+      "category": "version_control"
+    },
+    {
+      "skill": "GitHub",
+      "category": "version_control"
+    },
+    {
+      "skill": "GitLab",
+      "category": "version_control"
+    },
+    {
+      "skill": "BitBucket",
+      "category": "version_control"
+    }
+  ],
+  "preferred": [
+    {
+      "skill": "Cryptography",
+      "category": "basic_blockchain_knowledge"
+    },
+    {
+      "skill": "Vyper",
+      "category": "programming_languages"
+    },
+    {
+      "skill": "Smart Contract Frameworks (e.g., Truffle, Hardhat)",
+      "category": "smart_contracts_development"
+    },
+    {
+      "skill": "Hybrid Smart Contracts",
+      "category": "cryptocurrencies"
+    }
+  ],
+  "desired": [
+    {
+      "skill": "Testing (Unit Tests, Integration Tests)",
+      "category": "smart_contracts_development"
+    },
+    {
+      "skill": "Ethereum",
+      "category": "blockchain_platforms"
+    },
+    {
+      "skill": "Slither",
+      "category": "smart_contract_analysis_tools"
+    },
+    {
+      "skill": "Manticore",
+      "category": "smart_contract_analysis_tools"
+    },
+    {
+      "skill": "MythX",
+      "category": "smart_contract_analysis_tools"
+    },
+    {
+      "skill": "Echidna",
+      "category": "smart_contract_analysis_tools"
+    },
+    {
+      "skill": "React",
+      "category": "frontend_frameworks"
+    },
+    {
+      "skill": "Angular",
+      "category": "frontend_frameworks"
+    },
+    {
+      "skill": "Vue",
+      "category": "frontend_frameworks"
+    },
+    {
+      "skill": "Alchemy",
+      "category": "blockchain_infrastructure"
+    },
+    {
+      "skill": "Infura",
+      "category": "blockchain_infrastructure"
+    },
+    {
+      "skill": "Moralis",
+      "category": "blockchain_infrastructure"
+    },
+    {
+      "skill": "Geth",
+      "category": "client_nodes"
+    },
+    {
+      "skill": "Besu",
+      "category": "client_nodes"
+    },
+    {
+      "skill": "Nethermind",
+      "category": "client_nodes"
+    },
+    {
+      "skill": "Substrate",
+      "category": "client_nodes"
+    },
+    {
+      "skill": "ethers.js",
+      "category": "client_libraries"
+    },
+    {
+      "skill": "web3.js",
+      "category": "client_libraries"
+    },
+    {
+      "skill": "Moralis",
+      "category": "client_libraries"
+    },
+    {
+      "skill": "Quicknode",
+      "category": "node_as_a_service"
+    },
+    {
+      "skill": "Slither",
+      "category": "smart_contract_analysis_tools"
+    },
+    {
+      "skill": "Manticore",
+      "category": "smart_contract_analysis_tools"
+    },
+    {
+      "skill": "MythX",
+      "category": "smart_contract_analysis_tools"
+    },
+    {
+      "skill": "Echidna",
+      "category": "smart_contract_analysis_tools"
+    },
+    {
+      "skill": "React",
+      "category": "frontend_frameworks"
+    },
+    {
+      "skill": "Angular",
+      "category": "frontend_frameworks"
+    },
+    {
+      "skill": "Vue",
+      "category": "frontend_frameworks"
+    },
+    {
+      "skill": "Alchemy",
+      "category": "blockchain_infrastructure"
+    },
+    {
+      "skill": "Infura",
+      "category": "blockchain_infrastructure"
+    },
+    {
+      "skill": "Moralis",
+      "category": "blockchain_infrastructure"
+    },
+    {
+      "skill": "Geth",
+      "category": "client_nodes"
+    },
+    {
+      "skill": "Besu",
+      "category": "client_nodes"
+    },
+    {
+      "skill": "Nethermind",
+      "category": "client_nodes"
+    },
+    {
+      "skill": "Substrate",
+      "category": "client_nodes"
+    },
+    {
+      "skill": "ethers.js",
+      "category": "client_libraries"
+    },
+    {
+      "skill": "web3.js",
+      "category": "client_libraries"
+    },
+    {
+      "skill": "Moralis",
+      "category": "client_libraries"
+    },
+    {
+      "skill": "Quicknode",
+      "category": "node_as_a_service"
+    },
+    {
+      "skill": "Slither",
+      "category": "smart_contract_analysis_tools"
+    },
+    {
+      "skill": "Manticore",
+      "category": "smart_contract_analysis_tools"
+    },
+    {
+      "skill": "MythX",
+      "category": "smart_contract_analysis_tools"
+    },
+    {
+      "skill": "Echidna",
+      "category": "smart_contract_analysis_tools"
+    },
+    {
+      "skill": "React",
+      "category": "frontend_frameworks"
+    },
+    {
+      "skill": "Angular",
+      "category": "frontend_frameworks"
+    },
+    {
+      "skill": "Vue",
+      "category": "frontend_frameworks"
+    },
+    {
+      "skill": "Alchemy",
+      "category": "blockchain_infrastructure"
+    },
+    {
+      "skill": "Infura",
+      "category": "blockchain_infrastructure"
+    },
+    {
+      "skill": "Moralis",
+      "category": "blockchain_infrastructure"
+    },
+    {
+      "skill": "Geth",
+      "category": "client_nodes"
+    },
+    {
+      "skill": "Besu",
+      "category": "client_nodes"
+    },
+    {
+      "skill": "Nethermind",
+      "category": "client_nodes"
+    },
+    {
+      "skill": "Substrate",
+      "category": "client_nodes"
+    },
+    {
+      "skill": "ethers.js",
+      "category": "client_libraries"
+    },
+    {
+      "skill": "web3.js",
+      "category": "client_libraries"
+    },
+    {
+      "skill": "Moralis",
+      "category": "client_libraries"
+    },
+    {
+      "skill": "Quicknode",
+      "category": "node_as_a_service"
+    },
+    {
+      "skill": "Slither",
+      "category": "smart_contract_analysis_tools"
+    },
+    {
+      "skill": "Manticore",
+      "category": "smart_contract_analysis_tools"
+    },
+    {
+      "skill": "MythX",
+      "category": "smart_contract_analysis_tools"
+    },
+    {
+      "skill": "Echidna",
+      "category": "smart_contract_analysis_tools"
+    },
+    {
+      "skill": "React",
+      "category": "frontend_frameworks"
+    },
+    {
+      "skill": "Angular",
+      "category": "frontend_frameworks"
+    },
+    {
+      "skill": "Vue",
+      "category": "frontend_frameworks"
+    },
+    {
+      "skill": "Alchemy",
+      "category": "blockchain_infrastructure"
+    },
+    {
+      "skill": "Infura",
+      "category": "blockchain_infrastructure"
+    },
+    {
+      "skill": "Moralis",
+      "category": "blockchain_infrastructure"
+    },
+    {
+      "skill": "Geth",
+      "category": "client_nodes"
+    },
+    {
+      "skill": "Besu",
+      "category": "client_nodes"
+    },
+    {
+      "skill": "Nethermind",
+      "category": "client_nodes"
+    },
+    {
+      "skill": "Substrate",
+      "category": "client_nodes"
+    },
+    {
+      "skill": "ethers.js",
+      "category": "client_libraries"
+    },
+    {
+      "skill": "web3.js",
+      "category": "client_libraries"
+    },
+    {
+      "skill": "Moralis",
+      "category": "client_libraries"
+    },
+    {
+      "skill": "Quicknode",
+      "category": "node_as_a_service"
+    }
+  ]
+}

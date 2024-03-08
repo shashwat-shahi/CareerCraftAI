@@ -1,0 +1,241 @@
+{
+    "Role": "MLOps",
+    "required": [
+        {
+            "skill": "Python",
+            "category": "Programming"
+        },
+        {
+            "skill": "Bash",
+            "category": "Programming"
+        },
+        {
+            "skill": "Git",
+            "category": "Programming"
+        },
+        {
+            "skill": "GitHub",
+            "category": "VersionControl"
+        },
+        {
+            "skill": "AWS",
+            "category": "CloudComputing"
+        },
+        {
+            "skill": "Azure",
+            "category": "CloudComputing"
+        },
+        {
+            "skill": "GCP",
+            "category": "CloudComputing"
+        },
+        {
+            "skill": "Docker",
+            "category": "Containerization"
+        },
+        {
+            "skill": "Kubernetes",
+            "category": "Orchestration"
+        },
+        {
+            "skill": "Spark",
+            "category": "DataPipelines"
+        },
+        {
+            "skill": "Airflow",
+            "category": "DataPipelines"
+        },
+        {
+            "skill": "Kafka",
+            "category": "DataPipelines"
+        },
+        {
+            "skill": "Data lakes",
+            "category": "DataHousing"
+        },
+        {
+            "skill": "Data Warehouses",
+            "category": "DataHousing"
+        },
+        {
+            "skill": "MLOps Paradigm",
+            "category": "PipelineCraft"
+        },
+        {
+            "skill": "CICD Aspects",
+            "category": "CICDInMLOps"
+        },
+        {
+            "skill": "Models Boon and Bound",
+            "category": "CICDInMLOps"
+        },
+        {
+            "skill": "Experimentation Sagas",
+            "category": "VersionControl"
+        },
+        {
+            "skill": "Cloud-native ML Services",
+            "category": "CloudML"
+        },
+        {
+            "skill": "FaaS and PaaS for ML",
+            "category": "CloudML"
+        },
+        {
+            "skill": "Data Engineering Fundamentals",
+            "category": "EngineeringModels"
+        },
+        {
+            "skill": "Model Register",
+            "category": "Database"
+        },
+        {
+            "skill": "Orchestration Empire",
+            "category": "Looping"
+        },
+        {
+            "skill": "Kubernetes",
+            "category": "Orchestration"
+        },
+        {
+            "skill": "Model Valiance",
+            "category": "Monitoring"
+        },
+        {
+            "skill": "Latency Nip",
+            "category": "Monitoring"
+        },
+        {
+            "skill": "DataVariant Gauge",
+            "category": "Monitoring"
+        },
+        {
+            "skill": "MLOps Philomathy",
+            "category": "Pioneer"
+        },
+        {
+            "skill": "Container Orchestration (e.g., ECS, EKS, AKS)",
+            "category": "DevOps"
+        },
+        {
+            "skill": "Continuous Integration/Continuous Deployment (CI/CD)",
+            "category": "DevOps"
+        },
+        {
+            "skill": "Infrastructure as Code (e.g., Terraform, CloudFormation)",
+            "category": "DevOps"
+        },
+        {
+            "skill": "Containerization (e.g., Docker)",
+            "category": "DevOps"
+        },
+        {
+            "skill": "Monitoring and Logging (e.g., Prometheus, Grafana, ELK Stack)",
+            "category": "DevOps"
+        },
+        {
+            "skill": "Security Best Practices for ML",
+            "category": "Security"
+        }
+    ],
+    "preferred": [
+        {
+            "skill": "FeaturesCraft",
+            "category": "Machination"
+        },
+        {
+            "skill": "IaC Treasure Trove",
+            "category": "Machination"
+        },
+        {
+            "skill": "Ephemeral Estate",
+            "category": "Ecosystem"
+        },
+        {
+            "skill": "Schematics in Scalability",
+            "category": "Ecosystem"
+        },
+        {
+            "skill": "Pipelines",
+            "category": "Database"
+        },
+        {
+            "skill": "Engrams Entrusted",
+            "category": "Database"
+        },
+        {
+            "skill": "Stacked and Steered",
+            "category": "Looping"
+        },
+        {
+            "skill": "Dockers Sway",
+            "category": "Looping"
+        },
+        {
+            "skill": "In-the-know Protocol",
+            "category": "Looping"
+        },
+        {
+            "skill": "Hedge of Hold",
+            "category": "Security"
+        },
+        {
+            "skill": "Tales and Trust",
+            "category": "Security"
+        },
+        {
+            "skill": "Discern in Dispatch",
+            "category": "Pioneer"
+        },
+        {
+            "skill": "Serving the Story",
+            "category": "Fulmination"
+        },
+        {
+            "skill": "Custodian Calls",
+            "category": "Fulmination"
+        }
+    ],
+    "desired": [
+        {
+            "skill": "Machine Learning Model Management",
+            "category": "MLModelManagement"
+        },
+        {
+            "skill": "Data Versioning",
+            "category": "DataVersioning"
+        },
+        {
+            "skill": "Automated Machine Learning (AutoML)",
+            "category": "AutoML"
+        },
+        {
+            "skill": "Model Explainability and Interpretability",
+            "category": "Explainability"
+        },
+        {
+            "skill": "Model Drift Detection",
+            "category": "DriftDetection"
+        },
+        {
+            "skill": "Hyperparameter Optimization",
+            "category": "HyperparameterOptimization"
+        },
+        {
+            "skill": "A/B Testing for ML Models",
+            "category": "ABTesting"
+        },
+        {
+            "skill": "Model Serving and Inference",
+            "category": "ModelServing"
+        },
+        {
+            "skill": "Feature Store",
+            "category": "FeatureStore"
+        },
+        {
+            "skill": "Data Governance in ML",
+            "category": "DataGovernance"
+        }
+    ]
+}
