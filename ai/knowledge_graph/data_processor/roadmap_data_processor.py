@@ -1,10 +1,12 @@
 import google.generativeai as genai
 import configparser
 import json
+import os
+
 
 # Fetch API key from config.ini
 config = configparser.ConfigParser()
-config.read('../ai/config/config.ini')
+config.read('ai/config/config.ini')
 
 # Set up the API key
 genai.configure(api_key=config['API']['key'])
@@ -37,21 +39,43 @@ safety_settings = [
   },
 ]
 
-# Get the JSON FIle
-file_path = "data/scraped_raw_data/android_developer_roadmap.json"
+# Data Directory path
+data_dir = "ai/knowledge_graph/data/scraped_raw_data"
+processed_data_dir = "ai/knowledge_graph/data/processed_data"
 
-# Read the JSON file
-with open(file_path, 'r') as file:
-    data = json.load(file)
-print(data)
-# model = genai.GenerativeModel(model_name="gemini-1.0-pro",
-#                               generation_config=generation_config,
-#                               safety_settings=safety_settings)
+# List all files in the directory
+files = os.listdir(data_dir)
+processed_files = os.listdir(processed_data_dir)
 
-# prompt_parts = [
-#   "input: {  \"Role\": \"Android Developer\",  \"Roadmap\": {    \"language\": [      \"Kotlin\",      \"Java\"    ],    \"development_IDE\": [      \"Android Studio\"    ],    \"version_control_systems\": [      \"Git\",      \"GitHub\",      \"GitLab\",      \"BitBucket\"    ],    \"build_tools\": [      \"Gradle\"    ],    \"fundamentals\": [      \"Basics of Kotlin\",      \"Basics of Object-Oriented Programming (OOP)\",      \"Data Structures and Algorithms\"    ],    \"app_components\": [      \"Activity and Activity Lifecycle\",      \"Services\",      \"Content Providers\",      \"Broadcast Receivers\",      \"Tasks and Back Stack\"    ],    \"user_interface\": {      \"layouts\": [        \"FrameLayout\",        \"LinearLayout\",        \"RelativeLayout\",        \"ConstraintLayout\",        \"RecyclerView\",        \"ListView\"      ],      \"components\": [        \"TextView\",        \"EditText\",        \"Buttons\",        \"ImageView\",        \"Dialogs\",        \"Bottom Sheet\",        \"DrawerLayout\",        \"Tabs\"      ],      \"navigation_and_intents\": [        \"Implicit Intents\",        \"Explicit Intents\",        \"Intent Filters\",        \"Fragments\",        \"Navigation Components\"      ],      \"animations\": [        \"View Animations\",        \"Property Animations\"      ],      \"modern_ui\": [        \"Jetpack Compose\"      ]    },    \"asynchronism\": [      \"Coroutines\",      \"RxJava\",      \"RxKotlin\"    ],    \"architecture_and_design_patterns\": [      \"MVVM (Model-View-ViewModel)\",      \"MVP (Model-View-Presenter)\",      \"MVC (Model-View-Controller)\",      \"MVI (Model-View-Intent)\",      \"Repository Pattern\",      \"Builder Pattern\",      \"Observer Pattern\",      \"Factory Pattern\"    ],    \"dependency_injection\": [      \"Dagger\",      \"Hilt\",      \"Koin\",      \"Kodein\"    ],    \"storage_and_database\": [      \"Shared Preferences\",      \"DataStore\",      \"Room Database\",      \"File System\"    ],    \"networking\": [      \"Retrofit\",      \"OkHttp\",      \"Apollo-Android\"    ],    \"common_google_services\": [      \"Firebase (Authentication, Cloud Firestore, Realtime Database, Cloud Messaging, Crashlytics, Remote Config)\",      \"Google AdMob\",      \"Google Play Services (Maps, Location, etc.)\"    ],    \"testing_and_quality_assurance\": [      \"Espresso\",      \"JUnit\",      \"Linting (Ktlint, Detekt, Android Lint)\",      \"Debugging Tools (Timber, LeakCanary, Chucker, Jetpack Benchmark)\"    ],    \"distribution\": [      \"Google Play Store\",      \"Firebase App Distribution\",      \"Signing and Managing APKs\"    ],    \"continuous_integration_and_delivery\": [      \"GitHub Actions\",      \"GitLab CI/CD\",      \"Bitbucket Pipelines\"    ],    \"other_tools_and_technologies\": [      \"WorkManager for Background Tasks\",      \"Firebase Distribution for Beta Testing\",      \"Jetpack Libraries (LiveData, ViewModel, Room, Paging, etc.)\"    ]  }}\n\nFrom this JSON, create a new json for the role into 3 divisions as required, preferred and desired skills. The structure of the new json will be that at first it would contain the role name. then in each of the 3 skill section, there will be two keys. first key will be the \"skill name\" with the value as name of the skill and second key would be the \"category\" with the value as name of the category",
-#   "output: ",
-# ]
+# Get all Json Files
+json_files = [file for file in files if file.endswith('.json')]
+processed_files = [file for file in processed_files if file.endswith('.json')]
 
-# response = model.generate_content(prompt_parts)
-# print(response.text)
+model = genai.GenerativeModel(model_name="gemini-1.0-pro",
+                              generation_config=generation_config,
+                              safety_settings=safety_settings)
+print(processed_files)
+
+for file in json_files:
+  if 'processed_'+file not in processed_files:
+      # Read the JSON file
+      filename = file
+      with open(os.path.join(data_dir, file), 'r') as file:
+          data = json.load(file)
+
+      prompt_parts = [f"""input: {data} \nFrom this JSON, create a new json for the role into 3 divisions as required, preferred and desired skills. The structure of the new json will be:
+          'Role': 'role_name'
+          'required': 'skill': 'skill_name', 'category': 'category_name',
+          'preferred': 'skill': 'skill_name', 'category': 'category_name',
+          'desired': 'skill': 'skill_name', 'category': 'category_name'
+          Avoid giving any redunctant information.""",
+        "output: ",
+      ]
+
+      response = model.generate_content(prompt_parts)
+      print(response.text)
+      print(file)
+
+      # Dump the modified data back to the file
+      with open(os.path.join(processed_data_dir, "processed_"+filename), 'w') as file:
+          json.dump(response.text, file, indent=4)
