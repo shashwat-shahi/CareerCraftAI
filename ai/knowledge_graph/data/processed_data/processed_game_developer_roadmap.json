@@ -1,0 +1,36 @@
+{
+    "Role": "Game Developer",
+    "required": [
+        {"skill": "C++", "category": "ProgrammingLanguages"},
+        {"skill": "C", "category": "ProgrammingLanguages"},
+        {"skill": "Mathematics", "category": "Mathematics"},
+        {"skill": "Physics And Dynamics", "category": "PhysicsAndDynamics"},
+        {"skill": "Collision Detection", "category": "CollisionDetection"},
+        {"skill": "Game Design Principles", "category": "GameDesign"}
+    ],
+    "preferred": [
+        {"skill": "Game Engines", "category": "GameEngines"},
+        {"skill": "ComputerGraphicsBasics", "category": "ComputerGraphics"},
+        {"skill": "Unity Game Engine", "category": "GameEngines"},
+        {"skill": "Unreal Engine", "category": "GameEngines"},
+        {"skill": "DirectX", "category": "GraphicsLibraries"},
+        {"skill": "OpenGL", "category": "GraphicsLibraries"}
+    ],
+    "desired": [
+        {"skill": "APIs And Shading", "category": "APIsAndShading"},
+        {"skill": "Advanced Rendering", "category": "AdvancedRendering"},
+        {"skill": "Artificial Intelligence For Games", "category": "ArtificialIntelligenceForGames"},
+        {"skill": "Optimization And BestPractices", "category": "OptimizationAndBestPractices"},
+        {"skill": "Game Networking", "category": "Networking"},
+        {"skill": "3D Modeling Software", "category": "ArtTools"},
+        {"skill": "Version Control Systems (e.g., Git)", "category": "DevelopmentTools"},
+        {"skill": "Shader Programming", "category": "GraphicsProgramming"},
+        {"skill": "Game Physics Libraries (e.g., NVIDIA PhysX)", "category": "PhysicsLibraries"},
+        {"skill": "Audio Programming (e.g., FMOD, Wwise)", "category": "AudioProgramming"},
+        {"skill": "UI/UX Design Principles for Games", "category": "GameDesign"},
+        {"skill": "Cross-Platform Development (e.g., Xamarin, React Native)", "category": "DevelopmentTools"},
+        {"skill": "Multiplayer Game Development", "category": "Networking"},
+        {"skill": "Game Testing and QA", "category": "QA"},
+        {"skill": "Localization and Internationalization", "category": "Miscellaneous"}
+    ]
+}
