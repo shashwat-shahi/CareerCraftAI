@@ -64,7 +64,7 @@ def read_json_file(filename, data_dir):
 
 # Write the JSON file
 def write_json_file(filename, data, processed_data_dir):
-    with open(os.path.join(processed_data_dir, "processed_" + filename), "w") as file:
+    with open(os.path.join(processed_data_dir, "2_" + filename), "w") as file:
         json.dump(data, file, indent=4)
 
 # Fetch the response from the API
@@ -74,9 +74,10 @@ def fetch_response_from_api(data, model):
 'Role': 'role_name'
 'fundamentals': 'skill': 'skill_name', 'category': 'category_name',
 'intermediate': 'skill': 'skill_name', 'category': 'category_name',
-'expert': 'skill': 'skill_name', 'category': 'category_name'
+'advanced': 'skill': 'skill_name', 'category': 'category_name'
 The category_name should be generic and uniform for all the jsons I'm about to give you. 
 Like same type of skills should have the same category.
+Give special focus on the structure of the json and making the category_name uniform acorss all jsons with generic categories.
 Avoid giving any redunctant information.""",
         "output: ",
     ]

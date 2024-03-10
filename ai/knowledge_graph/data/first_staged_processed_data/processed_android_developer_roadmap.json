@@ -1,81 +1,293 @@
 {
-    "Role": "Android Developer",
-    "required": [
-      {"skill": "Kotlin", "category": "Language"},
-      {"skill": "Java", "category": "Language"},
-      {"skill": "Android Studio", "category": "Development IDE"},
-      {"skill": "Git", "category": "Version Control System"},
-      {"skill": "Gradle", "category": "Build Tool"},
-      {"skill": "Basics of Kotlin", "category": "Fundamentals"},
-      {"skill": "Basics of Object-Oriented Programming (OOP)", "category": "Fundamentals"},
-      {"skill": "Data Structures and Algorithms", "category": "Fundamentals"},
-      {"skill": "Activity and Activity Lifecycle", "category": "App Components"},
-      {"skill": "Services", "category": "App Components"},
-      {"skill": "Content Providers", "category": "App Components"},
-      {"skill": "Broadcast Receivers", "category": "App Components"},
-      {"skill": "Tasks and Back Stack", "category": "App Components"},
-      {"skill": "TextView", "category": "User Interface - Components"},
-      {"skill": "EditText", "category": "User Interface - Components"},
-      {"skill": "Buttons", "category": "User Interface - Components"},
-      {"skill": "ImageView", "category": "User Interface - Components"},
-      {"skill": "Implicit Intents", "category": "User Interface - Navigation and Intents"},
-      {"skill": "Explicit Intents", "category": "User Interface - Navigation and Intents"},
-      {"skill": "Intent Filters", "category": "User Interface - Navigation and Intents"},
-      {"skill": "Fragments", "category": "User Interface - Navigation and Intents"},
-      {"skill": "Coroutines", "category": "Asynchronism"},
-      {"skill": "MVVM (Model-View-ViewModel)", "category": "Architecture and Design Patterns"},
-      {"skill": "Repository Pattern", "category": "Architecture and Design Patterns"},
-      {"skill": "Room Database", "category": "Storage and Database"},
-      {"skill": "Retrofit", "category": "Networking"},
-      {"skill": "Espresso", "category": "Testing and Quality Assurance"},
-      {"skill": "JUnit", "category": "Testing and Quality Assurance"},
-      {"skill": "Debugging Tools", "category": "Testing and Quality Assurance"},
-      {"skill": "Google Play Store", "category": "Distribution"},
-      {"skill": "Firebase App Distribution", "category": "Distribution"},
-      {"skill": "Signing and Managing APKs", "category": "Distribution"},
-      {"skill": "WorkManager for Background Tasks", "category": "Other Tools and Technologies"},
-      {"skill": "Firebase Distribution for Beta Testing", "category": "Other Tools and Technologies"},
-      {"skill": "Jetpack Libraries", "category": "Other Tools and Technologies"}
-    ],
-    "preferred": [
-      {"skill": "GitHub", "category": "Version Control Systems"},
-      {"skill": "GitLab", "category": "Version Control Systems"},
-      {"skill": "BitBucket", "category": "Version Control Systems"},
-      {"skill": "Firebase (Authentication, Cloud Firestore, Realtime Database, Cloud Messaging, Crashlytics, Remote Config)", "category": "Common Google Services"},
-      {"skill": "Google AdMob", "category": "Common Google Services"},
-      {"skill": "Google Play Services (Maps, Location, etc.)", "category": "Common Google Services"},
-      {"skill": "MVP (Model-View-Presenter)", "category": "Architecture and Design Patterns"},
-      {"skill": "MVC (Model-View-Controller)", "category": "Architecture and Design Patterns"},
-      {"skill": "MVI (Model-View-Intent)", "category": "Architecture and Design Patterns"},
-      {"skill": "Builder Pattern", "category": "Architecture and Design Patterns"},
-      {"skill": "Observer Pattern", "category": "Architecture and Design Patterns"},
-      {"skill": "Factory Pattern", "category": "Architecture and Design Patterns"},
-      {"skill": "Dagger or Hilt or Koin or Kodein", "category": "Dependency Injection"},
-      {"skill": "Shared Preferences", "category": "Storage and Database"},
-      {"skill": "DataStore", "category": "Storage and Database"},
-      {"skill": "File System", "category": "Storage and Database"},
-      {"skill": "OkHttp", "category": "Networking"},
-      {"skill": "Apollo-Android", "category": "Networking"},
-      {"skill": "Linting", "category": "Testing and Quality Assurance"},
-      {"skill": "GitHub Actions or GitLab CI/CD or Bitbucket Pipelines", "category": "Continuous Integration and Delivery"},
-      {"skill": "Jetpack Compose", "category": "Modern UI"}
-    ],
-    "desired": [
-      {"skill": "RxJava", "category": "Asynchronism"},
-      {"skill": "RxKotlin", "category": "Asynchronism"},
-      {"skill": "FrameLayout", "category": "User Interface - Layouts"},
-      {"skill": "LinearLayout", "category": "User Interface - Layouts"},
-      {"skill": "RelativeLayout", "category": "User Interface - Layouts"},
-      {"skill": "ConstraintLayout", "category": "User Interface - Layouts"},
-      {"skill": "RecyclerView", "category": "User Interface - Layouts"},
-      {"skill": "ListView", "category": "User Interface - Layouts"},
-      {"skill": "Dialogs", "category": "User Interface - Components"},
-      {"skill": "Bottom Sheet", "category": "User Interface - Components"},
-      {"skill": "DrawerLayout", "category": "User Interface - Components"},
-      {"skill": "Tabs", "category": "User Interface - Components"},
-      {"skill": "Navigation Components", "category": "User Interface - Navigation and Intents"},
-      {"skill": "View Animations", "category": "Animations"},
-      {"skill": "Property Animations", "category": "Animations"}
-    ]
-  }
-  
+  "Role": "Android Developer",
+  "required": [
+    {
+      "skill": "Kotlin",
+      "category": "Language"
+    },
+    {
+      "skill": "Java",
+      "category": "Language"
+    },
+    {
+      "skill": "Android Studio",
+      "category": "Development IDE"
+    },
+    {
+      "skill": "Git",
+      "category": "Version Control System"
+    },
+    {
+      "skill": "Gradle",
+      "category": "Build Tool"
+    },
+    {
+      "skill": "Basics of Kotlin",
+      "category": "Fundamentals"
+    },
+    {
+      "skill": "Basics of Object-Oriented Programming (OOP)",
+      "category": "Fundamentals"
+    },
+    {
+      "skill": "Data Structures and Algorithms",
+      "category": "Fundamentals"
+    },
+    {
+      "skill": "Activity and Activity Lifecycle",
+      "category": "App Components"
+    },
+    {
+      "skill": "Services",
+      "category": "App Components"
+    },
+    {
+      "skill": "Content Providers",
+      "category": "App Components"
+    },
+    {
+      "skill": "Broadcast Receivers",
+      "category": "App Components"
+    },
+    {
+      "skill": "Tasks and Back Stack",
+      "category": "App Components"
+    },
+    {
+      "skill": "TextView",
+      "category": "User Interface - Components"
+    },
+    {
+      "skill": "EditText",
+      "category": "User Interface - Components"
+    },
+    {
+      "skill": "Buttons",
+      "category": "User Interface - Components"
+    },
+    {
+      "skill": "ImageView",
+      "category": "User Interface - Components"
+    },
+    {
+      "skill": "Implicit Intents",
+      "category": "User Interface - Navigation and Intents"
+    },
+    {
+      "skill": "Explicit Intents",
+      "category": "User Interface - Navigation and Intents"
+    },
+    {
+      "skill": "Intent Filters",
+      "category": "User Interface - Navigation and Intents"
+    },
+    {
+      "skill": "Fragments",
+      "category": "User Interface - Navigation and Intents"
+    },
+    {
+      "skill": "Coroutines",
+      "category": "Asynchronism"
+    },
+    {
+      "skill": "MVVM (Model-View-ViewModel)",
+      "category": "Architecture and Design Patterns"
+    },
+    {
+      "skill": "Repository Pattern",
+      "category": "Architecture and Design Patterns"
+    },
+    {
+      "skill": "Room Database",
+      "category": "Storage and Database"
+    },
+    {
+      "skill": "Retrofit",
+      "category": "Networking"
+    },
+    {
+      "skill": "Espresso",
+      "category": "Testing and Quality Assurance"
+    },
+    {
+      "skill": "JUnit",
+      "category": "Testing and Quality Assurance"
+    },
+    {
+      "skill": "Debugging Tools",
+      "category": "Testing and Quality Assurance"
+    },
+    {
+      "skill": "Google Play Store",
+      "category": "Distribution"
+    },
+    {
+      "skill": "Firebase App Distribution",
+      "category": "Distribution"
+    },
+    {
+      "skill": "Signing and Managing APKs",
+      "category": "Distribution"
+    },
+    {
+      "skill": "WorkManager for Background Tasks",
+      "category": "Other Tools and Technologies"
+    },
+    {
+      "skill": "Firebase Distribution for Beta Testing",
+      "category": "Other Tools and Technologies"
+    },
+    {
+      "skill": "Jetpack Libraries",
+      "category": "Other Tools and Technologies"
+    }
+  ],
+  "preferred": [
+    {
+      "skill": "GitHub",
+      "category": "Version Control Systems"
+    },
+    {
+      "skill": "GitLab",
+      "category": "Version Control Systems"
+    },
+    {
+      "skill": "BitBucket",
+      "category": "Version Control Systems"
+    },
+    {
+      "skill": "Firebase (Authentication, Cloud Firestore, Realtime Database, Cloud Messaging, Crashlytics, Remote Config)",
+      "category": "Common Google Services"
+    },
+    {
+      "skill": "Google AdMob",
+      "category": "Common Google Services"
+    },
+    {
+      "skill": "Google Play Services (Maps, Location, etc.)",
+      "category": "Common Google Services"
+    },
+    {
+      "skill": "MVP (Model-View-Presenter)",
+      "category": "Architecture and Design Patterns"
+    },
+    {
+      "skill": "MVC (Model-View-Controller)",
+      "category": "Architecture and Design Patterns"
+    },
+    {
+      "skill": "MVI (Model-View-Intent)",
+      "category": "Architecture and Design Patterns"
+    },
+    {
+      "skill": "Builder Pattern",
+      "category": "Architecture and Design Patterns"
+    },
+    {
+      "skill": "Observer Pattern",
+      "category": "Architecture and Design Patterns"
+    },
+    {
+      "skill": "Factory Pattern",
+      "category": "Architecture and Design Patterns"
+    },
+    {
+      "skill": "Dagger or Hilt or Koin or Kodein",
+      "category": "Dependency Injection"
+    },
+    {
+      "skill": "Shared Preferences",
+      "category": "Storage and Database"
+    },
+    {
+      "skill": "DataStore",
+      "category": "Storage and Database"
+    },
+    {
+      "skill": "File System",
+      "category": "Storage and Database"
+    },
+    {
+      "skill": "OkHttp",
+      "category": "Networking"
+    },
+    {
+      "skill": "Apollo-Android",
+      "category": "Networking"
+    },
+    {
+      "skill": "Linting",
+      "category": "Testing and Quality Assurance"
+    },
+    {
+      "skill": "GitHub Actions or GitLab CI/CD or Bitbucket Pipelines",
+      "category": "Continuous Integration and Delivery"
+    },
+    {
+      "skill": "Jetpack Compose",
+      "category": "Modern UI"
+    }
+  ],
+  "desired": [
+    {
+      "skill": "RxJava",
+      "category": "Asynchronism"
+    },
+    {
+      "skill": "RxKotlin",
+      "category": "Asynchronism"
+    },
+    {
+      "skill": "FrameLayout",
+      "category": "User Interface - Layouts"
+    },
+    {
+      "skill": "LinearLayout",
+      "category": "User Interface - Layouts"
+    },
+    {
+      "skill": "RelativeLayout",
+      "category": "User Interface - Layouts"
+    },
+    {
+      "skill": "ConstraintLayout",
+      "category": "User Interface - Layouts"
+    },
+    {
+      "skill": "RecyclerView",
+      "category": "User Interface - Layouts"
+    },
+    {
+      "skill": "ListView",
+      "category": "User Interface - Layouts"
+    },
+    {
+      "skill": "Dialogs",
+      "category": "User Interface - Components"
+    },
+    {
+      "skill": "Bottom Sheet",
+      "category": "User Interface - Components"
+    },
+    {
+      "skill": "DrawerLayout",
+      "category": "User Interface - Components"
+    },
+    {
+      "skill": "Tabs",
+      "category": "User Interface - Components"
+    },
+    {
+      "skill": "Navigation Components",
+      "category": "User Interface - Navigation and Intents"
+    },
+    {
+      "skill": "View Animations",
+      "category": "Animations"
+    },
+    {
+      "skill": "Property Animations",
+      "category": "Animations"
+    }
+  ]
+}

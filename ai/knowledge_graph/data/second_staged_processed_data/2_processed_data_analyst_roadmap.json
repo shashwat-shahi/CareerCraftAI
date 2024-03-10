@@ -1,0 +1,50 @@
+{
+    "Role": "Data Analyst",
+    "fundamentals": [
+        {"skill": "Python basics", "category": "Programming languages"},
+        {"skill": "SQL", "category": "Databases"},
+        {"skill": "Problem solving", "category": "Non-technical skills"}
+    ],
+    "intermediate": [
+        {"skill": "Numpy", "category": "Data analysis-libraries"},
+        {"skill": "Pandas", "category": "Data analysis-libraries"},
+        {"skill": "Matplotlib/Seaborn", "category": "Data analysis-libraries"},
+        {"skill": "R basics", "category": "Programming languages"},
+        {"skill": "Dplyr", "category": "Data analysis-libraries"},
+        {"skill": "Ggplot2", "category": "Data analysis-libraries"},
+        {"skill": "Tableau", "category": "Data analysis-tools"},
+        {"skill": "MS Excel", "category": "Databases"},
+        {"skill": "Mean", "category": "Descriptive statistics"},
+        {"skill": "Standard deviation", "category": "Descriptive statistics"},
+        {"skill": "Hypothesis testing", "category": "Inferential statistics"},
+        {"skill": "Confidence intervals", "category": "Inferential statistics"},
+        {"skill": "Correlation coefficient", "category": "Correlation and covariance"},
+        {"skill": "Covariance matrix", "category": "Correlation and covariance"},
+        {"skill": "Linear regression", "category": "Inferential statistics"},
+        {"skill": "Data visualization", "category": "Data analysis"},
+        {"skill": "Data cleaning", "category": "Data analysis"},
+        {"skill": "Communication", "category": "Non-technical skills"}
+    ],
+    "advanced": [
+        {"skill": "Rapidminer", "category": "Data analysis-tools"},
+        {"skill": "Domain knowledge", "category": "Non-technical skills"},
+        {"skill": "Statistical modeling", "category": "Data analysis-techniques"},
+        {"skill": "Data mining", "category": "Data analysis-techniques"},
+        {"skill": "Machine learning", "category": "Machine Learning"},
+        {"skill": "Deep learning", "category": "Deep Learning"},
+        {"skill": "Natural language processing", "category": "Natural Language Processing"},
+        {"skill": "Time series analysis", "category": "Time Series Analysis"},
+        {"skill": "A/B testing", "category": "A/B Testing"},
+        {"skill": "Data warehousing", "category": "Databases"},
+        {"skill": "Big data", "category": "Big Data"},
+        {"skill": "Data engineering", "category": "Data Engineering"},
+        {"skill": "Data architecture", "category": "Data Engineering"},
+        {"skill": "Data governance", "category": "Data Governance"},
+        {"skill": "Data ethics", "category": "Data Ethics"},
+        {"skill": "Data privacy", "category": "Data Privacy"},
+        {"skill": "Data security", "category": "Data Security"},
+        {"skill": "Data integration", "category": "Data Integration"},
+        {"skill": "Data visualization tools", "category": "Data Analysis-Tools"},
+        {"skill": "Data storytelling", "category": "Data Storytelling"}
+    ]
+}

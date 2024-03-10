@@ -1,0 +1,213 @@
+{
+    "Role": "MLOps",
+    "fundamentals": [
+        {
+            "skill": "Python",
+            "category": "Programming Languages"
+        },
+        {
+            "skill": "Bash",
+            "category": "Scripting Languages"
+        },
+        {
+            "skill": "Git",
+            "category": "Version Control Systems"
+        },
+        {
+            "skill": "GitHub",
+            "category": "Version Control Systems"
+        },
+        {
+            "skill": "AWS",
+            "category": "Cloud Computing"
+        },
+        {
+            "skill": "Azure",
+            "category": "Cloud Computing"
+        },
+        {
+            "skill": "GCP",
+            "category": "Cloud Computing"
+        },
+        {
+            "skill": "Docker",
+            "category": "Containerization"
+        },
+        {
+            "skill": "Kubernetes",
+            "category": "Container Orchestration"
+        },
+        {
+            "skill": "Spark",
+            "category": "Data Pipelines"
+        },
+        {
+            "skill": "Airflow",
+            "category": "Data Pipelines"
+        },
+        {
+            "skill": "Kafka",
+            "category": "Data Pipelines"
+        },
+        {
+            "skill": "Data lakes",
+            "category": "Data Housing"
+        },
+        {
+            "skill": "Data Warehouses",
+            "category": "Data Housing"
+        },
+        {
+            "skill": "MLOps Paradigm",
+            "category": "Pipeline Craft"
+        },
+        {
+            "skill": "CICD Aspects",
+            "category": "Continuous Integration/Continuous Deployment (CI/CD)"
+        },
+        {
+            "skill": "Models Boon and Bound",
+            "category": "Continuous Integration/Continuous Deployment (CI/CD)"
+        },
+        {
+            "skill": "Experimentation Sagas",
+            "category": "Version Control Systems"
+        },
+        {
+            "skill": "Cloud-native ML Services",
+            "category": "Cloud ML"
+        },
+        {
+            "skill": "FaaS and PaaS for ML",
+            "category": "Cloud ML"
+        },
+        {
+            "skill": "Data Engineering Fundamentals",
+            "category": "Engineering Models"
+        },
+        {
+            "skill": "Model Register",
+            "category": "Database"
+        },
+        {
+            "skill": "Orchestration Empire",
+            "category": "Looping"
+        },
+        {
+            "skill": "Model Valiance",
+            "category": "Monitoring"
+        },
+        {
+            "skill": "Latency Nip",
+            "category": "Monitoring"
+        },
+        {
+            "skill": "DataVariant Gauge",
+            "category": "Monitoring"
+        },
+        {
+            "skill": "MLOps Philomathy",
+            "category": "Pioneer"
+        }
+    ],
+    "intermediate": [
+        {
+            "skill": "FeaturesCraft",
+            "category": "Machination"
+        },
+        {
+            "skill": "IaC Treasure Trove",
+            "category": "Machination"
+        },
+        {
+            "skill": "Ephemeral Estate",
+            "category": "Ecosystem"
+        },
+        {
+            "skill": "Schematics in Scalability",
+            "category": "Ecosystem"
+        },
+        {
+            "skill": "Pipelines",
+            "category": "Database"
+        },
+        {
+            "skill": "Engrams Entrusted",
+            "category": "Database"
+        },
+        {
+            "skill": "Stacked and Steered",
+            "category": "Looping"
+        },
+        {
+            "skill": "Dockers Sway",
+            "category": "Looping"
+        },
+        {
+            "skill": "In-the-know Protocol",
+            "category": "Looping"
+        },
+        {
+            "skill": "Hedge of Hold",
+            "category": "Security"
+        },
+        {
+            "skill": "Tales and Trust",
+            "category": "Security"
+        },
+        {
+            "skill": "Discern in Dispatch",
+            "category": "Pioneer"
+        },
+        {
+            "skill": "Serving the Story",
+            "category": "Fulmination"
+        },
+        {
+            "skill": "Custodian Calls",
+            "category": "Fulmination"
+        }
+    ],
+    "advanced": [
+        {
+            "skill": "Machine Learning Model Management",
+            "category": "Machine Learning"
+        },
+        {
+            "skill": "Data Versioning",
+            "category": "Data Versioning"
+        },
+        {
+            "skill": "Automated Machine Learning (AutoML)",
+            "category": "AutoML"
+        },
+        {
+            "skill": "Model Explainability and Interpretability",
+            "category": "Explainability"
+        },
+        {
+            "skill": "Model Drift Detection",
+            "category": "Drift Detection"
+        },
+        {
+            "skill": "Hyperparameter Optimization",
+            "category": "Hyperparameter Optimization"
+        },
+        {
+            "skill": "A/B Testing for ML Models",
+            "category": "A/B Testing"
+        },
+        {
+            "skill": "Model Serving and Inference",
+            "category": "Model Serving"
+        },
+        {
+            "skill": "Feature Store",
+            "category": "Feature Store"
+        },
+        {
+            "skill": "Data Governance in ML",
+            "category": "Data Governance"
+        }
+    ]
+}
