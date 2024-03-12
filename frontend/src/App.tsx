@@ -1,11 +1,14 @@
-import { ThemeProvider } from "@/components/theme-provider"
-import { Button } from "./components/ui/button"
+
+import { Link } from "react-router-dom"
+import { buttonVariants } from "@/components/ui/button"
+
 
 function App() {
   return (
-    <ThemeProvider defaultTheme="dark">
-      <Button>Click me</Button>
-    </ThemeProvider>
+    <nav>
+      <Link className={buttonVariants({ variant: "outline" })} to="bye">Bye</Link>
+      <Link className={buttonVariants({ variant: "outline" })} to="hello">Hello</Link>
+    </nav>
   )
 }
 
