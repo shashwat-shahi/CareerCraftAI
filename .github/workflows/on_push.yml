@@ -1,32 +1,40 @@
-name: Git Workflows
+name: CICD
 
 on:
   push:
-    branches:
-      - main
+    branches: [deploy-springboot-app]
 
 jobs:
   build:
-    name: Java-Build
-    runs-on: ubuntu-latest
-
+    runs-on: [ubuntu-latest]
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up JDK 17
+      - name: Checkout source
+        uses: actions/checkout@v3
+      - name: Setup Java
         uses: actions/setup-java@v3
         with:
-          java-version: '17'
           distribution: 'temurin'
-          cache: maven
-      - name: Connect to PostgreSQL
-        uses: harmon758/postgresql-action@v1
-        with:
-          postgresql db: 'postgres'
-          postgresql user: 'postgres'
-          postgresql password: 'test@123'
-      - name: Build with Maven
-        working-directory: backend
-        run: mvn clean install
-      - name: Running test cases
-        working-directory: backend
-        run: mvn test -Dtest=HealthCheckControllerTest
+          java-version: '17'
+      - name: Build Project
+        working-directory: ./backend/
+        run: mvn clean install -DskipTests
+      - name: Login to docker hub
+        working-directory: ./backend/
+        run: docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
+      - name: Build docker img
+        working-directory: ./backend/
+        run: docker build -t sarveshgaurishankarsawant/careercraftai .
+      - name: Publish image to docker hub
+        working-directory: ./backend/
+        run: docker push sarveshgaurishankarsawant/careercraftai:latest
+
+  deploy:
+    needs: build
+    runs-on: self-hosted
+    steps:
+      - name: Pull Image from docker hub
+        run: docker pull sarveshgaurishankarsawant/careercraftai:latest
+      - name: Delete old container
+        run: docker rm -f swe-careercraftai-container
+      - name: Run docker container
+        run: docker run -e "DB_PASS=${{secrets.DB_PASS}}" -d -p 8080:8080 --name swe-careercraftai-container sarveshgaurishankarsawant/careercraftai

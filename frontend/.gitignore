@@ -1,0 +1,40 @@
+# Dependencies
+/node_modules/
+
+# Build outputs
+/build/
+/dist/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDEs and editors
+.idea/
+.vscode/
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Optional eslint cache
+.eslintcache
+
+# Yarn Integrity file
+.yarn-integrity
+
+# Next.js / Nuxt.js build output
+.next/
+.nuxt/
+
+# Temp folders
+tmp/
+temp/
