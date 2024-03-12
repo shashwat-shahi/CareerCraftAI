@@ -1,0 +1,49 @@
+{
+    "Role": "Blockchain Developer",
+    "fundamentals": [
+        {"skill": "Basic Blockchain Knowledge", "category": "Blockchain Fundamentals"},
+        {"skill": "Solidity", "category": "Programming Languages"},
+        {"skill": "IDEs", "category": "Development Tools"},
+        {"skill": "Cryptowallets", "category": "Cryptocurrencies"},
+        {"skill": "C#", "category": "Programming Languages"},
+        {"skill": "Java", "category": "Programming Languages"},
+        {"skill": "Python", "category": "Programming Languages"},
+        {"skill": "Go", "category": "Programming Languages"},
+        {"skill": "JavaScript", "category": "Programming Languages"},
+        {"skill": "Rust", "category": "Programming Languages"},
+        {"skill": "Git", "category": "Version Control Systems"},
+        {"skill": "GitHub", "category": "Version Control Systems"},
+        {"skill": "GitLab", "category": "Version Control Systems"},
+        {"skill": "BitBucket", "category": "Version Control Systems"}
+    ],
+    "intermediate": [
+        {"skill": "Cryptography", "category": "Blockchain Fundamentals"},
+        {"skill": "Vyper", "category": "Programming Languages"},
+        {"skill": "Smart Contract Frameworks (e.g., Truffle, Hardhat)", "category": "Development Tools"},
+        {"skill": "Truffle", "category": "Development Tools"},
+        {"skill": "Hardhat", "category": "Development Tools"},
+        {"skill": "Hybrid Smart Contracts", "category": "Cryptocurrencies"},
+        {"skill": "Testing (Unit Tests, Integration Tests)", "category": "Development Tools"},
+        {"skill": "Ethereum", "category": "Blockchain Platforms"},
+        {"skill": "Slither", "category": "Code Analysis Tools"},
+        {"skill": "Manticore", "category": "Code Analysis Tools"},
+        {"skill": "MythX", "category": "Code Analysis Tools"},
+        {"skill": "Echidna", "category": "Code Analysis Tools"}
+    ],
+    "advanced": [
+        {"skill": "React", "category": "Frontend Development"},
+        {"skill": "Angular", "category": "Frontend Development"},
+        {"skill": "Vue", "category": "Frontend Development"},
+        {"skill": "Alchemy", "category": "Blockchain Infrastructure"},
+        {"skill": "Infura", "category": "Blockchain Infrastructure"},
+        {"skill": "Moralis", "category": "Blockchain Infrastructure"},
+        {"skill": "Geth", "category": "Blockchain Nodes"},
+        {"skill": "Besu", "category": "Blockchain Nodes"},
+        {"skill": "Nethermind", "category": "Blockchain Nodes"},
+        {"skill": "Substrate", "category": "Blockchain Nodes"},
+        {"skill": "ethers.js", "category": "Blockchain Libraries"},
+        {"skill": "web3.js", "category": "Blockchain Libraries"},
+        {"skill": "Moralis", "category": "Blockchain Libraries"},
+        {"skill": "Quicknode", "category": "Node as a Service"}
+    ]
+}

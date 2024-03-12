@@ -1,0 +1,81 @@
+{
+  "Role": "Blockchain Developer",
+  "Roadmap": {
+    "basic_blockchain_knowledge": [
+      "What is Blockchain?",
+      "Decentralization",
+      "Why it matters?",
+      "Blockchain Structure",
+      "Basic Blockchain Operations",
+      "Applications and Uses",
+      "Cryptography",
+      "Consensus Protocols",
+      "Blockchain Interoperability",
+      "Storage",
+      "Mining and Incentive Models",
+      "Decentralization vs Trust",
+      "Blockchain Forking"
+    ],
+    "cryptocurrencies": [
+      "Cryptocurrencies Overview",
+      "Cryptowallets",
+      "Hybrid Smart Contracts"
+    ],
+    "blockchain_platforms": [
+      "Ethereum",
+      "Polygon",
+      "Binance Smart Chain",
+      "Solana",
+      "Gnosis Chain",
+      "Huobi Eco Chain",
+      "Terra",
+      "Avalanche",
+      "Moonbeam/Moonriver",
+      "Layer 2 Blockchains",
+      "Oracles (e.g., Chainlink)"
+    ],
+    "programming_languages": [
+      "Solidity",
+      "Vyper",
+      "Rust"
+    ],
+    "smart_contracts_development": [
+      "IDEs",
+      "Crypto Faucets",
+      "Decentralized Storage",
+      "Testing (Unit Tests, Integration Tests)",
+      "Deployment",
+      "Monitoring",
+      "Upgrades",
+      "Security Practices",
+      "Smart Contract Frameworks (e.g., Truffle, Hardhat)",
+      "Oracle Networks",
+      "Fuzz Testing & Static Analysis",
+      "Common Threat Vectors",
+      "Source of Randomness Attacks"
+    ],
+    "tools_and_technologies": [
+      "Version Control Systems (Git, GitHub, GitLab, BitBucket)",
+      "Smart Contract Analysis Tools (Slither, Manticore, MythX, Echidna)",
+      "Frontend Frameworks (React, Angular, Vue)",
+      "Blockchain Infrastructure (Alchemy, Infura, Moralis)",
+      "Client Nodes (Geth, Besu, Nethermind, Substrate)",
+      "Client Libraries (ethers.js, web3.js, Moralis)",
+      "Node as a Service (Quicknode)"
+    ],
+    "supporting_technologies": [
+      "dApps - Decentralized Applications",
+      "State and Payment Channels",
+      "Optimistic Rollups & Fraud Proofs",
+      "Zk Rollups & Zero Knowledge Proof",
+      "Building for Scale (Validium, Plasma, Sidechains)",
+      "Ethereum 2.0",
+      "On-Chain Scaling"
+    ],
+    "supporting_languages": [
+      "JavaScript",
+      "Python",
+      "Go"
+    ]
+  }
+}

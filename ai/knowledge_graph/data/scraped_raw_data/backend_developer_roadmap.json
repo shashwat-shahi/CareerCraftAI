@@ -1,0 +1,160 @@
+{
+  "Role": "Backend Developer",
+  "Roadmap": {
+    "internet_fundamentals": [
+      "How does the internet work?",
+      "What is hosting?",
+      "Browsers and how they work?",
+      "What is Domain Name",
+      "What is HTTP?"
+    ],
+    "programming_languages": [
+      "Rust",
+      "Go",
+      "Java",
+      "JavaScript",
+      "C#",
+      "Python",
+      "PHP",
+      "Ruby"
+    ],
+    "version_control": [
+      "Git",
+      "GitHub",
+      "GitLab",
+      "Bitbucket"
+    ],
+    "terminal_usage": [
+      "POSIX Basics",
+      "stdin, stdout, stderr, pipes",
+      "Basic Terminal Commands"
+    ],
+    "databases": {
+      "relational_databases": [
+        "PostgreSQL",
+        "MySQL",
+        "MariaDB",
+        "MS SQL",
+        "Oracle"
+      ],
+      "no_sql_databases": [
+        "Firebase Realtime",
+        "HBase",
+        "Graph DBs (Neo4j, DynamoDB)",
+        "Column DBs (Cassandra, RethinkDB)",
+        "Document DBs (MongoDB, CouchDB)"
+      ],
+      "database_concepts": [
+        "ACID",
+        "N+1 Problem",
+        "Normalization",
+        "Failure Modes",
+        "Data Replication",
+        "Database Indexes",
+        "Scaling Databases",
+        "Transactions"
+      ]
+    },
+    "os_and_general_knowledge": [
+      "Memory Management",
+      "Threads and Concurrency",
+      "Process Management",
+      "I/O Management",
+      "Interprocess Communication",
+      "How OSs work in General"
+    ],
+    "api_design": [
+      "Open API Specs",
+      "REST",
+      "JSON APIs",
+      "gRPC",
+      "GraphQL",
+      "HATEOAS"
+    ],
+    "authentication_and_security": [
+      "Authentication",
+      "OpenID",
+      "SAML",
+      "OAuth",
+      "JWT",
+      "Web Security Knowledge",
+      "HTTPS",
+      "SSL/TLS",
+      "Content Security Policy",
+      "OWASP Risks",
+      "CORS"
+    ],
+    "caching": [
+      "Redis",
+      "Memcached"
+    ],
+    "testing": [
+      "Integration Testing",
+      "Unit Testing",
+      "Functional Testing",
+      "CI/CD"
+    ],
+    "search_engines": [
+      "Elasticsearch",
+      "Solr"
+    ],
+    "web_servers": [
+      "Nginx",
+      "Apache",
+      "Caddy",
+      "MS IIS"
+    ],
+    "architecture": [
+      "Microservices",
+      "SOA",
+      "Serverless",
+      "Service Mesh",
+      "Twelve Factor Apps",
+      "Monolithic Apps",
+      "GOF Design Patterns",
+      "Architectural Patterns",
+      "Domain Driven Design",
+      "Test Driven Development",
+      "CQRS",
+      "Event Sourcing"
+    ],
+    "message_brokers": [
+      "RabbitMQ",
+      "Kafka"
+    ],
+    "containerization": [
+      "Docker",
+      "LXC",
+      "Containerization vs Virtualization",
+      "Kubernetes"
+    ],
+    "graphql_ecosystem": [
+      "GraphQL",
+      "Apollo",
+      "Relay Modern"
+    ],
+    "scaling_and_performance": [
+      "CDN",
+      "Sharding Strategies",
+      "CAP Theorem",
+      "Graceful Degradation",
+      "Throttling",
+      "Backpressure",
+      "Loadshifting",
+      "Building for Scale"
+    ],
+    "monitoring_and_observability": [
+      "Instrumentation",
+      "Monitoring",
+      "Circuit Breaker",
+      "Mitigation Strategies",
+      "Telemetry",
+      "Types of Scaling",
+      "Observability",
+      "Metrics logging"
+    ],
+    "devops_integration": [
+      "Have a look at the DevOps Roadmap"
+    ]
+  }
+}

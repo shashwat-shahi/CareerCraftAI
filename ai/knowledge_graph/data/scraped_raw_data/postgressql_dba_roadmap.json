@@ -1,0 +1,79 @@
+{
+  "Role": "PostgreSQL Database Administrator",
+  "Roadmap": {
+    "Introduction": [
+      "What are Relational Databases?",
+      "RDBMS Benefits and Limitations",
+      "PostgreSQL vs Other RDBMS",
+      "PostgreSQL vs NoSQL Databases"
+    ],
+    "FoundationalRDBMSConcepts": [
+      "Basic RDBMS Concepts",
+      "Relational Model & Object Model",
+      "Attributes, Tuples, Relations",
+      "ACID Properties",
+      "MVCC (Multi-Version Concurrency Control)"
+    ],
+    "InstallationAndConfiguration": [
+      "Installation and Setup",
+      "Using Docker for PostgreSQL",
+      "Using `systemd` for PostgreSQL Service",
+      "Managing PostgreSQL Databases",
+      "Resources Utilization and Performance Tuning"
+    ],
+    "SQLAndDBOperation": [
+      "Comprehensive understanding of SQL",
+      "DDL, DML, DCL, and TCL",
+      "Learn about Schemas, Transactions",
+      "Writing optimized SQL queries"
+    ],
+    "Security": [
+      "Managing Roles and Permissions",
+      "Setting up Authentication Models",
+      "Database Encryption",
+      "pg_hba.conf for Connection and Authentication Settings"
+    ],
+    "BackupAndRecovery": [
+      "Physical Backups with pg_basebackup",
+      "Logical Backups with pg_dump, pg_dumpall",
+      "Continuous Archiving and Point-In-Time Recovery (PITR)",
+      "High-Level Architecture for Discreet Failover"
+    ],
+    "CloudTangents": [
+      "Leveraging RDS for PostgreSQL",
+      "Integrating with Cloud Infrastructure (AWS, GCP, Azure)",
+      "Hybrid and Full-Cloud DBA operational insights"
+    ],
+    "DevOpsInclusion": [
+      "Infrastructure as Code Practices with PostgreSQL",
+      "Deployment Best Practices",
+      "Docker, Kubernetes, and Terraform",
+      "CI/CD Pipeline Considerations"
+    ],
+    "PerformanceTuning": [
+      "Routine Vacuuming and Health of Tables",
+      "Best Execution for Config Files",
+      "pg_stat_statements for Imperative Steering",
+      "Partitioning & Sharding"
+    ],
+    "AdvancedServices": [
+      "Extending PostgreSQL with FDW",
+      "Integrating and Upscaling NoSQL & Foreign Data Principles",
+      "Comprehensive Logging & Self-Healing Services"
+    ],
+    "DAV": {
+      "Docker": "Principles of Stateless, Ephemeral Work Cycles",
+      "Agile Bases in DB Schemas": "Fast-Granting Rollouts and Their Implications",
+      "Vagrant": "Sandboxing Ideas for Newcomers"
+    },
+    "DEVCaPS": {
+      "Declarative Management": "Terraform, Ansible, Pulumi",
+      "CI/CD Pipelines": "Delineation and Deployment with Jumpstarts",
+      "SecurityOps": "Vault, SELinux, RBAC"
+    },
+    "BrushingMonolith": {
+      "SchemaMixins": "Fencing Analytical Rows with Ephemeral Needs",
+      "CRON and TriggerTheory": "Stance Verge in Local Watching"
+    }
+  }
+}

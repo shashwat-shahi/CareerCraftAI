@@ -1,0 +1,48 @@
+{
+    "Role": "Data Scientist",
+    "Required": [
+    {"Skill": "Linear Algebra", "Category": "Mathematics"},
+    {"Skill": "Python Basics", "Category": "Programming"},
+    {"Skill": "Statistics", "Category": "Statistics"},
+    {"Skill": "Machine Learning", "Category": "Machine Learning"},
+    {"Skill": "Communication Skills", "Category": "Other"}
+    ],
+    "Preferred": [
+    {"Skill": "Matrix", "Category": "Mathematics"},
+    {"Skill": "Python", "Category": "Programming"},
+    {"Skill": "Feature Generation", "Category": "Feature Engineering"},
+    {"Skill": "Discrete Distribution", "Category": "Probability"},
+    {"Skill": "Correlation", "Category": "Statistics"},
+    {"Skill": "Model Validation", "Category": "Machine Learning"},
+    {"Skill": "Underfitting & Overfitting", "Category": "Machine Learning"},
+    {"Skill": "Artificial Neural Networks", "Category": "Deep Learning"}
+    ],
+    "Desired": [
+    {"Skill": "Analytics Geometry", "Category": "Mathematics"},
+    {"Skill": "R Basics", "Category": "Programming"},
+    {"Skill": "Numpy", "Category": "Programming"},
+    {"Skill": "Pandas", "Category": "Programming"},
+    {"Skill": "Scikit-Learn", "Category": "Programming"},
+    {"Skill": "Data Leakages", "Category": "Machine Learning"},
+    {"Skill": "Convolutional Neural Networks", "Category": "Deep Learning"},
+    {"Skill": "Recurrent Neural Networks", "Category": "Deep Learning"},
+    {"Skill": "Case Studies", "Category": "Other"},
+    {"Skill": "Big Data Technologies", "Category": "Big Data"},
+    {"Skill": "Hadoop", "Category": "Big Data"},
+    {"Skill": "Spark", "Category": "Big Data"},
+    {"Skill": "Data Visualization Tools", "Category": "Data Visualization"},
+    {"Skill": "Tableau", "Category": "Data Visualization"},
+    {"Skill": "Power BI", "Category": "Data Visualization"},
+    {"Skill": "Database Management", "Category": "Database Management"},
+    {"Skill": "SQL", "Category": "Database Management"},
+    {"Skill": "NoSQL", "Category": "Database Management"},
+    {"Skill": "Cloud Computing Platforms", "Category": "Cloud Computing"},
+    {"Skill": "AWS", "Category": "Cloud Computing"},
+    {"Skill": "Azure", "Category": "Cloud Computing"},
+    {"Skill": "GCP", "Category": "Cloud Computing"},
+    {"Skill": "Natural Language Processing (NLP)", "Category": "Machine Learning"},
+    {"Skill": "Deep Learning Frameworks", "Category": "Deep Learning"},
+    {"Skill": "TensorFlow", "Category": "Deep Learning"},
+    {"Skill": "PyTorch", "Category": "Deep Learning"}
+    ]
+    }

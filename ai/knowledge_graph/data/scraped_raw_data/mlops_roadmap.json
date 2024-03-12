@@ -1,0 +1,122 @@
+{
+    "Role": "MLOps",
+    "Roadmap": {
+        "Introduction": [
+            "Understanding MLOps",
+            "From ML to MLOps: Transition Vignette"
+        ],
+        "FundamentalSkills": {
+            "Programming": [
+                "Python",
+                "Bash",
+                "Git"
+            ],
+            "VersionControl": [
+                "GitHub"
+            ]
+        },
+        "CloudAndDevOps": {
+            "CloudComputing": [
+                "AWS",
+                "Azure",
+                "GCP"
+            ],
+            "Containerization": [
+                "Docker"
+            ],
+            "Orchestration": [
+                "Kubernetes"
+            ]
+        },
+        "DataEngineerTwin": {
+            "DataPipelines": [
+                "Spark",
+                "Airflow",
+                "Kafka"
+            ],
+            "DataHousing": [
+                "Data lakes",
+                "Data Warehouses"
+            ]
+        },
+        "CoreMLOps": {
+            "PipelineCraft": [
+                "MLOps Paradigm",
+                "MLOps Deployment, Alignment, Processing"
+            ],
+            "CICDInMLOps": [
+                "CI/CD Aspects",
+                "Models Boon and Bound"
+            ],
+            "VersionControl": [
+                "Experimentation Sagas",
+                "Models Vim",
+                "Feature Nascence"
+            ]
+        },
+        "SystemServices": {
+            "CloudML": [
+                "Cloud-native ML Services",
+                "FaaS and PaaS for ML"
+            ],
+            "DataStreaming": [
+                "Spark",
+                "Kafka"
+            ]
+        },
+        "TendingTools": {
+            "Machination": [
+                "Docker",
+                "FeaturesCraft",
+                "IaC Treasure Trove"
+            ],
+            "Ecosystem": [
+                "Kubernetes",
+                "Ephemeral Estate",
+                "Schematics in Scalability"
+            ]
+        },
+        "DataFormation": {
+            "EngineeringModels": [
+                "Data Engineering Fundamentals"
+            ],
+            "Database": [
+                "Model Register",
+                "Pipelines",
+                "Engrams Entrusted"
+            ]
+        },
+        "Orchestration": {
+            "Looping": [
+                "Orchestration Empire",
+                "Stacked and Steered"
+            ],
+            "LogicHaul": [
+                "Kubernetes",
+                "Docker's Sway",
+                "In-the-know Protocol"
+            ]
+        },
+        "InsightInflux": {
+            "Monitoring": [
+                "Model Valiance",
+                "Latency Nip",
+                "DataVariant Gauge"
+            ],
+            "Security": [
+                "Hedge of Hold",
+                "Tales and Trust"
+            ]
+        },
+        "ScaleScepter": {
+            "Pioneer": [
+                "MLOps Philomathy",
+                "Discern in Dispatch"
+            ],
+            "Fulmination": [
+                "Serving the Story",
+                "Custodian Calls"
+            ]
+        }
+    }
+}
