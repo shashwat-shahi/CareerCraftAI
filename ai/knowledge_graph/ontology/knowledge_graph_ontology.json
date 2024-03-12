@@ -1,0 +1,16 @@
+{
+    "nodes": [
+        {"label": "AllRoles", "properties": ["id","name"]},
+        {"label": "Role", "properties": ["id","role_name", "description", "synonymous_roles"]},
+        {"label": "{importance}", "properties":["id", "role"]},
+      { "label": "{category_name} , TechnologyCategory", "properties": ["id","technology_name", "description", "synonymous_tech"] },
+      { "label": "{category_name}, Skills, {importance}", "properties": ["id","name", "category", "description", "synonymous_skills"] }
+    ],
+    "relationships": [
+      { "startNode": "AllRoles", "endNode": "Role", "type": "has_role", "properties": ["id"] },
+      { "startNode": "Role", "endNode": "{importance}", "type": "for_{importance}_level_knowledge", "properties": ["id"] },
+      { "startNode": "{importance}", "endNode": "TechnologyCategory", "type": "should_learn", "properties": ["id"] },
+      { "startNode": "TechnologyCategory", "endNode": "Skills", "type": "options_and_examples", "properties": ["id"] }
+    ]
+  }
+  
