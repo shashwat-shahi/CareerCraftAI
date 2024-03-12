@@ -20,7 +20,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
-    /* ShadCN UI Library*/
+    /* ShadCN UI */
     "baseUrl": ".",
     "paths": {
       "@/*": [
