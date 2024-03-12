@@ -1,0 +1,265 @@
+{
+    "Role": "Game Developer",
+    "fundamentals": [
+        {
+            "skill": "C++",
+            "category": "Programming Languages"
+        },
+        {
+            "skill": "C",
+            "category": "Programming Languages"
+        },
+        {
+            "skill": "Mathematics",
+            "category": "Mathematics"
+        },
+        {
+            "skill": "Physics And Dynamics",
+            "category": "PhysicsAndDynamics"
+        },
+        {
+            "skill": "Collision Detection",
+            "category": "CollisionDetection"
+        },
+        {
+            "skill": "Game Design Principles",
+            "category": "Game Design"
+        },
+        {
+            "skill": "Game Engines",
+            "category": "Game Engines"
+        },
+        {
+            "skill": "Computer Graphics Basics",
+            "category": "Computer Graphics"
+        },
+        {
+            "skill": "Unity Game Engine",
+            "category": "Game Engines"
+        },
+        {
+            "skill": "Unreal Engine",
+            "category": "Game Engines"
+        },
+        {
+            "skill": "DirectX",
+            "category": "Graphics Libraries"
+        },
+        {
+            "skill": "OpenGL",
+            "category": "Graphics Libraries"
+        }
+    ],
+    "intermediate": [
+        {
+            "skill": "APIs And Shading",
+            "category": "APIsAndShading"
+        },
+        {
+            "skill": "Advanced Rendering",
+            "category": "AdvancedRendering"
+        },
+        {
+            "skill": "Artificial Intelligence For Games",
+            "category": "ArtificialIntelligenceForGames"
+        },
+        {
+            "skill": "Optimization And BestPractices",
+            "category": "OptimizationAndBestPractices"
+        },
+        {
+            "skill": "Game Networking",
+            "category": "Networking"
+        },
+        {
+            "skill": "3D Modeling Software",
+            "category": "ArtTools"
+        },
+        {
+            "skill": "Git",
+            "category": "Version Control Systems"
+        },
+        {
+            "skill": "Shader Programming",
+            "category": "GraphicsProgramming"
+        },
+        {
+            "skill": "Game Physics Libraries (e.g., NVIDIA PhysX)",
+            "category": "PhysicsLibraries"
+        },
+        {
+            "skill": "Audio Programming",
+            "category": "AudioProgramming"
+        },
+        {
+            "skill": "FMOD",
+            "category": "AudioProgramming"
+        },
+        {
+            "skill": "Wwise",
+            "category": "AudioProgramming"
+        },
+        {
+            "skill": "UI/UX Design Principles for Games",
+            "category": "GameDesign"
+        },
+        {
+            "skill": "Cross-Platform Development",
+            "category": "DevelopmentTools"
+        },
+        {
+            "skill": "Xamarin",
+            "category": "DevelopmentTools"
+        },
+        {
+            "skill": "React Native",
+            "category": "DevelopmentTools"
+        },
+        {
+            "skill": "Multiplayer Game Development",
+            "category": "Networking"
+        },
+        {
+            "skill": "Game Testing and QA",
+            "category": "QA"
+        },
+        {
+            "skill": "Localization and Internationalization",
+            "category": "Miscellaneous"
+        },
+        {
+            "skill": "GraphQL",
+            "category": "APIs"
+        },
+        {
+            "skill": "gRPC",
+            "category": "APIs"
+        },
+        {
+            "skill": "Grafana",
+            "category": "DevOpsTools"
+        },
+        {
+            "skill": "Prometheus",
+            "category": "DevOpsTools"
+        },
+        {
+            "skill": "ELK Stack",
+            "category": "DevOpsTools"
+        },
+        {
+            "skill": "OAuth",
+            "category": "Security"
+        },
+        {
+            "skill": "JWT",
+            "category": "Security"
+        },
+        {
+            "skill": "HTTPS",
+            "category": "Security"
+        }
+    ],
+    "expert": [
+        {
+            "skill": "Unit Testing",
+            "category": "Testing"
+        },
+        {
+            "skill": "Integration Testing",
+            "category": "Testing"
+        },
+        {
+            "skill": "End-to-End (E2E) Testing",
+            "category": "Testing"
+        },
+        {
+            "skill": "RESTful Patterns",
+            "category": "SoftwareDesign"
+        },
+        {
+            "skill": "GraphQL Implementation",
+            "category": "SoftwareDesign"
+        },
+        {
+            "skill": "API Documentation",
+            "category": "Documentation"
+        },
+        {
+            "skill": "SemVer",
+            "category": "Versioning"
+        },
+        {
+            "skill": "Conventional Commits",
+            "category": "Versioning"
+        },
+        {
+            "skill": "Branching Strategies",
+            "category": "VersionControl"
+        },
+        {
+            "skill": "SCRUM",
+            "category": "Agile"
+        },
+        {
+            "skill": "Kanban",
+            "category": "Agile"
+        },
+        {
+            "skill": "eXtreme Programming (XP)",
+            "category": "Agile"
+        },
+        {
+            "skill": "Jira",
+            "category": "ProjectManagement"
+        },
+        {
+            "skill": "Confluence",
+            "category": "ProjectManagement"
+        },
+        {
+            "skill": "Slack",
+            "category": "Communication"
+        },
+        {
+            "skill": "Zoom",
+            "category": "Communication"
+        },
+        {
+            "skill": "VS Code",
+            "category": "DevelopmentTools"
+        },
+        {
+            "skill": "Postman",
+            "category": "APITesting"
+        },
+        {
+            "skill": "Swagger",
+            "category": "APIDocumentation"
+        },
+        {
+            "skill": "MongoDB",
+            "category": "Database"
+        },
+        {
+            "skill": "MySQL",
+            "category": "Database"
+        },
+        {
+            "skill": "Redis",
+            "category": "Database"
+        },
+        {
+            "skill": "Jenkins",
+            "category": "CI/CD"
+        },
+        {
+            "skill": "GitHub",
+            "category": "VersionControl"
+        },
+        {
+            "skill": "GitLab",
+            "category": "VersionControl"
+        }
+    ]
+}

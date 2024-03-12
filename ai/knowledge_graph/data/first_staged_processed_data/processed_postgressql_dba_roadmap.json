@@ -1,0 +1,35 @@
+{
+    "Role": "PostgreSQL Database Administrator",
+    "required": [
+      {"skill": "SQL", "category": "SQLAndDBOperation"},
+      {"skill": "PostgreSQL Installation and Configuration", "category": "InstallationAndConfiguration"},
+      {"skill": "PostgreSQL Security", "category": "Security"},
+      {"skill": "PostgreSQL Backup and Recovery", "category": "BackupAndRecovery"},
+      {"skill": "Database Performance Tuning", "category": "PerformanceTuning"},
+      {"skill": "Database Monitoring Tools", "category": "MonitoringTools"},
+      {"skill": "Database High Availability", "category": "HighAvailability"}
+    ],
+    "preferred": [
+      {"skill": "Docker for PostgreSQL", "category": "InstallationAndConfiguration"},
+      {"skill": "Cloud Integration for PostgreSQL", "category": "CloudTangents"},
+      {"skill": "PostgreSQL Replication", "category": "HighAvailability"},
+      {"skill": "Database Security Best Practices", "category": "Security"},
+      {"skill": "Database Schema Design", "category": "DatabaseDesign"},
+      {"skill": "Data Modeling", "category": "DatabaseDesign"},
+      {"skill": "Query Optimization", "category": "PerformanceTuning"},
+      {"skill": "Database Automation", "category": "Automation"},
+      {"skill": "Scripting (e.g., Bash, Python)", "category": "Scripting"}
+    ],
+    "desired": [
+      {"skill": "Automated Database Testing", "category": "Testing"},
+      {"skill": "Database Migration Tools", "category": "Migration"},
+      {"skill": "PostgreSQL Extensions", "category": "AdvancedServices"},
+      {"skill": "Database Patching and Upgrades", "category": "Maintenance"},
+      {"skill": "Disaster Recovery Planning", "category": "HighAvailability"},
+      {"skill": "Database Capacity Planning", "category": "CapacityPlanning"},
+      {"skill": "Data Encryption", "category": "Security"},
+      {"skill": "Database Performance Monitoring", "category": "MonitoringTools"},
+      {"skill": "Database Troubleshooting", "category": "Troubleshooting"}
+    ]
+  }
+  

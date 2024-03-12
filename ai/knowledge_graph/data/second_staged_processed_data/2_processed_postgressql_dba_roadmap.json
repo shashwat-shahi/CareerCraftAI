@@ -1,0 +1,40 @@
+{
+    "Role": "PostgreSQL Database Administrator",
+    "fundamentals": [
+        {"skill": "SQL", "category": "Databases"},
+        {"skill": "PostgreSQL Security", "category": "Security"},
+        {"skill": "PostgreSQL Backup and Recovery", "category": "Backup and Recovery"},
+        {"skill": "Database Performance Tuning", "category": "Performance Tuning"},
+        {"skill": "Database Monitoring Tools", "category": "Monitoring Tools"},
+        {"skill": "Docker for PostgreSQL", "category": "Installation and Configuration"},
+        {"skill": "Database Security Best Practices", "category": "Security"},
+        {"skill": "Database Schema Design", "category": "Database Design"},
+        {"skill": "Data Modeling", "category": "Database Design"},
+        {"skill": "Query Optimization", "category": "Performance Tuning"},
+        {"skill": "Bash", "category": "Scripting Languages"}
+    ],
+    "intermediate": [
+        {"skill": "Cloud Integration for PostgreSQL", "category": "Cloud Services"},
+        {"skill": "PostgreSQL Replication", "category": "High Availability"},
+        {"skill": "Database Automation", "category": "Automation"},
+        {"skill": "Automated Database Testing", "category": "Testing"},
+        {"skill": "Database Migration Tools", "category": "Migration"},
+        {"skill": "PostgreSQL Extensions", "category": "Advanced Services"},
+        {"skill": "Database Patching and Upgrades", "category": "Maintenance"},
+        {"skill": "Disaster Recovery Planning", "category": "High Availability"},
+        {"skill": "Database Capacity Planning", "category": "Capacity Planning"},
+        {"skill": "Data Encryption", "category": "Security"},
+        {"skill": "Database Troubleshooting", "category": "Troubleshooting"},
+        {"skill": "Database Replication", "category": "High Availability"},
+        {"skill": "Database Clustering", "category": "High Availability"},
+        {"skill": "Database Sharding", "category": "Scalability"},
+        {"skill": "Database Performance Optimization", "category": "Performance Tuning"}
+    ],
+    "advanced": [
+        {"skill": "Database Performance Monitoring", "category": "Monitoring Tools"},
+        {"skill": "Database Partitioning", "category": "Scalability"},
+        {"skill": "Database Indexing", "category": "Performance Tuning"},
+        {"skill": "Database Security Auditing", "category": "Security"},
+        {"skill": "Database Disaster Recovery Testing", "category": "High Availability"}
+    ]
+}

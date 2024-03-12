@@ -1,0 +1,167 @@
+{
+  "Role": "Full Stack Developer",
+  "Roadmap": {
+    "Frontend": {
+      "Languages": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "TypeScript"
+      ],
+      "CSSFrameworks": [
+        "Tailwind CSS",
+        "Bootstrap",
+        "Bulma"
+      ],
+      "Preprocessors": [
+        "Sass",
+        "Less",
+        "PostCSS"
+      ],
+      "JavaScriptFrameworks": [
+        "React",
+        "Vue.js",
+        "Angular",
+        "Svelte"
+      ],
+      "BuildTools": [
+        "Webpack",
+        "Parcel",
+        "Vite",
+        "Rollup",
+        "Gulp"
+      ],
+      "PackageManagers": [
+        "npm",
+        "yarn",
+        "pnpm"
+      ],
+      "VersionControl": [
+        "Git",
+        "GitHub",
+        "GitLab",
+        "Bitbucket"
+      ],
+      "StaticSiteGenerators": [
+        "Next.js",
+        "Gatsby",
+        "Nuxt.js",
+        "Vuepress",
+        "Jekyll",
+        "Eleventy"
+      ]
+    },
+    "Backend": {
+      "BackendRuntimes": [
+        "Node.js",
+        "Deno"
+      ],
+      "ProgrammingLanguages": [
+        "JavaScript",
+        "TypeScript",
+        "Python",
+        "Ruby",
+        "Java",
+        "Go",
+        "Rust",
+        "C#"
+      ],
+      "Databases": [
+        "PostgreSQL",
+        "MySQL",
+        "MongoDB",
+        "Redis",
+        "Cassandra"
+      ],
+      "FrameworksWithinBackend": [
+        "Express",
+        "Django",
+        "Flask",
+        "Ruby on Rails",
+        "Spring Boot",
+        "FastAPI",
+        "Gin"
+      ],
+      "APITechniques": [
+        "REST",
+        "GraphQL",
+        "gRPC",
+        "WebSocket"
+      ],
+      "ORMs": [
+        "TypeORM",
+        "Sequelize",
+        "Mongoose",
+        "Prisma"
+      ]
+    },
+    "DevOps": {
+      "CloudProviders": [
+        "AWS",
+        "Google Cloud",
+        "Azure",
+        "DigitalOcean",
+        "Heroku"
+      ],
+      "CI_CD": [
+        "GitHub Actions",
+        "GitLab CI/CD",
+        "Jenkins",
+        "CircleCI",
+        "Travis CI"
+      ],
+      "Containers": [
+        "Docker",
+        "Kubernetes",
+        "Docker Swarm"
+      ],
+      "InfrastructureAsCode": [
+        "Terraform",
+        "AWS CloudFormation",
+        "Pulumi",
+        "Ansible"
+      ],
+      "MonitoringAndLogging": [
+        "Grafana",
+        "Prometheus",
+        "ELK Stack",
+        "Datadog",
+        "Splunk"
+      ],
+      "WebServers": [
+        "Nginx",
+        "Apache",
+        "Caddy"
+      ]
+    },
+    "BestPractices": {
+      "Security": [
+        "OAuth",
+        "JWT",
+        "HTTPS",
+        "Content Security Policy"
+      ],
+      "TestingStrategies": [
+        "Unit Testing",
+        "Integration Testing",
+        "End-to-End (E2E) Testing"
+      ],
+      "API": [
+        "RESTful Patterns",
+        "GraphQL Implementation",
+        "API Documentation"
+      ],
+      "VersionControl": [
+        "SemVer",
+        "Conventional Commits",
+        "Branching Strategies"
+      ],
+      "AgileDevelopment": [
+        "SCRUM",
+        "Kanban",
+        "eXtreme Programming (XP)"
+      ]
+    }
+  }
+  
+}

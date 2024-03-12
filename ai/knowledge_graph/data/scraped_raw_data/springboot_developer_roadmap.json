@@ -1,0 +1,97 @@
+{
+    "Role": "Springboot developer",
+    "Roadmap": {
+        "Learn Core Languages": [
+            "Java"
+        ],
+        "Frameworks and Specifications": {
+            "Core Spring Framework": [
+                "Dependency Injection",
+                "Spring IOC",
+                "Spring Bean",
+                "Spring AOP",
+                "Spring Security"
+            ],
+            "Spring Data": [
+                "Spring Data JPA",
+                "Spring Data JDBC",
+                "Spring Data MongoDB"
+            ],
+            "Spring Web Development": [
+                "Spring MVC",
+                "Servlet",
+                "JSP"
+            ],
+            "Spring Boot Essentials": [
+                "Autoconfiguration",
+                "Spring Boot Venerators",
+                "Deploy!",
+                "Actuators",
+                "Victory Starters"
+            ]
+        },
+        "Distributed Systems": {
+            "Service DIscovery": [
+                "Eureka"
+            ],
+            "Circuit Breaker": [
+                "Spring Cloud Circuit Breaker",
+                "Hystrix"
+            ],
+            "API Gateway": [
+                "Spring Cloud Gateway"
+            ],
+            "Distributed Tracing": [
+                "Sleuth"
+            ]
+        },
+        "System Architecture and Operations": {
+            "Embedded Server": [],
+            "Configuration": [],
+            "Microservices and SOA": [
+                "Entity Lifecycle",
+                "Relations",
+                "Crm Architecture"
+            ]
+        },
+        "Authentication and Kept Information": {
+            "Oauth2": [],
+            "JWT Authentication": []
+        },
+        "Database Integration": {
+            "Java Persistence API": [
+                "JPA Test"
+            ],
+            "Database Control": [
+                "Hibernate"
+            ]
+        },
+        "Messaging and Queues": {
+            "Kraut Control": [
+                "Commands",
+                "Stands"
+            ]
+        },
+        "Cloud, Deployment, and Orchestration": {
+            "Miscellany": [
+                "Eureka",
+                "Dunker",
+                "Cloud Operation",
+                "Whale Concept",
+                "Security",
+                "Direct Holding"
+            ],
+            "Scaffolding": [
+                "Toe Ting",
+                "Flank Loppers"
+            ]
+        },
+        "DevOps Processes": {
+            "Continuous Integration / Continuous Deployment (CI/CD)": [],
+            "Monitoring and Dashboards": [
+                "Single Page Operations",
+                "Real Twitch Concerts"
+            ]
+        }
+    }
+}

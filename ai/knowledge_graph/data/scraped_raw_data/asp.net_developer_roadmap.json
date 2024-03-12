@@ -1,0 +1,118 @@
+{
+  "Role": "ASP .NET Developer",
+  "Roadmap": {
+  "version_control": ["Git", "Azure DevOps Services", "GitHub", "GitLab", "BitBucket"],
+  "programming_languages": ["C#"],
+  "web_technologies": ["HTTP/HTTPS Protocol"],
+  "data_structures_and_algorithms": true,
+  "database_fundamentals": [
+    "SQL Basics",
+    "Stored Procedures",
+    "Constraints",
+    "Triggers",
+    "Database Design Basics",
+    "Entity Framework Core",
+    "Dapper",
+    "RepoDB",
+    "NHibernate"
+  ],
+  "asp_net_core_basics": [
+    "Razor Pages",
+    "Razor Components",
+    "Middlewares",
+    "Filters and Attributes",
+    "MVC",
+    "REST",
+    "App Settings and Config",
+    "Memory Cache"
+  ],
+  "dotnet_technologies": [".NET 6", ".NET CLI"],
+  "framework_basics": [
+    "Code First + Migrations",
+    "Change Tracker API",
+    "Lazy, Eager, Explicit Loading"
+  ],
+  "dependency_injection": [
+    "Simple Injector",
+    "Castle Windsor",
+    "Ninject",
+    "Scrutor",
+    "Microsoft.Extensions.DependencyInjection",
+    "DI Containers"
+  ],
+  "caching": [
+    "Life Cycles",
+    "Distributed Cache",
+    "Memcached",
+    "AutoFac",
+    "Entity Framework 2nd Level Cache"
+  ],
+  "orm": ["Entity Framework Core"],
+  "search_engines": ["Solr", "Elastic Search", "Sphinx", "Redis"],
+  "log_management": [
+    "ELK Stack",
+    "Sentry.io",
+    "Datadog",
+    "loggly.com",
+    "Serilog",
+    "NLog",
+    "elmah.io"
+  ],
+  "api_clients_and_communication": [
+    "gRPC",
+    "Sieve",
+    "OData",
+    "GraphQL-dotnet",
+    "HotChocolate"
+  ],
+  "real_time_communication": ["SignalR Core"],
+  "object_mapping": ["AutoMapper", "Express Mapper"],
+  "task_scheduling": ["Quartz", "Coravel"],
+  "testing": [
+    "Integration Testing",
+    "Behavior Testing",
+    "SpecFlow",
+    "BDDFY",
+    "WebApplicationFactory",
+    "Test Server",
+    "NUnit",
+    "xUnit",
+    "MSTest"
+  ],
+  "e2e_testing": ["Selenium", "Playwright", "Puppeteer", "Cypress"],
+  "mocking": ["NSubstitute", "Moq", "FakeItEasy"],
+  "containerization": ["Docker", "Docker Swarm"],
+  "message_brokers": ["ActiveMQ", "Apache Kafka", "RabbitMQ"],
+  "microservices": ["API Gateway", "Ocelot", "Mass Transit", "NServiceBus", "EasyNetQ"],
+  "ci_cd": [
+    "GitHub Actions",
+    "Azure Pipelines",
+    "Travis CI",
+    "Jenkins",
+    "Circle CI",
+    "TeamCity"
+  ],
+  "good_to_know_libraries": [
+    "Razor",
+    "MediatR",
+    "DotLiquid",
+    "FluentValidation",
+    "Scriban",
+    "Polly",
+    "Fluid",
+    "Nuke",
+    "Benchmark.NET",
+    "NodaTime",
+    "GenFu",
+    "SwashBuckle",
+    "Azure Service Bus",
+    "YARP"
+  ],
+  "software_design_and_architecture": true,
+  "other": [
+    "Fluent Assertions",
+    "Orchestration",
+    "Reverse Proxy"
+  ]
+}
+}

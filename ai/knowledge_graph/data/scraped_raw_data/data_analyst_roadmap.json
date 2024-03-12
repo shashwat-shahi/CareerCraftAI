@@ -1,0 +1,54 @@
+{
+    "data_analyst_roadmap": {
+      "technical_skills": {
+        "programming_languages": {
+          "python": {
+            "basics": true,
+            "data_analysis_libraries": {
+              "numpy": true,
+              "pandas": true,
+              "matplotlib/seaborn": true
+            }
+          },
+          "r": {
+            "basics": true,
+            "data_analysis_libraries": {
+              "dplyr": true,
+              "ggplot2": true
+            }
+          },
+          "sql": true
+        },
+        "databases": {
+          "ms excel": true,
+          "sql databases": true
+        },
+        "data_analysis_tools": {
+          "tableau": true,
+          "rapidminer": true
+        }
+      },
+      "non_technical_skills": {
+        "problem_solving": true,
+        "communication": true,
+        "domain_knowledge": true
+      },
+      "statistics": {
+        "descriptive_statistics": {
+          "mean": true,
+          "standard_deviation": true,
+          "variance": true
+        },
+        "inferential_statistics": {
+          "hypothesis_testing": true,
+          "confidence_intervals": true,
+          "correlation_and_covariance": {
+            "correlation_coefficient": true,
+            "covariance_matrix": true
+          },
+          "linear_regression": true
+        }
+      }
+    }
+  }
+  

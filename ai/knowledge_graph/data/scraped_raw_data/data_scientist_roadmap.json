@@ -1,0 +1,68 @@
+{
+    "data_scientist_roadmap": {
+      "mathematics": {
+        "linear_algebra": [],
+        "analytics_geometry": [],
+        "matrix": [],
+        "vector_calculus": [],
+        "optimization": []
+      },
+      "programming": {
+        "python_basics": [],
+        "python": [],
+        "r_basics": [],
+        "numpy": [],
+        "pandas": [],
+        "matplotlib/seaborn": [],
+        "dplyr": [],
+        "ggplot2": [],
+        "tidyr": [],
+        "scikit-learn": []
+      },
+      "feature_engineering": {
+        "baseline_model": [],
+        "feature_generation": [],
+        "feature_selection": [],
+        "categorical_encodings": []
+      },
+      "probability": {
+        "discrete_distribution": [],
+        "continuos_distribution": [],
+        "introduction_to_probability": []
+      },
+      "statistics": {
+        "data_description": [],
+        "simple_linear_regression": [],
+        "correlation": [],
+        "random_samples": [],
+        "sampling_distribution": [],
+        "parameter_estimation": [],
+        "hypotheses_testing": [],
+        "anova": []
+      },
+      "machine_learning": {
+        "introduction": [],
+        "first_ml_model": [],
+        "model_validation": [],
+        "pipelines": [],
+        "underfitting_&_overfitting": [],
+        "random_forests": [],
+        "data_leakage": []
+      },
+      "deep_learning": {
+        "artificial_neural_network": [],
+        "convolutional_neural_network": [],
+        "recurrent_neural_network": [],
+        "keras": [],
+        "pytorch": [],
+        "tensorflow": [],
+        "binary_classification": []
+      },
+      "other_points": {
+        "domain_knowledge": [],
+        "case_studies": [],
+        "communication_skill": []
+      }
+    }
+  }
+  

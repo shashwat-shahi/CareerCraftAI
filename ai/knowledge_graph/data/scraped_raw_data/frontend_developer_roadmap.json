@@ -1,0 +1,131 @@
+{
+  "Role": "Frontend Developer",
+  "Roadmap": {
+      "Internet": {
+        "Basics": [
+          "How does the internet work?",
+          "What is HTTP?",
+          "What is Domain Name?",
+          "What is hosting?",
+          "DNS and how it works?"
+        ]
+      },
+      "HTML": {
+        "Basics": [
+          "Writing Semantic HTML",
+          "Forms and Validations",
+          "Accessibility",
+          "Browsers and how they work?",
+          "SEO Basics"
+        ]
+      },
+      "CSS": {
+        "Basics": [
+          "Learn the basics",
+          "Making Layouts",
+          "Responsive Design"
+        ],
+        "Advanced Concepts": [
+          "CSS in JS",
+          "CSS Modules",
+          "Styled Components",
+          "Vanilla Extract",
+          "Panda CSS"
+        ],
+        "Frameworks": [
+          "MUI",
+          "daisyUI",
+          "Chakra UI",
+          "Mantine"
+        ],
+        "Architecture": [
+          "BEM",
+          "Tailwind"
+        ],
+        "Preprocessors": [
+          "Sass",
+          "PostCSS"
+        ]
+      },
+      "JavaScript": {
+        "Core Skills": [
+          "Learn the Basics",
+          "DOM Manipulation",
+          "Fetch API / Ajax (XHR)"
+        ]
+      },
+      "Version Control": {
+        "Git": [
+          "Basics",
+          "GitHub",
+          "GitLab",
+          "Bitbucket"
+        ]
+      },
+      "Package Managers": [
+        "npm",
+        "pnpm",
+        "yarn"
+      ],
+      "Build Tools": [
+        "Webpack",
+        "Vite",
+        "Parcel",
+        "Rollup",
+        "npm scripts",
+        "Prettier",
+        "ESLint"
+      ],
+      "Frameworks and Libraries": [
+        "React",
+        "Vue.js",
+        "Angular",
+        "Svelte",
+        "Solid JS",
+        "Qwik"
+      ],
+      "Testing": [
+        "Vitest",
+        "Jest",
+        "Playwright",
+        "Cypress"
+      ],
+      "Web Security": [
+        "Authentication Strategies (JWT, OAuth, SSO, Basic Auth, Session Auth etc)",
+        "Web Security Basics (CORS, HTTPS, Content Security Policy)",
+        "OWASP Security Risks"
+      ],
+      "Server-Side Rendering": [
+        "Next.js",
+        "Nuxt.js",
+        "Remix",
+        "Svelte Kit"
+      ],
+      "Type Checkers": [
+        "TypeScript"
+      ],
+      "Progressive Web Apps": [
+        "Basics",
+        "APIs used in PWAs",
+        "Static Site Generators (Vuepress, Astro, Jekyll, Eleventy, Hugo, Next.js, Nuxt.js, Remix)"
+      ],
+      "Performance Optimization": [
+        "Using Lighthouse",
+        "Using DevTools",
+        "Performance Best Practices"
+      ],
+      "Mobile and Desktop Applications": [
+        "React Native",
+        "Flutter",
+        "Electron",
+        "Tauri",
+        "Ionic",
+        "NativeScript"
+      ],
+      "Additional Learning Tracks": [
+        "TypeScript Roadmap",
+        "Node.js Roadmap"
+      ]
+    }
+  }
+  
