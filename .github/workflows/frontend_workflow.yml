@@ -28,6 +28,7 @@ jobs:
         node-version: '14'
 
     - name: Install Dependencies
+      working-directory: ./frontend/
       run: |
         node --version
         npm ci --production
