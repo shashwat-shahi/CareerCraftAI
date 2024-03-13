@@ -24,38 +24,38 @@ function NavigationBar() {
         <NavigationMenuList>
           <NavigationMenuItem>
             <Link to="/">
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
                 Home
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link to="dashboard">
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Dashboard
+              <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
+                <Link to="dashboard">
+                  Dashboard
+                </Link>
               </NavigationMenuLink>
-            </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
             <Link to="jobs">
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
                 Jobs
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link to="roadmap">
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
+              <Link to="roadmap">
                 Roadmap
+              </Link>
               </NavigationMenuLink>
-            </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link to="profile">
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Profile
-              </NavigationMenuLink>
-            </Link>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
+                <Link to="profile">
+                  Profile
+                </Link>
+              </NavigationMenuLink> 
           </NavigationMenuItem>
         </NavigationMenuList>
     </NavigationMenu>

@@ -15,7 +15,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 
 function UploadResume() {
   return (
-    <div className="flex h-screen">
+    <div className="flex min-h-[90vh]">
         <Card className="w-[350px] self-center mx-auto">
             <CardHeader>
                 <CardTitle>Submit your resume</CardTitle>
