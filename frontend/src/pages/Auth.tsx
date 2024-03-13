@@ -9,16 +9,16 @@ import {
 function Auth() {
   return (
     <div className="flex min-h-[90vh]">
-        <Card className="w-[350px] self-center mx-auto">
+        <Card className="w-[400px] self-center mx-auto">
             <CardHeader>
-                <CardTitle>Login</CardTitle>
+                <CardTitle className='mb-3'>Log In to Jumpstart Your Career</CardTitle>
+                <CardDescription className='mb-5'>Securely log in now to start getting personalized resume feedback and discover exciting job opportunities tailored just for you</CardDescription>
             </CardHeader>
             <CardContent>
                 <form>
                     <div className="grid w-full items-center gap-4">
                         <div className="flex flex-col space-y-1.5">
                             <Button // @ts-ignore 
-                            variant="outline"
                             >
                                 <Avatar>
                                     <AvatarImage src="/src/images/github_logo.svg" alt="@shadcn" />
