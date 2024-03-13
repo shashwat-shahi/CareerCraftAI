@@ -8,13 +8,6 @@ import UploadResume from './pages/UploadResume.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <ThemeProvider defaultTheme="dark">
-    <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<App />} /> 
-          <Route path="upload" element={<UploadResume />} />  
-        </Routes>
-      </BrowserRouter>
-    </ThemeProvider>
+    <App />
   </React.StrictMode>,
 )
