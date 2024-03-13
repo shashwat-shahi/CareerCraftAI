@@ -1,7 +1,7 @@
 name: Build and Deploy React App to CloudFront
 on:
-  push:
-    branches: [ deploy-frontend-app ]
+  pull_request:
+    branches: [ main ]
 jobs:
   build-and-deploy:
     name: Build and Deploy
