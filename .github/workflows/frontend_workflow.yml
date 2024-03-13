@@ -29,9 +29,17 @@ jobs:
 
     - name: Install Dependencies
       working-directory: ./frontend/
-      run: |
-        node --version
-        npm ci --production
+      run: npm install
+
+    - name: Install Vite Globally
+      working-directory: ./frontend/
+      run: npm install -g vite
+
+    # - name: Install Dependencies
+    #   working-directory: ./frontend/
+    #   run: |
+    #     node --version
+    #     npm ci --production
 
     - name: Build Static Website
       working-directory: ./frontend/
