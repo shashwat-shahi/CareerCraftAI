@@ -12,6 +12,8 @@
   "dependencies": {
     "@radix-ui/react-slot": "^1.0.2",
     "@reduxjs/toolkit": "^2.2.1",
+    "@types/node": "^20.11.26",
+    "@types/react": "^18.2.64",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "localforage": "^1.10.0",
@@ -23,10 +25,7 @@
     "react-router-dom": "^6.22.3",
     "sort-by": "^1.2.0",
     "tailwind-merge": "^2.2.1",
-    "tailwindcss-animate": "^1.0.7",
-    "@types/node": "^20.11.26",
-    "@types/react": "^18.2.64",
-    "@types/react-dom": "^18.2.21"
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@types/node": "^20.11.26",
