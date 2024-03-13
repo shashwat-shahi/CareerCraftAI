@@ -2,7 +2,7 @@
 
 function Hello() {
   return (
-    <div>Hello</div>
+    <div>Yo</div>
   )
 }
 

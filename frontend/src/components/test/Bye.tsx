@@ -2,7 +2,7 @@
 
 function Bye() {
   return (
-    <div>Bye</div>
+    <div>Tata</div>
   )
 }
 
