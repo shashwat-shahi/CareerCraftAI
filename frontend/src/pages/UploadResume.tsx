@@ -26,7 +26,7 @@ function UploadResume() {
                     <div className="grid w-full items-center gap-4">
                         <div className="flex flex-col space-y-1.5">
                         <Label htmlFor="resume">Resume</Label>
-                        <Input id="resume" type="file" />
+                        <Input id="resume" type="file" className="bg-secondary"/>
                         </div>
                         <div className="flex flex-col space-y-1.5">
                         <Label htmlFor="jobs">Jobs</Label>
