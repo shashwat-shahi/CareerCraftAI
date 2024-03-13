@@ -6,6 +6,7 @@ import Hello from './components/test/Hello.tsx'
 import Bye from './components/test/Bye.tsx'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { ThemeProvider } from "@/components/theme-provider"
+import UploadResume from './pages/UploadResume.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -15,6 +16,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <Route path="/" element={<App />} /> 
           <Route path="hello" element={<Hello/>} />
           <Route path="bye" element={<Bye />} />
+          <Route path="upload" element={<UploadResume />} />  
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
