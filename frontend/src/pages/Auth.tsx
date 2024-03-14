@@ -10,7 +10,7 @@ function Auth() {
   return (
     <div className='wrapper flex'>
         <div className='left w-[60%]'>
-            <img src="/assets/auth.jpg" alt="auth" />
+            <img src="/auth.jpg" alt="auth" />
         </div>
         <div className="right w-[40%] flex min-h-[90vh]">
             <Card className="w-[400px] self-center mx-auto">
