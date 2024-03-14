@@ -1,6 +1,7 @@
 package com.edu.neu.careercraftai.controllers;
 
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.Collections;
 import java.util.Map;
 
@@ -9,7 +10,7 @@ import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -35,9 +36,26 @@ public class UserController {
     @Autowired
     FileUploaderService fileUploaderService;
 
-    @GetMapping("/login")
-    public void loginUser(@AuthenticationPrincipal OAuth2User principal) {
-        System.out.println(principal.getName());
+    @GetMapping("/createUser")
+    public String loginUser(Authentication authentication) throws ParseException {
+        if (authentication != null && authentication.isAuthenticated()) {
+            Object principal = authentication.getPrincipal();
+            if (principal instanceof OAuth2User) {
+                OAuth2User oauth2User = (OAuth2User) principal;
+                String email = oauth2User.getAttribute("email");
+                String firstName = oauth2User.getAttribute("given_name");
+                String lastName = oauth2User.getAttribute("family_name");
+
+                UserDetails newUser = new UserDetails();
+                newUser.setEmailId(email);
+                newUser.setFirstName(firstName);
+                newUser.setLastName(lastName);
+
+                userService.createUser(newUser);
+                return email;
+            }
+        }
+        return "ID token not found.";
     }
     
     @GetMapping("/ping")

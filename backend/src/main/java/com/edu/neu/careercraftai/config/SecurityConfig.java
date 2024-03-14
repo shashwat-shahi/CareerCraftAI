@@ -5,7 +5,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
@@ -13,16 +14,23 @@ import static org.springframework.security.config.Customizer.withDefaults;
 @EnableWebSecurity
 public class SecurityConfig {
     
+
+    @Bean
+    public AuthenticationSuccessHandler authenticationSuccessHandler() {
+        SimpleUrlAuthenticationSuccessHandler handler = new SimpleUrlAuthenticationSuccessHandler();  
+        handler.setDefaultTargetUrl("/createUser");
+        return handler;
+    }
+
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
-        return http
-                .authorizeHttpRequests(auth -> {
-                    auth.requestMatchers("/").permitAll();
-                    auth.anyRequest().authenticated();
-                })
-                .oauth2Login(withDefaults())
-                // .csrf().disable()
-                // .csrf(csrf -> csrf.disable())
-                .build();
+
+        http.authorizeHttpRequests(auth -> {
+                auth.requestMatchers("/ping").permitAll();
+                auth.anyRequest().authenticated();
+            })
+            .oauth2Login(oauth2 -> oauth2.successHandler(authenticationSuccessHandler()));
+
+        return http.build();
     }
 }
