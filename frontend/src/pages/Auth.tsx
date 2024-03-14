@@ -1,12 +1,10 @@
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import {
-    Avatar,
-    AvatarFallback,
-    AvatarImage,
-  } from "@/components/ui/avatar"
+import { Link } from 'react-router-dom'
    
 function Auth() {
+    const google_oauth_url = import.meta.env.VITE_GOOGLE_OAUTH_URL;
+    console.log(google_oauth_url);
   return (
     <div className='wrapper flex'>
         <div className='left w-[60%]'>
@@ -22,24 +20,9 @@ function Auth() {
                     <form>
                         <div className="grid w-full items-center gap-4">
                             <div className="flex flex-col space-y-1.5">
-                                <Button 
-                                >
-                                    <Avatar>
-                                        <AvatarImage src="github_logo.svg" alt="@shadcn" />
-                                        <AvatarFallback>CN</AvatarFallback>
-                                    </Avatar>
-                                    Github
-                                </Button>
-                            </div>
-                            <div className="flex flex-col space-y-1.5">
-                                <Button 
-                                variant="outline">
-                                    <Avatar>
-                                        <AvatarImage src="google_logo.svg" alt="@shadcn" />
-                                        <AvatarFallback>CN</AvatarFallback>
-                                    </Avatar>
-                                    Google
-                                </Button>
+                            <Button asChild>
+                                <Link to={google_oauth_url}>Google</Link>
+                            </Button>
                             </div>
                         </div>
                     </form>
