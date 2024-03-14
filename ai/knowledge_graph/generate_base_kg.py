@@ -34,7 +34,19 @@ def create_parent_and_career_option_relationship(session, role_name):
         MERGE (a)-[:CAREER_OPTION]->(r)
         """
     session.run(parent_and_career_option_relationship_query, role_name=role_name)
-    
+
+def create_technology_category_nodes(session, role_name):
+    for difficulty_level in ["fundamentals", "intermediate", "advanced"]:
+        relationship_type = f"for_{difficulty_level}_knowledge"
+        session.run("""
+            MERGE (c:Difficulty_Level {name: $category_name, role_name: $role_name})
+            WITH c
+            MATCH (r:Role {role_name: $role_name})
+            CALL apoc.merge.relationship(r, $relationship_type, {}, {}, c) YIELD rel
+            RETURN rel
+            """, category_name=difficulty_level, role_name=role_name, relationship_type=relationship_type)
+
+
 # populate knowledge graph
 def populate_knowledge_graph(driver, json_data):
     
@@ -51,6 +63,7 @@ def populate_knowledge_graph(driver, json_data):
     
     create_parent_and_career_option_relationship(session, role_name)
     
+    create_technology_category_nodes(session, role_name)
     
     
     
