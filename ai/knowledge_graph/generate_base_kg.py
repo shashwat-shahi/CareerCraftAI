@@ -15,6 +15,17 @@ def read_json_file(filename, data_dir):
     with open(os.path.join(data_dir, filename), "r") as file:
         data = json.load(file)
     return data
+
+# Create or retrieve AllRoles - Parent node
+def create_parent_node(session):
+    parent_node_creation_query = "MERGE (a:AllRoles {name: 'Job Roles'})"
+    session.run(parent_node_creation_query)
+
+# Create or retrieve Role node
+def create_role_node(session, role_name):
+    role_node_creation_query = "MERGE (r:Role {role_name: $role_name})"
+    session.run(role_node_creation_query, role_name=role_name)
+    
 # populate knowledge graph
 def populate_knowledge_graph(driver, json_data):
     
@@ -25,9 +36,9 @@ def populate_knowledge_graph(driver, json_data):
     intermediate = json_data.get("intermediate", [])
     advanced = json_data.get("advanced", [])
     
-    # Create or retrieve AllRoles node
-    parent_node_creation_query = "MERGE (a:AllRoles {name: 'Job Roles'})"
-    session.run(parent_node_creation_query)
+    create_parent_node(session)
+    
+    create_role_node(session, role_name)
     
     
 if __name__ == "__main__":
