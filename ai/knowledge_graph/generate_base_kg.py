@@ -25,6 +25,15 @@ def create_parent_node(session):
 def create_role_node(session, role_name):
     role_node_creation_query = "MERGE (r:Role {role_name: $role_name})"
     session.run(role_node_creation_query, role_name=role_name)
+
+# Create relationship between Role and AllRoles
+def create_parent_and_career_option_relationship(session, role_name):
+    parent_and_career_option_relationship_query = """
+        MATCH (a:AllRoles {name: 'Job Roles'})
+        MATCH (r:Role {role_name: $role_name})
+        MERGE (a)-[:CAREER_OPTION]->(r)
+        """
+    session.run(parent_and_career_option_relationship_query, role_name=role_name)
     
 # populate knowledge graph
 def populate_knowledge_graph(driver, json_data):
@@ -39,6 +48,10 @@ def populate_knowledge_graph(driver, json_data):
     create_parent_node(session)
     
     create_role_node(session, role_name)
+    
+    create_parent_and_career_option_relationship(session, role_name)
+    
+    
     
     
 if __name__ == "__main__":
