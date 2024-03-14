@@ -21,7 +21,7 @@ function Auth() {
                             <Button // @ts-ignore 
                             >
                                 <Avatar>
-                                    <AvatarImage src="/src/images/github_logo.svg" alt="@shadcn" />
+                                    <AvatarImage src="github_logo.svg" alt="@shadcn" />
                                     <AvatarFallback>CN</AvatarFallback>
                                 </Avatar>
                                 Github
@@ -31,7 +31,7 @@ function Auth() {
                             <Button // @ts-ignore
                             variant="outline">
                                 <Avatar>
-                                    <AvatarImage src="/src/images/google_logo.svg" alt="@shadcn" />
+                                    <AvatarImage src="google_logo.svg" alt="@shadcn" />
                                     <AvatarFallback>CN</AvatarFallback>
                                 </Avatar>
                                 Google
