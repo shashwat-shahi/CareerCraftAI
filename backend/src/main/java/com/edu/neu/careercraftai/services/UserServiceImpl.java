@@ -20,6 +20,15 @@ public class UserServiceImpl implements UserService{
     AspirationRepository aspirationRepository;
 
     @Override
+	public UserEntity createUser(UserDetails userDetails) {
+		UserEntity user = new UserEntity();
+        user.setEmailId(userDetails.getEmailId());
+        user.setFirstName(userDetails.getFirstName());
+        user.setLastName(userDetails.getLastName());
+        return userRepository.save(user);
+	}
+
+    @Override
     public UserEntity updateUser(Integer userId, UserDetails userDetails) {
         UserEntity user = userRepository.findById(userId).get();
         user.setFirstName(userDetails.getFirstName());
