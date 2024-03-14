@@ -46,7 +46,17 @@ def create_technology_category_nodes(session, role_name):
             RETURN rel
             """, category_name=difficulty_level, role_name=role_name, relationship_type=relationship_type)
 
-
+def create_tech_category_names(session, role_name, tech_category_name):
+    create_tech_category_query = """
+            CALL apoc.merge.node([$category_name], {name: $category_name, role_name: $role_name})
+            YIELD node as category_node
+            CALL apoc.create.addLabels(category_node, ['TECHNOLOGY_CATEGORY']) YIELD node
+            RETURN node
+            """
+    category_node = session.run(create_tech_category_query, category_name=tech_category_name, role_name=role_name)
+    category_node_id = category_node.single()[0].id
+    return category_node_id
+    
 # populate knowledge graph
 def populate_knowledge_graph(driver, json_data):
     
@@ -64,6 +74,17 @@ def populate_knowledge_graph(driver, json_data):
     create_parent_and_career_option_relationship(session, role_name)
     
     create_technology_category_nodes(session, role_name)
+    
+        # Populate skills and their categories
+    for difficulty_level, skill_set in zip(["fundamentals", "intermediate", "advanced"], [fundamentals, intermediate, advanced]):
+        for skill_info in skill_set:
+            skill_name = skill_info["skill"]
+            tech_category_name = skill_info["category"]
+            
+            # Create or retrieve category name
+            tech_category_node_id = create_tech_category_names(session, role_name, tech_category_name)
+            
+    
     
     
     
