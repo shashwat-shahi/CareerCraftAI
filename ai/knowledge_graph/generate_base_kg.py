@@ -56,6 +56,16 @@ def create_tech_category_names(session, role_name, tech_category_name):
     category_node = session.run(create_tech_category_query, category_name=tech_category_name, role_name=role_name)
     category_node_id = category_node.single()[0].id
     return category_node_id
+
+def create_relationship_between_category_and_difficulty_level(session, difficulty_level, category_node_id):
+    category_and_difficulty_create_query = """
+            MATCH (a:Difficulty_Level {name: $difficulty_level}), (b)
+            WHERE id(b) = $category_node_id
+            MERGE (a)-[r:IMPORTANT_TOPICS]->(b)
+            RETURN r
+            """
+    session.run(category_and_difficulty_create_query, difficulty_level=difficulty_level, category_node_id=category_node_id)
+    
     
 # populate knowledge graph
 def populate_knowledge_graph(driver, json_data):
@@ -75,7 +85,7 @@ def populate_knowledge_graph(driver, json_data):
     
     create_technology_category_nodes(session, role_name)
     
-        # Populate skills and their categories
+    # Populate skills and their categories
     for difficulty_level, skill_set in zip(["fundamentals", "intermediate", "advanced"], [fundamentals, intermediate, advanced]):
         for skill_info in skill_set:
             skill_name = skill_info["skill"]
@@ -83,6 +93,10 @@ def populate_knowledge_graph(driver, json_data):
             
             # Create or retrieve category name
             tech_category_node_id = create_tech_category_names(session, role_name, tech_category_name)
+            
+            # Create a relationship between the category node and the difficulty node
+            create_relationship_between_category_and_difficulty_level(session, difficulty_level, tech_category_node_id)
+            
             
     
     
