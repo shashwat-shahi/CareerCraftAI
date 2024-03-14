@@ -66,6 +66,16 @@ def create_relationship_between_category_and_difficulty_level(session, difficult
             """
     session.run(category_and_difficulty_create_query, difficulty_level=difficulty_level, category_node_id=category_node_id)
     
+def create_skill_node(session, role_name, skill_name, difficulty_level, tech_category_name):
+    create_skill_node_query = """
+    CALL apoc.merge.node([$category_name], {name: $skill_name, difficulty_level: $difficulty_level, role_name: $role_name})
+    YIELD node as skill_node
+    CALL apoc.create.addLabels(skill_node, ['SKILLS']) YIELD node
+    RETURN node
+    """
+    result = session.run(create_skill_node_query, category_name=tech_category_name ,skill_name=skill_name, difficulty_level=difficulty_level, role_name=role_name)
+    skill_node_id = result.single()[0].id
+    return skill_node_id
     
 # populate knowledge graph
 def populate_knowledge_graph(driver, json_data):
@@ -96,6 +106,13 @@ def populate_knowledge_graph(driver, json_data):
             
             # Create a relationship between the category node and the difficulty node
             create_relationship_between_category_and_difficulty_level(session, difficulty_level, tech_category_node_id)
+            
+            # Create the skill node with dynamic label and category_name
+            skill_node_id = create_skill_node(session, role_name, skill_name, difficulty_level, tech_category_name)
+            
+            
+            
+            
             
             
     
