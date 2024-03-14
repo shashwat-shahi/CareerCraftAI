@@ -15,8 +15,8 @@ function App() {
     <ThemeProvider defaultTheme="dark">
     <BrowserRouter>
         <Routes>
+          <Route path="/login" element={<Auth />} />
           <Route path="/" element={<SiteLayout />}>
-            <Route path="login" element={<Auth />} />
             <Route index element={<UploadResume />} /> 
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="jobs" element={<Jobs />} />
