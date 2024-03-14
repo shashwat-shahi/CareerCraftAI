@@ -1,0 +1,40 @@
+name: CICD
+
+on:
+  push:
+    branches: [ tj_dev_13_user_crud ]
+
+jobs:
+  build:
+    runs-on: [ubuntu-latest]
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v3
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - name: Build Project
+        working-directory: ./backend/
+        run: mvn clean install -DskipTests
+      - name: Login to docker hub
+        working-directory: ./backend/
+        run: docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
+      - name: Build docker img
+        working-directory: ./backend/
+        run: docker build -t sarveshgaurishankarsawant/careercraftai .
+      - name: Publish image to docker hub
+        working-directory: ./backend/
+        run: docker push sarveshgaurishankarsawant/careercraftai:latest
+
+  deploy:
+    needs: build
+    runs-on: self-hosted
+    steps:
+      - name: Pull Image from docker hub
+        run: docker pull sarveshgaurishankarsawant/careercraftai:latest
+      - name: Delete old container
+        run: docker rm -f swe-careercraftai-container
+      - name: Run docker container
+        run: docker run -e "DB_PASS=${{secrets.DB_PASS}}" -d -p 8080:8080 --name swe-careercraftai-container sarveshgaurishankarsawant/careercraftai
