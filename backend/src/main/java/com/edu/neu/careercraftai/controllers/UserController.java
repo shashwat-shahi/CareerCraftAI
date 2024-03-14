@@ -40,7 +40,7 @@ public class UserController {
         System.out.println(principal.getName());
     }
     
-    @PostMapping("/ping")
+    @GetMapping("/ping")
     public String ping(){
         return "Pinged successfully.";
     }
