@@ -1,5 +1,4 @@
 from neo4j import GraphDatabase
-import google.generativeai as genai
 import configparser
 import json
 import os
@@ -76,6 +75,15 @@ def create_skill_node(session, role_name, skill_name, difficulty_level, tech_cat
     result = session.run(create_skill_node_query, category_name=tech_category_name ,skill_name=skill_name, difficulty_level=difficulty_level, role_name=role_name)
     skill_node_id = result.single()[0].id
     return skill_node_id
+
+def create_relationship_between_skill_and_category(session, skill_node_id, category_node_id):
+    skill_category_rel_create_query = """
+            MATCH (a), (b)
+            WHERE id(a) = $category_node_id AND id(b) = $skill_node_id
+            CALL apoc.merge.relationship(a, 'CAN_LEARN', {}, {}, b) YIELD rel
+            RETURN rel
+            """
+    session.run(skill_category_rel_create_query, category_node_id=category_node_id, skill_node_id=skill_node_id)
     
 # populate knowledge graph
 def populate_knowledge_graph(driver, json_data):
@@ -110,14 +118,9 @@ def populate_knowledge_graph(driver, json_data):
             # Create the skill node with dynamic label and category_name
             skill_node_id = create_skill_node(session, role_name, skill_name, difficulty_level, tech_category_name)
             
+            create_relationship_between_skill_and_category(session, skill_node_id, tech_category_node_id)
             
-            
-            
-            
-            
-    
-    
-    
+    session.close()
     
 if __name__ == "__main__":
     # Read JSON data
