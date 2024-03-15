@@ -48,7 +48,8 @@ public class UserController {
              if (principal instanceof OAuth2User) {
                 OAuth2User oauth2User = (OAuth2User) principal;
                 String email = oauth2User.getAttribute("email");
-                if (!userService.isUserPresent(email)){
+                UserEntity user = userService.getUserByEmail(email);
+                if (user == null){
                     String firstName = oauth2User.getAttribute("given_name");
                     String lastName = oauth2User.getAttribute("family_name");
 
@@ -57,12 +58,14 @@ public class UserController {
                     newUser.setFirstName(firstName);
                     newUser.setLastName(lastName);
 
-                    userService.createUser(newUser);
+                    UserEntity userCreated = userService.createUser(newUser);
 
-                    response.sendRedirect(linkForNewUsers);
+                    
+                    response.sendRedirect(linkForNewUsers+"/"+userCreated.getId());
                 }
                 else {
-                    response.sendRedirect(linkForExistingUsers);
+                    
+                    response.sendRedirect(linkForExistingUsers+"/"+user.getId());
                 }
                 
             }
