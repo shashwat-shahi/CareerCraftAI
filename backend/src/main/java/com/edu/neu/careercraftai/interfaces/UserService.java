@@ -9,4 +9,5 @@ public interface UserService {
     public UserEntity getUser(Integer userId);
     public String deleteUser(Integer userId);
     public boolean isUserPresent(String email);
+    public UserEntity getUserByEmail(String email);
 }
