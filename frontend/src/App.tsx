@@ -9,7 +9,6 @@ import Roadmap from "./pages/Roadmap"
 import Profile from "./pages/Profile"
 import Auth from "./pages/Auth"
 import { useEffect } from "react"
-import { isJSessionIdPresent } from "./utils/jsession-token"
 import AuthRequired from "./pages/AuthRequired"
 
 

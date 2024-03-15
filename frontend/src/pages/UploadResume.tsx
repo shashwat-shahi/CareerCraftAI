@@ -10,10 +10,22 @@ import {
   } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { useState } from "react"
 
 
 
 function UploadResume() {
+
+    const [formData, setFormData] = useState(
+        {
+            aspirationalJob: "",
+            resume: null
+        }
+    )
+
+
+
+
   return (
     <div className="flex min-h-[90vh]">
         <Card className="w-[350px] self-center mx-auto">
