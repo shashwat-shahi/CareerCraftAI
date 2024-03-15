@@ -2,9 +2,6 @@ package com.edu.neu.careercraftai.controllers;
 
 import java.io.IOException;
 import java.text.ParseException;
-import java.util.Collections;
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.HttpStatus;
@@ -24,8 +21,8 @@ import com.edu.neu.careercraftai.entity.UserEntity;
 import com.edu.neu.careercraftai.interfaces.FileUploaderService;
 import com.edu.neu.careercraftai.interfaces.UserService;
 import com.edu.neu.careercraftai.models.UserDetails;
-
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.servlet.http.HttpServletResponse;
 
 @RestController
 public class UserController {
@@ -37,22 +34,24 @@ public class UserController {
     FileUploaderService fileUploaderService;
 
     @GetMapping("/createUser")
-    public String loginUser(Authentication authentication) throws ParseException {
+    public String createUser(Authentication authentication, HttpServletResponse response) throws ParseException, IOException {
         if (authentication != null && authentication.isAuthenticated()) {
             Object principal = authentication.getPrincipal();
-            if (principal instanceof OAuth2User) {
+             if (principal instanceof OAuth2User) {
                 OAuth2User oauth2User = (OAuth2User) principal;
                 String email = oauth2User.getAttribute("email");
-                String firstName = oauth2User.getAttribute("given_name");
-                String lastName = oauth2User.getAttribute("family_name");
+                if (!userService.isUserPresent(email)){
+                    String firstName = oauth2User.getAttribute("given_name");
+                    String lastName = oauth2User.getAttribute("family_name");
 
-                UserDetails newUser = new UserDetails();
-                newUser.setEmailId(email);
-                newUser.setFirstName(firstName);
-                newUser.setLastName(lastName);
+                    UserDetails newUser = new UserDetails();
+                    newUser.setEmailId(email);
+                    newUser.setFirstName(firstName);
+                    newUser.setLastName(lastName);
 
-                userService.createUser(newUser);
-                return email;
+                    userService.createUser(newUser);
+                }
+                response.sendRedirect("https://careercraftai.sarveshsawant.com");
             }
         }
         return "ID token not found.";
