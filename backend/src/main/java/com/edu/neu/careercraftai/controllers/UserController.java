@@ -3,6 +3,7 @@ package com.edu.neu.careercraftai.controllers;
 import java.io.IOException;
 import java.text.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -33,6 +34,13 @@ public class UserController {
     @Autowired
     FileUploaderService fileUploaderService;
 
+    @Value("${redirect.link.users.new}")
+    String linkForNewUsers;
+
+    @Value("${redirect.link.users.existing}")
+    String linkForExistingUsers;
+
+
     @GetMapping("/createUser")
     public String createUser(Authentication authentication, HttpServletResponse response) throws ParseException, IOException {
         if (authentication != null && authentication.isAuthenticated()) {
@@ -40,7 +48,8 @@ public class UserController {
              if (principal instanceof OAuth2User) {
                 OAuth2User oauth2User = (OAuth2User) principal;
                 String email = oauth2User.getAttribute("email");
-                if (!userService.isUserPresent(email)){
+                UserEntity user = userService.getUserByEmail(email);
+                if (user == null){
                     String firstName = oauth2User.getAttribute("given_name");
                     String lastName = oauth2User.getAttribute("family_name");
 
@@ -49,9 +58,16 @@ public class UserController {
                     newUser.setFirstName(firstName);
                     newUser.setLastName(lastName);
 
-                    userService.createUser(newUser);
+                    UserEntity userCreated = userService.createUser(newUser);
+
+                    
+                    response.sendRedirect(linkForNewUsers+"/"+userCreated.getId());
                 }
-                response.sendRedirect("http://localhost:5173/");
+                else {
+                    
+                    response.sendRedirect(linkForExistingUsers+"/"+user.getId());
+                }
+                
             }
         }
         return "ID token not found.";
