@@ -1,5 +1,7 @@
 package com.edu.neu.careercraftai.services;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -51,5 +53,11 @@ public class UserServiceImpl implements UserService{
         userRepository.deleteById(userId);
         return "User deleted successfylly";
     }
+
+	@Override
+	public boolean isUserPresent(String email) {
+		Optional<UserEntity> user = userRepository.findByEmailId(email);
+        return user.isPresent();
+	}
 
 }
