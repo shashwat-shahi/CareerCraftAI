@@ -1,9 +1,0 @@
-{
-  "nodes": [
-    { "label": "Role", "properties": ["name", "description"] },
-    { "label": "Skill", "properties": ["name", "category", "description"] }
-  ],
-  "relationships": [
-    { "startNode": "Role", "endNode": "Skill", "type": "REQUIRES", "properties": ["importance"] }
-  ]
-}
