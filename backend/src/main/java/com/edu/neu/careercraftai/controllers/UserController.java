@@ -51,7 +51,7 @@ public class UserController {
 
                     userService.createUser(newUser);
                 }
-                response.sendRedirect("https://careercraftai.sarveshsawant.com");
+                response.sendRedirect("http://localhost:5173/");
             }
         }
         return "ID token not found.";
