@@ -3,6 +3,7 @@ package com.edu.neu.careercraftai.controllers;
 import java.io.IOException;
 import java.text.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -33,6 +34,13 @@ public class UserController {
     @Autowired
     FileUploaderService fileUploaderService;
 
+    @Value("${redirect.link.users.new}")
+    String linkForNewUsers;
+
+    @Value("${redirect.link.users.existing}")
+    String linkForExistingUsers;
+
+
     @GetMapping("/createUser")
     public String createUser(Authentication authentication, HttpServletResponse response) throws ParseException, IOException {
         if (authentication != null && authentication.isAuthenticated()) {
@@ -50,8 +58,13 @@ public class UserController {
                     newUser.setLastName(lastName);
 
                     userService.createUser(newUser);
+
+                    response.sendRedirect(linkForNewUsers);
                 }
-                response.sendRedirect("https://careercraftai.sarveshsawant.com");
+                else {
+                    response.sendRedirect(linkForExistingUsers);
+                }
+                
             }
         }
         return "ID token not found.";
