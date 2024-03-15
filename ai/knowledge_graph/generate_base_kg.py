@@ -34,6 +34,7 @@ def create_parent_and_career_option_relationship(session, role_name):
         """
     session.run(parent_and_career_option_relationship_query, role_name=role_name)
 
+# Create or retrieve Difficulty_Level nodes
 def create_technology_category_nodes(session, role_name):
     for difficulty_level in ["fundamentals", "intermediate", "advanced"]:
         relationship_type = f"for_{difficulty_level}_knowledge"
@@ -45,6 +46,7 @@ def create_technology_category_nodes(session, role_name):
             RETURN rel
             """, category_name=difficulty_level, role_name=role_name, relationship_type=relationship_type)
 
+# Create or retrieve category name
 def create_tech_category_names(session, role_name, tech_category_name):
     create_tech_category_query = """
             CALL apoc.merge.node([$category_name], {name: $category_name, role_name: $role_name})
@@ -56,6 +58,7 @@ def create_tech_category_names(session, role_name, tech_category_name):
     category_node_id = category_node.single()[0].id
     return category_node_id
 
+# Create a relationship between the category node and the difficulty node
 def create_relationship_between_category_and_difficulty_level(session, difficulty_level, category_node_id):
     category_and_difficulty_create_query = """
             MATCH (a:Difficulty_Level {name: $difficulty_level}), (b)
@@ -64,7 +67,8 @@ def create_relationship_between_category_and_difficulty_level(session, difficult
             RETURN r
             """
     session.run(category_and_difficulty_create_query, difficulty_level=difficulty_level, category_node_id=category_node_id)
-    
+
+# Create the skill node with dynamic label and category_name
 def create_skill_node(session, role_name, skill_name, difficulty_level, tech_category_name):
     create_skill_node_query = """
     CALL apoc.merge.node([$category_name], {name: $skill_name, difficulty_level: $difficulty_level, role_name: $role_name})
@@ -76,6 +80,7 @@ def create_skill_node(session, role_name, skill_name, difficulty_level, tech_cat
     skill_node_id = result.single()[0].id
     return skill_node_id
 
+# Create a relationship between the skill node and the category node
 def create_relationship_between_skill_and_category(session, skill_node_id, category_node_id):
     skill_category_rel_create_query = """
             MATCH (a), (b)
@@ -85,7 +90,7 @@ def create_relationship_between_skill_and_category(session, skill_node_id, categ
             """
     session.run(skill_category_rel_create_query, category_node_id=category_node_id, skill_node_id=skill_node_id)
     
-# populate knowledge graph
+# Populate knowledge graph
 def populate_knowledge_graph(driver, json_data):
     
     session = driver.session()
@@ -95,12 +100,16 @@ def populate_knowledge_graph(driver, json_data):
     intermediate = json_data.get("intermediate", [])
     advanced = json_data.get("advanced", [])
     
+    # Create or retrieve AllRoles - Parent node
     create_parent_node(session)
     
+    # Create or retrieve Role node
     create_role_node(session, role_name)
     
+    # Create relationship between Role and AllRoles
     create_parent_and_career_option_relationship(session, role_name)
     
+    # Create or retrieve Difficulty_Level nodes
     create_technology_category_nodes(session, role_name)
     
     # Populate skills and their categories
@@ -118,6 +127,7 @@ def populate_knowledge_graph(driver, json_data):
             # Create the skill node with dynamic label and category_name
             skill_node_id = create_skill_node(session, role_name, skill_name, difficulty_level, tech_category_name)
             
+            # Create a relationship between the skill node and the category node
             create_relationship_between_skill_and_category(session, skill_node_id, tech_category_node_id)
             
     session.close()
