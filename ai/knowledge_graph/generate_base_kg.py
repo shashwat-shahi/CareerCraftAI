@@ -2,6 +2,7 @@ from neo4j import GraphDatabase
 import configparser
 import json
 import os
+import warnings
 
 
 # Read and write JSON files
@@ -54,14 +55,14 @@ def create_tech_category_names(session, role_name, tech_category_name):
     return category_node_id
 
 # Create a relationship between the category node and the difficulty node
-def create_relationship_between_category_and_difficulty_level(session, difficulty_level, category_node_id):
+def create_relationship_between_category_and_difficulty_level(session, difficulty_level, category_node_id, role_name):
     category_and_difficulty_create_query = """
-            MATCH (a:Difficulty_Level {name: $difficulty_level}), (b)
-            WHERE id(b) = $category_node_id
+            MATCH (a), (b)
+            WHERE id(b) = $category_node_id AND a.name = $difficulty_level AND a.role_name = $role_name
             MERGE (a)-[r:IMPORTANT_TOPICS]->(b)
             RETURN r
             """
-    session.run(category_and_difficulty_create_query, difficulty_level=difficulty_level, category_node_id=category_node_id)
+    session.run(category_and_difficulty_create_query, difficulty_level=difficulty_level, category_node_id=category_node_id, role_name=role_name)
 
 # Create the skill node with dynamic label and category_name
 def create_skill_node(session, role_name, skill_name, difficulty_level, tech_category_name):
@@ -117,7 +118,7 @@ def populate_knowledge_graph(driver, json_data):
             tech_category_node_id = create_tech_category_names(session, role_name, tech_category_name)
             
             # Create a relationship between the category node and the difficulty node
-            create_relationship_between_category_and_difficulty_level(session, difficulty_level, tech_category_node_id)
+            create_relationship_between_category_and_difficulty_level(session, difficulty_level, tech_category_node_id, role_name)
             
             # Create the skill node with dynamic label and category_name
             skill_node_id = create_skill_node(session, role_name, skill_name, difficulty_level, tech_category_name)
@@ -145,13 +146,18 @@ if __name__ == "__main__":
     # Connect to Neo4j AuraDB
     driver = GraphDatabase.driver(uri, auth=(username, password))
     
+    # Ignore warning messages
+    warnings.filterwarnings('ignore')
+    
     # Read JSON data
-    json_data = read_json_file("2_processed_android_developer_roadmap.json", data_directory)
+    for filename in os.listdir(data_directory):
+        if filename.endswith(".json"):
+            print(f"Processing {filename}")
+            # Read JSON file
+            json_data = read_json_file(filename, data_directory)
     
-    # Populate knowledge graph
-    populate_knowledge_graph(driver, json_data)
-    
-    session = driver.session()
+            # Populate knowledge graph
+            populate_knowledge_graph(driver, json_data)
 
     # Close Neo4j driver
     driver.close()

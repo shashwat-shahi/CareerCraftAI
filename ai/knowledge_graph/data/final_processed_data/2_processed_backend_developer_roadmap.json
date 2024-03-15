@@ -94,7 +94,7 @@
         {"skill": "Containerization vs Virtualization", "category": "Containerization"},
         {"skill": "Web Security Knowledge", "category": "Authentication and Security"}
     ],
-    "expert": [
+    "advanced": [
         {"skill": "GraphQL", "category": "GraphQL Ecosystem"},
         {"skill": "Apollo", "category": "GraphQL Ecosystem"},
         {"skill": "Relay Modern", "category": "GraphQL Ecosystem"},
