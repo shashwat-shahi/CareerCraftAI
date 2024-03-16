@@ -8,8 +8,6 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 
-import static org.springframework.security.config.Customizer.withDefaults;
-
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
@@ -18,7 +16,7 @@ public class SecurityConfig {
     @Bean
     public AuthenticationSuccessHandler authenticationSuccessHandler() {
         SimpleUrlAuthenticationSuccessHandler handler = new SimpleUrlAuthenticationSuccessHandler();  
-        handler.setDefaultTargetUrl("/createUser");
+        handler.setDefaultTargetUrl("/user/createUser");
         return handler;
     }
 
@@ -29,7 +27,8 @@ public class SecurityConfig {
                 auth.requestMatchers("/ping").permitAll();
                 auth.anyRequest().authenticated();
             })
-            .oauth2Login(oauth2 -> oauth2.successHandler(authenticationSuccessHandler()));
+            .oauth2Login(oauth2 -> oauth2.successHandler(authenticationSuccessHandler()))
+            .csrf(csrf -> csrf.disable());
 
         return http.build();
     }
