@@ -14,17 +14,6 @@ import AuthRequired from "./pages/AuthRequired"
 
 function App() {
 
-  useEffect(() => {
-    fetch('http://localhost:8080/ping')
-      .then(response => response.text())
-      .then(data => {
-        console.log(data);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-  }, []);
-
   return (
     <ThemeProvider defaultTheme="dark">
     <BrowserRouter>

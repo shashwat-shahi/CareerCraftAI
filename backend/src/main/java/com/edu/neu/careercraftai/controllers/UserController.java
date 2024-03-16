@@ -77,9 +77,9 @@ public class UserController {
         return "ID token not found.";
     }
     
-    @GetMapping("/ping/{id}")
-    public String ping(@PathVariable(name = "id")String id){
-        return "Pinged successfully by User Id "+id;
+    @GetMapping("/ping")
+    public String ping(){
+        return "Ping Success";
     }
 
     //update user

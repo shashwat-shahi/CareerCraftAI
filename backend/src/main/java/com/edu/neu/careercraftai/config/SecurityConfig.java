@@ -32,9 +32,9 @@ public class SecurityConfig {
         http.authorizeHttpRequests(auth -> {
                 auth.requestMatchers("/ping").permitAll();
                 auth.anyRequest().authenticated();
-            })
+            }).cors(cors -> cors.configurationSource(corsConfigurationSource())).csrf(AbstractHttpConfigurer::disable)
             .oauth2Login(oauth2 -> oauth2.successHandler(authenticationSuccessHandler()))
-            .cors(cors -> cors.configurationSource(corsConfigurationSource())).csrf(AbstractHttpConfigurer::disable);
+            ;
 
         return http.build();
     }

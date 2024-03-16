@@ -50,7 +50,7 @@ function UploadResume() {
         const queryParams = new URLSearchParams();
         queryParams.append("aspiration", data.aspirationalJob);
         const queryString = queryParams.toString();
-        const url = `${import.meta.env.VITE_BACKEND_URL}/updateUser/${userId}?${queryString}`;
+        const url = `${import.meta.env.VITE_BACKEND_URL}/user/updateUser/${userId}?${queryString}`;
         
         try {
             const response = await fetch(url, {
