@@ -4,45 +4,70 @@ import {
     Card,
     CardContent,
     CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
   } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useState } from "react"
+import { useSearchParams } from "react-router-dom"
+import { useToast } from "@/components/ui/use-toast"
 
 
 
 function UploadResume() {
 
-    const [formData, setFormData] = useState(
+    const [data, setData] = useState(
         {
             aspirationalJob: "",
-            resume: null
+            resume: ""
         }
     )
+    const [searchParams, setSearchParams] = useSearchParams()
+    const { toast } = useToast()
+
+    const userId = searchParams.get("userId")
 
     const handleFileChange = (e: any) => {
-        setFormData({
-            ...formData,
+        setData({
+            ...data,
             resume: e.target.files[0]
         })
     }
 
     const handleSelectChange = (selectedValue) => {
-        setFormData({
-            ...formData,
+        setData({
+            ...data,
             aspirationalJob: selectedValue
         });
     };
 
-    const handleSubmit = (e: any) => {
-        e.preventDefault()
-        console.log(formData)
-    }
-
-
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+       
+        const uploadFormData = new FormData();
+        uploadFormData.append("resumeFile", data.resume);
+        const queryParams = new URLSearchParams();
+        queryParams.append("aspiration", data.aspirationalJob);
+        const queryString = queryParams.toString();
+        const url = `${import.meta.env.VITE_BACKEND_URL}/updateUser/${userId}?${queryString}`;
+        
+        try {
+            const response = await fetch(url, {
+                method: 'POST',
+                body: uploadFormData,
+                credentials: 'include',
+            });
+            if (response.ok) {
+                alert("Upload successful")
+                console.log('Upload successful');
+            } else {
+                console.error('Upload failed');
+            }
+        } catch (error) {
+            console.error('Error submitting form', error);
+        }
+    };
     
   return (
     <div className="flex min-h-[90vh]">
@@ -52,7 +77,7 @@ function UploadResume() {
                 <CardDescription>AI analyzes resumes, focusing on relevance, skills and experience.</CardDescription>
             </CardHeader>
             <CardContent>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div className="grid w-full items-center gap-4">
                         <div className="flex flex-col space-y-1.5">
                         <Label htmlFor="resume">Resume</Label>
@@ -71,14 +96,14 @@ function UploadResume() {
                                 <SelectValue placeholder="Select" />
                             </SelectTrigger>
                             <SelectContent position="popper">
-                                <SelectItem value="frontend_engineer">Frontend Engineer</SelectItem>
-                                <SelectItem value="data_scientist">Data Scientist</SelectItem>
-                                <SelectItem value="infrastruture_engineer">Infrastructure Engineer</SelectItem>
-                                <SelectItem value="backend_engineer">Backend Engineer</SelectItem>
+                                <SelectItem value="1">Frontend Engineer</SelectItem>
+                                <SelectItem value="2">Data Scientist</SelectItem>
+                                <SelectItem value="3">Infrastructure Engineer</SelectItem>
+                                <SelectItem value="4">Backend Engineer</SelectItem>
                             </SelectContent>
                         </Select>
                         </div>
-                        <Button onSubmit={handleSubmit}>Submit</Button>
+                        <Button type="submit">Submit</Button>
                     </div>
                 </form>
             </CardContent>
