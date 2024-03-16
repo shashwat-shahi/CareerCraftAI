@@ -8,7 +8,7 @@ import Jobs from "./pages/Jobs"
 import Roadmap from "./pages/Roadmap"
 import Profile from "./pages/Profile"
 import Auth from "./pages/Auth"
-import { useEffect } from "react"
+
 import AuthRequired from "./pages/AuthRequired"
 
 

@@ -11,7 +11,6 @@ import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useState } from "react"
 import { useSearchParams } from "react-router-dom"
-import { useToast } from "@/components/ui/use-toast"
 
 
 
@@ -24,9 +23,10 @@ function UploadResume() {
         }
     )
     const [searchParams, setSearchParams] = useSearchParams()
-    const { toast } = useToast()
+    setSearchParams(prev => prev)
 
     const userId = searchParams.get("userId")
+    
 
     const handleFileChange = (e: any) => {
         setData({
