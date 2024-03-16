@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
@@ -34,7 +35,8 @@ public class SecurityConfig {
                 auth.requestMatchers("/ping").permitAll();
                 auth.anyRequest().authenticated();
             })
-            .oauth2Login(oauth2 -> oauth2.successHandler(authenticationSuccessHandler())).cors(cors -> cors.configurationSource(corsConfigurationSource()));
+            .oauth2Login(oauth2 -> oauth2.successHandler(authenticationSuccessHandler()))
+            .cors(cors -> cors.configurationSource(corsConfigurationSource())).csrf(AbstractHttpConfigurer::disable);
 
         return http.build();
     }
