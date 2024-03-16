@@ -37,8 +37,13 @@ function UploadResume() {
         });
     };
 
-    console.log(formData)
+    const handleSubmit = (e: any) => {
+        e.preventDefault()
+        console.log(formData)
+    }
 
+
+    
   return (
     <div className="flex min-h-[90vh]">
         <Card className="w-[350px] self-center mx-auto">
@@ -72,14 +77,11 @@ function UploadResume() {
                                 <SelectItem value="backend_engineer">Backend Engineer</SelectItem>
                             </SelectContent>
                         </Select>
-
                         </div>
+                        <Button onSubmit={handleSubmit}>Submit</Button>
                     </div>
                 </form>
             </CardContent>
-            <CardFooter className="flex justify-between">
-                <Button>Submit</Button>
-            </CardFooter>
         </Card>
     </div>
   )
