@@ -27,7 +27,8 @@ public class SecurityConfig {
                 auth.requestMatchers("/ping").permitAll();
                 auth.anyRequest().authenticated();
             })
-            .oauth2Login(oauth2 -> oauth2.successHandler(authenticationSuccessHandler()));
+            .oauth2Login(oauth2 -> oauth2.successHandler(authenticationSuccessHandler()))
+            .csrf(csrf -> csrf.disable());
 
         return http.build();
     }

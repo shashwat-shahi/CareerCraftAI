@@ -65,11 +65,11 @@ public class UserController {
                     UserEntity userCreated = userService.createUser(newUser);
 
                     
-                    response.sendRedirect(linkForNewUsers+"/"+userCreated.getId());
+                    response.sendRedirect(linkForNewUsers+"?userId="+userCreated.getId());
                 }
                 else {
                     
-                    response.sendRedirect(linkForExistingUsers+"/"+user.getId());
+                    response.sendRedirect(linkForExistingUsers+"?userId="+user.getId());
                 }
                 
             }
