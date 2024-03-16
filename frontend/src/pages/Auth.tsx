@@ -6,13 +6,18 @@ function Auth() {
     const google_oauth_url = import.meta.env.VITE_GOOGLE_OAUTH_URL;
     console.log(google_oauth_url);
   return (
-    <div className='wrapper flex'>
+    <div className='wrapper flex overflow-hidden'>
         <div className='left w-[60%]'>
             <img src="/auth.jpg" alt="auth" />
         </div>
         <div className="right w-[40%] flex min-h-[90vh]">
             <Card className="w-[400px] self-center mx-auto">
                 <CardHeader>
+                    <div className='flex'>
+                    <div className='w-[40px] m-4'><img src="logo.png" alt="" /></div>
+                    <div className='text-3xl mb-3 text-center m-4'>CareerCraft AI</div>
+                    </div>
+                    <br />
                     <CardTitle className='mb-3'>Log In to Jumpstart Your Career</CardTitle>
                     <CardDescription className='mb-5'>Securely log in now to start getting personalized resume feedback and discover exciting job opportunities tailored just for you</CardDescription>
                 </CardHeader>
