@@ -2,6 +2,8 @@ package com.edu.neu.careercraftai.controllers;
 
 import java.io.IOException;
 import java.text.ParseException;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ByteArrayResource;
@@ -11,6 +13,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.edu.neu.careercraftai.entity.UserEntity;
@@ -21,7 +30,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.servlet.http.HttpServletResponse;
 
 @RestController
-@CrossOrigin
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired
@@ -68,9 +77,9 @@ public class UserController {
         return "ID token not found.";
     }
     
-    @GetMapping("/ping")
-    public String ping(){
-        return "Pinged successfully.";
+    @GetMapping("/ping/{id}")
+    public String ping(@PathVariable(name = "id")String id){
+        return "Pinged successfully by User Id "+id;
     }
 
     //update user
@@ -125,6 +134,15 @@ public class UserController {
                 .header("Content-type", "application/octet-stream")
                 .header("Content-disposition", "attachment; filename=\""+fileName+"\"")
                 .body(new ByteArrayResource(fileContent));
+    }
+
+    // get all users
+    @GetMapping("/getAllUsers")
+    public ResponseEntity<List<UserEntity>> getAllUsers(){
+        List<UserEntity> users = userService.getAllUsers();
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(users);
     }
 
 }
