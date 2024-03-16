@@ -23,8 +23,21 @@ function UploadResume() {
         }
     )
 
+    const handleFileChange = (e: any) => {
+        setFormData({
+            ...formData,
+            resume: e.target.files[0]
+        })
+    }
 
+    const handleSelectChange = (selectedValue) => {
+        setFormData({
+            ...formData,
+            aspirationalJob: selectedValue
+        });
+    };
 
+    console.log(formData)
 
   return (
     <div className="flex min-h-[90vh]">
@@ -38,13 +51,19 @@ function UploadResume() {
                     <div className="grid w-full items-center gap-4">
                         <div className="flex flex-col space-y-1.5">
                         <Label htmlFor="resume">Resume</Label>
-                        <Input id="resume" type="file" className="bg-secondary"/>
+                        <Input
+                            id="resume"
+                            name="resume"
+                            type="file"
+                            className="bg-secondary"
+                            onChange={handleFileChange}
+                        />
                         </div>
                         <div className="flex flex-col space-y-1.5">
                         <Label htmlFor="jobs">Jobs</Label>
-                        <Select>
+                        <Select onValueChange={(value) => handleSelectChange(value)}>
                             <SelectTrigger id="jobs">
-                            <SelectValue placeholder="Select" />
+                                <SelectValue placeholder="Select" />
                             </SelectTrigger>
                             <SelectContent position="popper">
                                 <SelectItem value="frontend_engineer">Frontend Engineer</SelectItem>
@@ -53,6 +72,7 @@ function UploadResume() {
                                 <SelectItem value="backend_engineer">Backend Engineer</SelectItem>
                             </SelectContent>
                         </Select>
+
                         </div>
                     </div>
                 </form>
