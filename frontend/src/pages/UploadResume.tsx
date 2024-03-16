@@ -23,7 +23,7 @@ function UploadResume() {
         }
     )
     const [searchParams, setSearchParams] = useSearchParams()
-    setSearchParams(prev => prev)
+    
 
     const userId = searchParams.get("userId")
     
@@ -65,6 +65,7 @@ function UploadResume() {
                 console.error('Upload failed');
             }
         } catch (error) {
+            setSearchParams(prev => prev)
             console.error('Error submitting form', error);
         }
     };
