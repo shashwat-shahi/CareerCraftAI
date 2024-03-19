@@ -21,14 +21,18 @@ import java.util.List;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-    
+
+//    @Bean
+//    public CookieSerializer cookieSerializer() {
+//        DefaultCookieSerializer serializer = new DefaultCookieSerializer();
+//        serializer.setCookieName("myCustomCookieName");
+//        serializer.setDomainNamePattern("^.+?\\.(\\w+\\.[a-z]+)$");
+//        return serializer;
+//    }
 
     @Bean
     public AuthenticationSuccessHandler authenticationSuccessHandler() {
         SimpleUrlAuthenticationSuccessHandler handler = new SimpleUrlAuthenticationSuccessHandler();
-        // Customize cookie behavior:
-        handler.setUseReferer(true);  // Use referer URL if available
-        CookieSerializer cookieSerializer = new DefaultCookieSerializer();
         handler.setDefaultTargetUrl("/user/createUser");
         return handler;
     }
