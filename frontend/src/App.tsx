@@ -9,20 +9,25 @@ import Roadmap from "./pages/Roadmap"
 import Profile from "./pages/Profile"
 import Auth from "./pages/Auth"
 
+import AuthRequired from "./pages/AuthRequired"
+
 
 function App() {
+
   return (
     <ThemeProvider defaultTheme="dark">
     <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Auth />} />
-          <Route path="/" element={<SiteLayout />}>
-            <Route index element={<UploadResume />} /> 
-            <Route path="dashboard" element={<Dashboard />} />
-            <Route path="jobs" element={<Jobs />} />
-            <Route path="roadmap" element={<Roadmap />} />
-            <Route path="profile" element={<Profile />} />
-          </Route> 
+          <Route element={<AuthRequired />}> 
+            <Route path="/" element={<SiteLayout />}>
+              <Route index element={<UploadResume />} /> 
+              <Route path="dashboard" element={<Dashboard />} />
+              <Route path="jobs" element={<Jobs />} />
+              <Route path="roadmap" element={<Roadmap />} />
+              <Route path="profile" element={<Profile />} />
+            </Route> 
+          </Route>
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
