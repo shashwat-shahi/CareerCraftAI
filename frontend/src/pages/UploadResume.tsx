@@ -11,6 +11,9 @@ import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useState } from "react"
 import { useSearchParams } from "react-router-dom"
+import { Toaster } from "@/components/ui/sonner"
+import { toast } from "sonner"
+
 
 
 
@@ -59,7 +62,7 @@ function UploadResume() {
                 credentials: 'include',
             });
             if (response.ok) {
-                alert("Upload successful")
+                toast.success("Upload successful.")
                 console.log('Upload successful');
             } else {
                 console.error('Upload failed');
@@ -72,6 +75,7 @@ function UploadResume() {
     
   return (
     <div className="flex min-h-[90vh]">
+        <Toaster richColors toastOptions={{}}/>
         <Card className="w-[350px] self-center mx-auto">
             <CardHeader>
                 <CardTitle>Submit your resume</CardTitle>
