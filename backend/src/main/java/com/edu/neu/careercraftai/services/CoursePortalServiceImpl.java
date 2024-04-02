@@ -1,6 +1,8 @@
 package com.edu.neu.careercraftai.services;
 
+import java.util.ArrayList;
 import java.util.Base64;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -12,6 +14,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.edu.neu.careercraftai.interfaces.CoursePortalService;
+import com.edu.neu.careercraftai.models.CourseOverview;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 
 import jakarta.annotation.PostConstruct;
 
@@ -24,19 +31,30 @@ public class CoursePortalServiceImpl implements CoursePortalService{
     @Value("${udemy.api.client.secret}")
     String udemyApiClientSecret;
 
+    @Value("${udemy.base.url}")
+    String udemyBaseUrl;
+
+    @Value("${udemy.courses.url}")
+    String udemyCoursesUrl;
+
+    @Value("${udemy.course.url}")
+    String udemyCoursesByIdUrl;
+
     @Autowired
     RestTemplate restTemplate;
+
+    @Autowired
+    Gson gson;
 
     static String encodedAuthString;
 
     @Override
-    public void getCoursesFromKeyword(String keyword) {
-        String url = "https://udemy.com/api-2.0/courses/?page=1&page_size=10&search=java";
+    public List<CourseOverview> getCoursesFromKeyword(String keyword) {
+        String url = udemyBaseUrl + udemyCoursesUrl + keyword;
         
         // Create headers
         HttpHeaders headers = new HttpHeaders();
         headers.set("Authorization", "Basic ".concat(encodedAuthString));
-        // Add other headers as needed
         
         // Create request entity with headers
         HttpEntity<String> entity = new HttpEntity<>(headers);
@@ -45,13 +63,22 @@ public class CoursePortalServiceImpl implements CoursePortalService{
         ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
         
         // Process the response
-        System.out.println("Response: " + response.getBody());
-    }
+        List<CourseOverview> courses = new ArrayList<CourseOverview>();
+        String responseJson = response.getBody();
+        JsonObject jsonObject = gson.fromJson(responseJson, JsonObject.class);
+        JsonArray resultsArray = jsonObject.get("results").getAsJsonArray();
+        for (JsonElement jsonElement : resultsArray) {
+            JsonObject courseObject = jsonElement.getAsJsonObject();
+            CourseOverview courseOverview = new CourseOverview();
+            courseOverview.setId(courseObject.get("id").getAsLong());
+            courseOverview.setTitle(courseObject.get("title").getAsString());
+            courseOverview.setUrl("https://www.udemy.com" + courseObject.get("url").getAsString());
+            courseOverview.setHeadline(courseObject.get("headline").getAsString()); 
+            courseOverview.setImageUrl(courseObject.get("image_240x135").getAsString());
+            courses.add(courseOverview);
+        }
 
-    @Override
-    public void getCourseDetailsFromCourseId(String courseId) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getCourseDetailsFromCourseId'");
+        return courses;
     }
 
     @PostConstruct

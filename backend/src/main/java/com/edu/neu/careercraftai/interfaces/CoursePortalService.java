@@ -1,6 +1,10 @@
 package com.edu.neu.careercraftai.interfaces;
 
+import java.util.List;
+
+import com.edu.neu.careercraftai.models.CourseOverview;
+import com.google.gson.JsonObject;
+
 public interface CoursePortalService {
-    public void getCoursesFromKeyword(String keyword);
-    public void getCourseDetailsFromCourseId(String courseId);
+    public List<CourseOverview> getCoursesFromKeyword(String keyword);
 }
