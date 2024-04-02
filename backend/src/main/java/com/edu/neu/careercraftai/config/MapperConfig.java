@@ -5,6 +5,8 @@ import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.google.gson.Gson;
+
 @Configuration
 public class MapperConfig {
 
@@ -13,5 +15,10 @@ public class MapperConfig {
         ModelMapper modelMapper = new ModelMapper();
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
         return modelMapper;
+    }
+
+    @Bean
+    public Gson gson(){
+        return new Gson();
     }
 }
