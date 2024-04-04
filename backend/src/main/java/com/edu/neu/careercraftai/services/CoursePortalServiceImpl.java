@@ -37,9 +37,6 @@ public class CoursePortalServiceImpl implements CoursePortalService{
     @Value("${udemy.courses.url}")
     String udemyCoursesUrl;
 
-    @Value("${udemy.course.url}")
-    String udemyCoursesByIdUrl;
-
     @Autowired
     RestTemplate restTemplate;
 
