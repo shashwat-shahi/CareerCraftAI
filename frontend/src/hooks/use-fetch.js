@@ -1,34 +1,34 @@
-import { useEffect, useState } from "react";
+import {useEffect, useState} from "react";
 
-function useFetch(url, options={method:"GET"}) {
+const useFetch = (url, options = {method: "GET", credentials: "include"}) => {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-    const [error, setError] = useState(null)
-    const [loading, setLoading] = useState(false)
-    const [data, setData] = useState(null)
-    
-    useEffect(() => {
-        fetchData = async () => {
-            try {
-                setLoading(true)
-                const response = await fetch(url, {...options})
-                if (!response.ok){
-                    throw new Error("Error while connecting to the API")
-                }
-                const result = await response.json()
-                setData(result)
-            }
-            catch(error){
-                setError(error)
-            }
-            finally{
-                setLoading(false)
-            }
-
-            if(url){
-                fetchData()
-            }
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch(url, {...options});
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
         }
-    }, [url])
-}
+        const result = await response.json();
+        setData(result);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-export default useFetch
+    if (url && !url.endsWith("null")) {
+      console.log(url)
+      fetchData();
+    }
+  }, [url]); // its optional to give "options" here
+
+  return {data, loading, error};
+};
+
+export default useFetch;
