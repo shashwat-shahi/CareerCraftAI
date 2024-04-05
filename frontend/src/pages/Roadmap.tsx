@@ -9,9 +9,11 @@ import {
 } from "@/components/ui/card"
 
 import { Link } from "react-router-dom"
+import { Skeleton } from "@/components/ui/skeleton"
+
 
 function Roadmap() {
-
+  
   let keywords = [
     { courseId: 1, courseName: 'Python' },
     { courseId: 2, courseName: 'Machine Learning' },
@@ -32,11 +34,7 @@ function Roadmap() {
     return <h1>No Keywords detected in resume re upload</h1>
   }
  
-  if (loading){
-    return (
-      <h1>Loading</h1>
-    )
-  }
+ 
 
   if (error){
     return (
@@ -61,14 +59,23 @@ function Roadmap() {
       <div className="flex flex-wrap gap-20 justify-center">
       {data && data.map(course => <div key={course.id}>
             <Card className="h-auto w-64"> 
-              <CardHeader>
+             {loading ? 
+             <div className="flex flex-col space-y-3">
+              <Skeleton className="h-[125px] w-[250px] rounded-xl" />
+              <div className="space-y-2">
+              <Skeleton className="h-4 w-[250px]" />
+              <Skeleton className="h-4 w-[200px]" />
+              </div>
+              </div> 
+              : 
+            <CardHeader>
                 <img src={course.imageUrl} className="my-2"/>
                 <CardTitle className="my-2">{course.title}</CardTitle>
                 <CardDescription className="my-2">{course.headline}</CardDescription>
                 <Button asChild className="my-2">
                   <Link to={course.url} target="_blank">View More</Link>
                 </Button>
-              </CardHeader>
+              </CardHeader>}
             </Card>
         </div>)}
       </div>
