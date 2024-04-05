@@ -1,6 +1,14 @@
 import { Button } from "@/components/ui/button"
 import useFetch from "../hooks/use-fetch"
 import { useState } from "react"
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+
+import { Link } from "react-router-dom"
 
 function Roadmap() {
 
@@ -17,12 +25,8 @@ function Roadmap() {
   ]
 
   const [activeCourse, setActiveCourse] = useState(null)
-  
 
   const {data, loading, error} = useFetch(`${import.meta.env.VITE_BACKEND_URL}/course/getCoursesFromKeyword/${activeCourse}`)
-
-
-  console.log(data)
 
   if (keywords.length == 0){
     return <h1>No Keywords detected in resume re upload</h1>
@@ -45,16 +49,28 @@ function Roadmap() {
   }
 
   return (
-    <div className="flex w-screen justify-center">
+    <div className="flex w-screen items-center flex-col">
       <div className="flex flex-wrap justify-between w-8/12 my-9">
         {
           keywords.map((keyword) => {
             return <Button key={keyword.courseId} onClick={() => fetchCourseDetails(keyword.courseName)}>{keyword.courseName}</Button>
           })
         }
-
         {!activeCourse && <h1>Select a keyword from the list</h1>} 
-  
+      </div>
+      <div className="flex flex-wrap gap-20 justify-center">
+      {data && data.map(course => <div key={course.id}>
+            <Card className="h-auto w-64"> 
+              <CardHeader>
+                <img src={course.imageUrl} className="my-2"/>
+                <CardTitle className="my-2">{course.title}</CardTitle>
+                <CardDescription className="my-2">{course.headline}</CardDescription>
+                <Button asChild className="my-2">
+                  <Link to={course.url} target="_blank">View More</Link>
+                </Button>
+              </CardHeader>
+            </Card>
+        </div>)}
       </div>
     </div>
   )
