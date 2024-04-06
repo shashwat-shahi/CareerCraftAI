@@ -30,7 +30,7 @@ function UploadResume() {
 
     
     const {val, loading, error} = useFetch(`${import.meta.env.VITE_BACKEND_URL}/aspiration/getAspirations`)
-    console.log(val)
+    console.log(val, loading, error)
 
     const userId = searchParams.get("userId")
     
