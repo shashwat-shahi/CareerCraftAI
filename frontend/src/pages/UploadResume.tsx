@@ -13,6 +13,7 @@ import { useState } from "react"
 import { useSearchParams } from "react-router-dom"
 import { Toaster } from "@/components/ui/sonner"
 import { toast } from "sonner"
+import useFetch from "../hooks/use-fetch"
 
 
 
@@ -26,7 +27,10 @@ function UploadResume() {
         }
     )
     const [searchParams, setSearchParams] = useSearchParams()
+
     
+    const {val, loading, error} = useFetch(`${import.meta.env.VITE_BACKEND_URL}/aspiration/getAspirations`)
+    console.log(val)
 
     const userId = searchParams.get("userId")
     
@@ -101,10 +105,9 @@ function UploadResume() {
                                 <SelectValue placeholder="Select" />
                             </SelectTrigger>
                             <SelectContent position="popper">
-                                <SelectItem value="1">Frontend Engineer</SelectItem>
-                                <SelectItem value="2">Data Scientist</SelectItem>
-                                <SelectItem value="3">Infrastructure Engineer</SelectItem>
-                                <SelectItem value="4">Backend Engineer</SelectItem>
+                                {
+                                    val && val.map(asp => <SelectItem key={asp.id} value={asp.id.toString()}>{asp.name}</SelectItem>)
+                                }
                             </SelectContent>
                         </Select>
                         </div>

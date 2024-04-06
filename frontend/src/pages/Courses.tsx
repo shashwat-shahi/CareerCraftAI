@@ -28,7 +28,7 @@ function Courses() {
 
   const [activeCourse, setActiveCourse] = useState(null)
 
-  const {data, loading, error} = useFetch(`${import.meta.env.VITE_BACKEND_URL}/course/getCoursesFromKeyword/${activeCourse}`)
+  const {val, loading, error} = useFetch(`${import.meta.env.VITE_BACKEND_URL}/course/getCoursesFromKeyword/${activeCourse}`)
 
   if (keywords.length == 0){
     return <h1>No Keywords detected in resume re upload</h1>
@@ -60,7 +60,7 @@ function Courses() {
       {!activeCourse && <h1>Select a keyword from the list</h1>} 
       </div>
       <div className="flex flex-wrap gap-20 justify-center">
-      {data && data.map(course => <div key={course.id}>
+      {val && val.map(course => <div key={course.id}>
             <Card className="h-auto w-64"> 
              {loading ? 
              <div className="flex flex-col space-y-3">

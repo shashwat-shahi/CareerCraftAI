@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 
 const useFetch = (url, options = {method: "GET", credentials: "include"}) => {
-  const [data, setData] = useState(null);
+  const [val, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -23,12 +23,11 @@ const useFetch = (url, options = {method: "GET", credentials: "include"}) => {
     };
 
     if (url && !url.endsWith("null")) {
-      console.log(url)
       fetchData();
     }
   }, [url]); // its optional to give "options" here
 
-  return {data, loading, error};
+  return {val, loading, error};
 };
 
 export default useFetch;
