@@ -10,6 +10,7 @@ import Profile from "./pages/Profile"
 import Auth from "./pages/Auth"
 
 import AuthRequired from "./pages/AuthRequired"
+import Courses from "./pages/Courses"
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
               <Route path="jobs" element={<Jobs />} />
               <Route path="roadmap" element={<Roadmap />} />
               <Route path="profile" element={<Profile />} />
+              <Route path="courses" element={<Courses />} />
             </Route> 
           </Route>
         </Routes>

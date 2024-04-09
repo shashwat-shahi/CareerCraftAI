@@ -57,6 +57,13 @@ function NavigationBar() {
                 </Link>
               </NavigationMenuLink> 
           </NavigationMenuItem>
+          <NavigationMenuItem>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
+                <Link to="courses">
+                  Courses
+                </Link>
+              </NavigationMenuLink> 
+          </NavigationMenuItem>
         </NavigationMenuList>
     </NavigationMenu>
   )
