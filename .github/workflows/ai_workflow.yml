@@ -1,0 +1,43 @@
+name: CI/CD for Flask App
+
+on:
+  push:
+    branches: [ test ]
+  pull_request:
+    branches: [ test ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.8'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run tests
+        run: |
+          export FLASK_APP=app.py
+          flask test
+      - name: Login to Docker Hub
+        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+      - name: Build Docker image
+        run: docker build -t yourusername/flaskapp:latest .
+      - name: Publish image to Docker Hub
+        run: docker push yourusername/flaskapp:latest
+
+  deploy:
+    needs: build-and-test
+    runs-on: self-hosted
+    steps:
+      - name: Pull Image from Docker Hub
+        run: docker pull yourusername/flaskapp:latest
+      - name: Delete old container
+        run: docker rm -f flask-container
+      - name: Run Docker container
+        run: docker run -e "SECRET_KEY=${{ secrets.SECRET_KEY }}" -d -p 5000:5000 --name flask-container yourusername/flaskapp:latest
