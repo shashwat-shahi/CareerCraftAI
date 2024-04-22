@@ -160,7 +160,7 @@
             "category": "Security"
         }
     ],
-    "expert": [
+    "advanced": [
         {
             "skill": "Unit Testing",
             "category": "Testing"

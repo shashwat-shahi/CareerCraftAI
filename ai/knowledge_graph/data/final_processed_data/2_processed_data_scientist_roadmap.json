@@ -49,7 +49,7 @@
         {"skill": "Model Validation", "category": "Machine Learning"},
         {"skill": "Underfitting & Overfitting", "category": "Machine Learning"}
     ],
-    "expert": [
+    "advanced": [
         {"skill": "Analytics Geometry", "category": "Mathematics"},
         {"skill": "R Basics", "category": "Programming"},
         {"skill": "Feature Generation", "category": "Feature Engineering"},
