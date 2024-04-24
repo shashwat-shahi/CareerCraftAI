@@ -1,6 +1,10 @@
+import RoadMapImage from '../../public/image.png'
+
 function Roadmap() {
   return (
-    <div>Roadmap</div>
+    <div className="flex justify-center mt-10">
+      <img src={RoadMapImage} />
+    </div>
   )
 }
 

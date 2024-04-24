@@ -37,11 +37,11 @@ function NavigationBar() {
               </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link to="jobs">
               <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
-                Jobs
+                <Link to="jobboard">
+                  Jobboard
+                </Link>
               </NavigationMenuLink>
-            </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
               <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
@@ -61,6 +61,13 @@ function NavigationBar() {
               <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
                 <Link to="courses">
                   Courses
+                </Link>
+              </NavigationMenuLink> 
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
+                <Link to="resume">
+                  Resume
                 </Link>
               </NavigationMenuLink> 
           </NavigationMenuItem>

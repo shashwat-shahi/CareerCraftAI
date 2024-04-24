@@ -1,0 +1,885 @@
+[
+    {
+      "id": "1",
+      "company": "Google",
+      "position": "Software Engineer",
+      "heading": "Work on Google's world-class technology projects.",
+      "jobdescription": "As a Software Engineer at Google, you will work on cutting-edge technology projects that impact millions of users worldwide. You will collaborate with a talented team of engineers to design, develop, and maintain innovative software solutions.",
+      "applyLink": "https://google.com/careers",
+      "location": "Mountain View, CA"
+    },
+    {
+      "id": "2",
+      "company": "Facebook",
+      "position": "Data Analyst",
+      "heading": "Analyze data to drive decision-making at Facebook.",
+      "jobdescription": "As a Data Analyst at Facebook, you will analyze large datasets to derive insights and drive data-driven decision-making across various business units. You will work closely with cross-functional teams to identify trends, patterns, and opportunities for improvement.",
+      "applyLink": "https://www.facebook.com/careers/",
+      "location": "Menlo Park, CA"
+    },
+    {
+      "id": "3",
+      "company": "Apple",
+      "position": "Product Manager",
+      "heading": "Lead the development of innovative Apple products.",
+      "jobdescription": "As a Product Manager at Apple, you will lead the development and launch of innovative products that redefine the industry standards. You will collaborate with cross-functional teams to define product requirements, set strategic direction, and drive product development from conception to launch.",
+      "applyLink": "https://www.apple.com/jobs/us/",
+      "location": "Cupertino, CA"
+    },
+    {
+      "id": "4",
+      "company": "Amazon",
+      "position": "Software Engineer",
+      "heading": "Build scalable and efficient systems at Amazon.",
+      "jobdescription": "As a Software Engineer at Amazon, you will design, develop, and deploy scalable and efficient software systems that power Amazon's e-commerce platform. You will work in a fast-paced environment and collaborate with a diverse team of engineers to innovate and solve complex technical challenges.",
+      "applyLink": "https://www.amazon.jobs/",
+      "location": "Seattle, WA"
+    },
+    {
+      "id": "5",
+      "company": "Microsoft",
+      "position": "Data Analyst",
+      "heading": "Transform data into actionable insights at Microsoft.",
+      "jobdescription": "As a Data Analyst at Microsoft, you will transform complex data into actionable insights that drive business strategies and decision-making. You will work with large datasets, utilize data analytics tools, and collaborate with cross-functional teams to identify trends and opportunities for business growth.",
+      "applyLink": "https://careers.microsoft.com/",
+      "location": "Redmond, WA"
+    },
+    {
+      "id": "6",
+      "company": "Netflix",
+      "position": "Product Manager",
+      "heading": "Drive product innovation at the world's leading streaming service.",
+      "jobdescription": "As a Product Manager at Netflix, you will drive product innovation and enhance user experience for the world's leading streaming service. You will define product requirements, prioritize features, and collaborate with cross-functional teams to deliver high-quality and engaging content to millions of subscribers worldwide.",
+      "applyLink": "https://jobs.netflix.com/",
+      "location": "Los Gatos, CA"
+    },
+    {
+      "id": "7",
+      "company": "Tesla",
+      "position": "Software Engineer",
+      "heading": "Contribute to the future of sustainable transportation at Tesla.",
+      "jobdescription": "As a Software Engineer at Tesla, you will contribute to the development of cutting-edge software solutions that power Tesla's electric vehicles and energy products. You will work in a dynamic environment, collaborate with a talented team of engineers, and innovate in the field of sustainable transportation.",
+      "applyLink": "https://www.tesla.com/careers",
+      "location": "Palo Alto, CA"
+    },
+    {
+      "id": "8",
+      "company": "Spotify",
+      "position": "Data Analyst",
+      "heading": "Use data to enhance user experience at Spotify.",
+      "jobdescription": "As a Data Analyst at Spotify, you will analyze user data to enhance the overall user experience and drive business growth. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for improvement.",
+      "applyLink": "https://www.spotifyjobs.com/",
+      "location": "New York, NY"
+    },
+    {
+      "id": "9",
+      "company": "Airbnb",
+      "position": "Product Manager",
+      "heading": "Shape the future of travel experiences at Airbnb.",
+      "jobdescription": "As a Product Manager at Airbnb, you will shape the future of travel experiences by defining and delivering innovative product solutions that enhance user engagement and satisfaction. You will collaborate with cross-functional teams to set strategic direction, prioritize features, and drive product development from conception to launch.",
+      "applyLink": "https://airbnb.com/careers",
+      "location": "San Francisco, CA"
+    },
+    {
+      "id": "10",
+      "company": "Adobe",
+      "position": "Software Engineer",
+      "heading": "Develop cutting-edge software solutions at Adobe.",
+      "jobdescription": "As a Software Engineer at Adobe, you will develop cutting-edge software solutions and technologies that empower creative professionals worldwide. You will collaborate with a talented team of engineers, designers, and product managers to innovate and deliver high-quality software products and services.",
+      "applyLink": "https://www.adobe.com/careers.html",
+      "location": "San Jose, CA"
+    },
+    {
+      "id": "11",
+      "company": "Twitter",
+      "position": "Data Analyst",
+      "heading": "Analyze trends and user behavior at Twitter.",
+      "jobdescription": "As a Data Analyst at Twitter, you will analyze trends, user behavior, and social media metrics to derive insights and inform strategic decisions. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify opportunities for growth and improvement.",
+      "applyLink": "https://careers.twitter.com/en.html",
+      "location": "San Francisco, CA"
+    },
+    {
+      "id": "12",
+      "company": "Uber",
+      "position": "Product Manager",
+      "heading": "Innovate in the field of transportation and technology at Uber.",
+      "jobdescription": "As a Product Manager at Uber, you will drive innovation in the field of transportation and technology by defining and delivering innovative product solutions that enhance user experience and satisfaction. You will collaborate with cross-functional teams to set strategic direction, prioritize features, and drive product development from conception to launch.",
+      "applyLink": "https://www.uber.com/us/en/careers/",
+      "location": "San Francisco, CA"
+    },
+    {
+      "id": "13",
+      "company": "LinkedIn",
+      "position": "Software Engineer",
+      "heading": "Build professional networking solutions at LinkedIn.",
+      "jobdescription": "As a Software Engineer at LinkedIn, you will build and maintain professional networking solutions that connect professionals worldwide. You will work with a talented team of engineers, designers, and product managers to innovate and deliver high-quality software products and services.",
+      "applyLink": "https://www.linkedin.com/company/linkedin/jobs/",
+      "location": "Sunnyvale, CA"
+    },
+    {
+      "id": "14",
+      "company": "Dropbox",
+      "position": "Data Analyst",
+      "heading": "Utilize data to improve cloud storage solutions at Dropbox.",
+      "jobdescription": "As a Data Analyst at Dropbox, you will analyze user data and behavior to improve cloud storage solutions and drive business growth. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for improvement.",
+      "applyLink": "https://www.dropbox.com/jobs",
+      "location": "San Francisco, CA"
+    },
+    {
+      "id": "15",
+      "company": "Salesforce",
+      "position": "Product Manager",
+      "heading": "Drive customer success with innovative CRM solutions at Salesforce.",
+      "jobdescription": "As a Product Manager at Salesforce, you will drive customer success with innovative CRM solutions that empower businesses to connect with their customers in new ways. You will collaborate with cross-functional teams to define product requirements, set strategic direction, and drive product development from conception to launch.",
+      "applyLink": "https://www.salesforce.com/company/careers/",
+      "location": "San Francisco, CA"
+    },
+    {
+      "id": "16",
+      "company": "Oracle",
+      "position": "Software Engineer",
+      "heading": "Develop enterprise software solutions at Oracle.",
+      "jobdescription": "As a Software Engineer at Oracle, you will develop enterprise software solutions and technologies that empower businesses to operate more efficiently and effectively. You will work in a dynamic environment, collaborate with a talented team of engineers, and innovate in the field of enterprise software development.",
+      "applyLink": "https://www.oracle.com/corporate/careers/",
+      "location": "Redwood City, CA"
+    },
+    {
+      "id": "17",
+      "company": "IBM",
+      "position": "Data Analyst",
+      "heading": "Harness the power of data at IBM.",
+      "jobdescription": "As a Data Analyst at IBM, you will harness the power of data to drive business strategies, insights, and innovations across various business units. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://www.ibm.com/employment/",
+      "location": "Armonk, NY"
+    },
+    {
+      "id": "18",
+      "company": "Airbus",
+      "position": "Product Manager",
+      "heading": "Innovate in the aerospace industry at Airbus.",
+      "jobdescription": "As a Product Manager at Airbus, you will innovate in the aerospace industry by defining and delivering innovative product solutions that enhance safety, efficiency, and sustainability. You will collaborate with cross-functional teams to set strategic direction, prioritize features, and drive product development from conception to launch.",
+      "applyLink": "https://www.airbus.com/careers.html",
+      "location": "Toulouse, France"
+    },
+    {
+      "id": "19",
+      "company": "Samsung",
+      "position": "Software Engineer",
+      "heading": "Develop innovative technologies at Samsung.",
+      "jobdescription": "As a Software Engineer at Samsung, you will develop innovative technologies and solutions that redefine the way people interact with technology. You will work in a dynamic environment, collaborate with a talented team of engineers, and innovate in the field of consumer electronics and software development.",
+      "applyLink": "https://www.samsung.com/us/careers/",
+      "location": "Seoul, South Korea"
+    },
+    {
+      "id": "20",
+      "company": "Nike",
+      "position": "Data Analyst",
+      "heading": "Analyze consumer data to drive marketing strategies at Nike.",
+      "jobdescription": "As a Data Analyst at Nike, you will analyze consumer data and behavior to drive marketing strategies, insights, and innovations. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://jobs.nike.com/",
+      "location": "Beaverton, OR"
+    },
+    {
+      "id": "21",
+      "company": "Walmart",
+      "position": "Product Manager",
+      "heading": "Innovate in retail technology at Walmart.",
+      "jobdescription": "As a Product Manager at Walmart, you will innovate in retail technology by defining and delivering innovative product solutions that enhance customer experience, operational efficiency, and business growth. You will collaborate with cross-functional teams to set strategic direction, prioritize features, and drive product development from conception to launch.",
+      "applyLink": "https://careers.walmart.com/",
+      "location": "Bentonville, AR"
+    },
+    {
+      "id": "22",
+      "company": "Cisco",
+      "position": "Software Engineer",
+      "heading": "Build networking solutions at Cisco.",
+      "jobdescription": "As a Software Engineer at Cisco, you will build and maintain networking solutions and technologies that connect people, devices, and information. You will work with a talented team of engineers, designers, and product managers to innovate and deliver high-quality networking products and services.",
+      "applyLink": "https://www.cisco.com/c/en/us/about/careers.html",
+      "location": "San Jose, CA"
+    },
+    {
+      "id": "23",
+      "company": "Sony",
+      "position": "Data Analyst",
+      "heading": "Analyze consumer behavior and market trends at Sony.",
+      "jobdescription": "As a Data Analyst at Sony, you will analyze consumer behavior, market trends, and sales data to drive business strategies, insights, and innovations. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://www.sony.com/en/SonyInfo/careers/",
+      "location": "Tokyo, Japan"
+    },
+    {
+      "id": "24",
+      "company": "Dell",
+      "position": "Product Manager",
+      "heading": "Drive innovation in technology solutions at Dell.",
+      "jobdescription": "As a Product Manager at Dell, you will drive innovation in technology solutions by defining and delivering innovative product solutions that enhance customer experience, operational efficiency, and business growth. You will collaborate with cross-functional teams to set strategic direction, prioritize features, and drive product development from conception to launch.",
+      "applyLink": "https://jobs.dell.com/",
+      "location": "Round Rock, TX"
+    },
+    {
+      "id": "25",
+      "company": "HP",
+      "position": "Software Engineer",
+      "heading": "Develop cutting-edge software solutions at HP.",
+      "jobdescription": "As a Software Engineer at HP, you will develop cutting-edge software solutions and technologies that empower businesses and consumers worldwide. You will work in a dynamic environment, collaborate with a talented team of engineers, and innovate in the field of software development and technology solutions.",
+      "applyLink": "https://www8.hp.com/us/en/jobs/index.html",
+      "location": "Palo Alto, CA"
+    },
+    {
+      "id": "26",
+      "company": "Intel",
+      "position": "Data Analyst",
+      "heading": "Analyze data to drive innovation at Intel.",
+      "jobdescription": "As a Data Analyst at Intel, you will analyze data to drive innovation, insights, and business strategies across various business units. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://jobs.intel.com/",
+      "location": "Santa Clara, CA"
+    },
+    {
+      "id": "27",
+      "company": "General Motors",
+      "position": "Product Manager",
+      "heading": "Innovate in automotive technology at General Motors.",
+      "jobdescription": "As a Product Manager at General Motors, you will innovate in automotive technology by defining and delivering innovative product solutions that enhance safety, efficiency, and sustainability. You will collaborate with cross-functional teams to set strategic direction, prioritize features, and drive product development from conception to launch.",
+      "applyLink": "https://search-careers.gm.com/",
+      "location": "Detroit, MI"
+    },
+    {
+      "id": "28",
+      "company": "Coca-Cola",
+      "position": "Software Engineer",
+      "heading": "Develop software solutions at Coca-Cola.",
+      "jobdescription": "As a Software Engineer at Coca-Cola, you will develop software solutions and technologies that support and enhance the company's operations, marketing, and supply chain management. You will work in a dynamic environment, collaborate with a talented team of engineers, and innovate in the field of software development.",
+      "applyLink": "https://www.coca-colacompany.com/careers",
+      "location": "Atlanta, GA"
+    },
+    {
+      "id": "29",
+      "company": "NVIDIA",
+      "position": "Data Analyst",
+      "heading": "Analyze data to drive innovation in visual computing technologies at NVIDIA.",
+      "jobdescription": "As a Data Analyst at NVIDIA, you will analyze data to drive innovation in visual computing technologies, insights, and business strategies across various business units. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://www.nvidia.com/en-us/about-nvidia/careers/",
+      "location": "Santa Clara, CA"
+    },
+    {
+      "id": "30",
+      "company": "PepsiCo",
+      "position": "Product Manager",
+      "heading": "Innovate in food and beverage products at PepsiCo.",
+      "jobdescription": "As a Product Manager at PepsiCo, you will innovate in food and beverage products by defining and delivering innovative product solutions that enhance consumer experience, sustainability, and business growth. You will collaborate with cross-functional teams to set strategic direction, prioritize features, and drive product development from conception to launch.",
+      "applyLink": "https://www.pepsicojobs.com/main/",
+      "location": "Purchase, NY"
+    },
+    {
+      "id": "31",
+      "company": "Zoom",
+      "position": "Software Engineer",
+      "heading": "Develop video conferencing solutions at Zoom.",
+      "jobdescription": "As a Software Engineer at Zoom, you will develop video conferencing solutions and technologies that empower people to connect and collaborate remotely. You will work in a dynamic environment, collaborate with a talented team of engineers, and innovate in the field of communication technology.",
+      "applyLink": "https://zoom.us/careers",
+      "location": "San Jose, CA"
+    },
+    {
+      "id": "32",
+      "company": "Accenture",
+      "position": "Data Analyst",
+      "heading": "Analyze data to drive business transformation at Accenture.",
+      "jobdescription": "As a Data Analyst at Accenture, you will analyze data to drive business transformation, insights, and innovations across various industries and business units. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://www.accenture.com/us-en/careers/jobsearch",
+      "location": "Chicago, IL"
+    },
+    {
+      "id": "33",
+      "company": "IBM",
+      "position": "Product Manager",
+      "heading": "Drive innovation in cloud computing solutions at IBM.",
+      "jobdescription": "As a Product Manager at IBM, you will drive innovation in cloud computing solutions by defining and delivering innovative product solutions that enhance customer experience, operational efficiency, and business growth. You will collaborate with cross-functional teams to set strategic direction, prioritize features, and drive product development from conception to launch.",
+      "applyLink": "https://www.ibm.com/employment/",
+      "location": "Armonk, NY"
+    },
+    {
+      "id": "34",
+      "company": "Oracle",
+      "position": "Software Engineer",
+      "heading": "Develop enterprise software solutions at Oracle.",
+      "jobdescription": "As a Software Engineer at Oracle, you will develop enterprise software solutions and technologies that empower businesses to operate more efficiently and effectively. You will work in a dynamic environment, collaborate with a talented team of engineers, and innovate in the field of enterprise software development.",
+      "applyLink": "https://www.oracle.com/corporate/careers/",
+      "location": "Redwood City, CA"
+    },
+    {
+      "id": "35",
+      "company": "Microsoft",
+      "position": "Data Analyst",
+      "heading": "Analyze data to drive business transformation at Microsoft.",
+      "jobdescription": "As a Data Analyst at Microsoft, you will analyze data to drive business transformation, insights, and innovations across various industries and business units. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://careers.microsoft.com/",
+      "location": "Redmond, WA"
+    },
+    {
+      "id": "36",
+      "company": "Tesla",
+      "position": "Product Manager",
+      "heading": "Innovate in the field of sustainable transportation at Tesla.",
+      "jobdescription": "As a Product Manager at Tesla, you will innovate in the field of sustainable transportation by defining and delivering innovative product solutions that enhance safety, efficiency, and sustainability. You will collaborate with cross-functional teams to set strategic direction, prioritize features, and drive product development from conception to launch.",
+      "applyLink": "https://www.tesla.com/careers",
+      "location": "Palo Alto, CA"
+    },
+    {
+      "id": "37",
+      "company": "Adobe",
+      "position": "Software Engineer",
+      "heading": "Develop creative software solutions at Adobe.",
+      "jobdescription": "As a Software Engineer at Adobe, you will develop creative software solutions and technologies that empower creative professionals worldwide. You will work in a dynamic environment, collaborate with a talented team of engineers, and innovate in the field of creative software development.",
+      "applyLink": "https://www.adobe.com/careers.html",
+      "location": "San Jose, CA"
+    },
+    {
+      "id": "38",
+      "company": "Facebook",
+      "position": "Data Analyst",
+      "heading": "Analyze data to drive decision-making at Facebook.",
+      "jobdescription": "As a Data Analyst at Facebook, you will analyze data to drive decision-making, insights, and innovations across various business units. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://www.facebook.com/careers/",
+      "location": "Menlo Park, CA"
+    },
+    {
+      "id": "39",
+      "company": "Google",
+      "position": "Product Manager",
+      "heading": "Lead product development at Google.",
+      "jobdescription": "As a Product Manager at Google, you will lead the development and launch of innovative products that redefine the industry standards. You will collaborate with cross-functional teams to define product requirements, set strategic direction, and drive product development from conception to launch.",
+      "applyLink": "https://google.com/careers",
+      "location": "Mountain View, CA"
+    },
+    {
+      "id": "40",
+      "company": "Netflix",
+      "position": "Software Engineer",
+      "heading": "Develop innovative streaming technologies at Netflix.",
+      "jobdescription": "As a Software Engineer at Netflix, you will develop innovative streaming technologies and solutions that deliver high-quality and engaging content to millions of subscribers worldwide. You will work in a dynamic environment, collaborate with a talented team of engineers, and innovate in the field of streaming technology.",
+      "applyLink": "https://jobs.netflix.com/",
+      "location": "Los Gatos, CA"
+    },
+    {
+      "id": "41",
+      "company": "Uber",
+      "position": "Data Analyst",
+      "heading": "Analyze data to drive business strategies at Uber.",
+      "jobdescription": "As a Data Analyst at Uber, you will analyze data to drive business strategies, insights, and innovations across various business units. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://www.uber.com/us/en/careers/",
+      "location": "San Francisco, CA"
+    },
+    {
+      "id": "42",
+      "company": "Airbnb",
+      "position": "Software Engineer",
+      "heading": "Develop innovative travel and hospitality solutions at Airbnb.",
+      "jobdescription": "As a Software Engineer at Airbnb, you will develop innovative travel and hospitality solutions and technologies that enhance user experience and satisfaction. You will work in a dynamic environment, collaborate with a talented team of engineers, and innovate in the field of travel and hospitality technology.",
+      "applyLink": "https://airbnb.com/careers",
+      "location": "San Francisco, CA"
+    },
+    {
+      "id": "43",
+      "company": "LinkedIn",
+      "position": "Data Analyst",
+      "heading": "Analyze data to drive professional networking solutions at LinkedIn.",
+      "jobdescription": "As a Data Analyst at LinkedIn, you will analyze data to drive professional networking solutions, insights, and innovations. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://www.linkedin.com/company/linkedin/jobs/",
+      "location": "Sunnyvale, CA"
+    },
+    {
+      "id": "44",
+      "company": "Spotify",
+      "position": "Product Manager",
+      "heading": "Lead product innovation at Spotify.",
+      "jobdescription": "As a Product Manager at Spotify, you will lead product innovation and enhance user experience for the world's leading streaming service. You will define product requirements, prioritize features, and collaborate with cross-functional teams to deliver high-quality and engaging content to millions of subscribers worldwide.",
+      "applyLink": "https://www.spotifyjobs.com/",
+      "location": "New York, NY"
+    },
+    {
+      "id": "45",
+      "company": "Tesla",
+      "position": "Data Analyst",
+      "heading": "Analyze data to drive innovation in sustainable transportation at Tesla.",
+      "jobdescription": "As a Data Analyst at Tesla, you will analyze data to drive innovation in sustainable transportation, insights, and business strategies across various business units. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://www.tesla.com/careers",
+      "location": "Palo Alto, CA"
+    },
+    {
+      "id": "46",
+      "company": "Microsoft",
+      "position": "Product Manager",
+      "heading": "Lead product development at Microsoft.",
+      "jobdescription": "As a Product Manager at Microsoft, you will lead the development and launch of innovative products that redefine the industry standards. You will collaborate with cross-functional teams to define product requirements, set strategic direction, and drive product development from conception to launch.",
+      "applyLink": "https://careers.microsoft.com/",
+      "location": "Redmond, WA"
+    },
+    {
+      "id": "47",
+      "company": "Apple",
+      "position": "Software Engineer",
+      "heading": "Develop cutting-edge software solutions at Apple.",
+      "jobdescription": "As a Software Engineer at Apple, you will develop cutting-edge software solutions and technologies that empower consumers worldwide. You will work in a dynamic environment, collaborate with a talented team of engineers, and innovate in the field of software development and technology solutions.",
+      "applyLink": "https://www.apple.com/jobs/us/",
+      "location": "Cupertino, CA"
+    },
+    {
+      "id": "48",
+      "company": "Amazon",
+      "position": "Data Analyst",
+      "heading": "Analyze data to drive business strategies at Amazon.",
+      "jobdescription": "As a Data Analyst at Amazon, you will analyze data to drive business strategies, insights, and innovations across various business units. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://www.amazon.jobs/",
+      "location": "Seattle, WA"
+    },
+    {
+      "id": "49",
+      "company": "Google",
+      "position": "Data Analyst",
+      "heading": "Analyze data to drive decision-making at Google.",
+      "jobdescription": "As a Data Analyst at Google, you will analyze data to drive decision-making, insights, and innovations across various business units. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://google.com/careers",
+      "location": "Mountain View, CA"
+    },
+    {
+      "id": "50",
+      "company": "Facebook",
+      "position": "Software Engineer",
+      "heading": "Develop innovative social networking solutions at Facebook.",
+      "jobdescription": "As a Software Engineer at Facebook, you will develop innovative social networking solutions and technologies that connect people worldwide. You will work in a dynamic environment, collaborate with a talented team of engineers, and innovate in the field of social networking technology.",
+      "applyLink": "https://www.facebook.com/careers/",
+      "location": "Menlo Park, CA"
+    },
+    {
+      "id": "51",
+      "company": "Netflix",
+      "position": "Data Analyst",
+      "heading": "Analyze data to drive content strategy at Netflix.",
+      "jobdescription": "As a Data Analyst at Netflix, you will analyze data to drive content strategy, insights, and business strategies across various business units. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://jobs.netflix.com/",
+      "location": "Los Gatos, CA"
+    },
+    {
+      "id": "52",
+      "company": "Uber",
+      "position": "Software Engineer",
+      "heading": "Develop innovative transportation solutions at Uber.",
+      "jobdescription": "As a Software Engineer at Uber, you will develop innovative transportation solutions and technologies that enhance user experience and satisfaction. You will work in a dynamic environment, collaborate with a talented team of engineers, and innovate in the field of transportation technology.",
+      "applyLink": "https://www.uber.com/us/en/careers/",
+      "location": "San Francisco, CA"
+    },
+    {
+      "id": "53",
+      "company": "Airbnb",
+      "position": "Data Analyst",
+      "heading": "Analyze data to drive growth and user experience at Airbnb.",
+      "jobdescription": "As a Data Analyst at Airbnb, you will analyze data to drive growth, user experience, and business strategies across various business units. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://airbnb.com/careers",
+      "location": "San Francisco, CA"
+    },
+    {
+      "id": "54",
+      "company": "LinkedIn",
+      "position": "Software Engineer",
+      "heading": "Develop professional networking solutions at LinkedIn.",
+      "jobdescription": "As a Software Engineer at LinkedIn, you will develop and maintain professional networking solutions and technologies that connect professionals worldwide. You will work in a dynamic environment, collaborate with a talented team of engineers, and innovate in the field of professional networking technology.",
+      "applyLink": "https://www.linkedin.com/company/linkedin/jobs/",
+      "location": "Sunnyvale, CA"
+    },
+    {
+      "id": "55",
+      "company": "Spotify",
+      "position": "Data Analyst",
+      "heading": "Analyze data to drive user engagement and content strategy at Spotify.",
+      "jobdescription": "As a Data Analyst at Spotify, you will analyze data to drive user engagement, content strategy, and business strategies across various business units. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://www.spotifyjobs.com/",
+      "location": "New York, NY"
+    },
+    {
+      "id": "56",
+      "company": "Tesla",
+      "position": "Software Engineer",
+      "heading": "Develop innovative software solutions for sustainable transportation at Tesla.",
+      "jobdescription": "As a Software Engineer at Tesla, you will develop innovative software solutions and technologies for sustainable transportation. You will work in a dynamic environment, collaborate with a talented team of engineers, and innovate in the field of software development and transportation technology.",
+      "applyLink": "https://www.tesla.com/careers",
+      "location": "Palo Alto, CA"
+    },
+    {
+      "id": "57",
+      "company": "Microsoft",
+      "position": "Data Analyst",
+      "heading": "Analyze data to drive cloud computing strategies at Microsoft.",
+      "jobdescription": "As a Data Analyst at Microsoft, you will analyze data to drive cloud computing strategies, insights, and business strategies across various business units. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://careers.microsoft.com/",
+      "location": "Redmond, WA"
+    },
+    {
+      "id": "58",
+      "company": "Apple",
+      "position": "Product Manager",
+      "heading": "Lead product development at Apple.",
+      "jobdescription": "As a Product Manager at Apple, you will lead the development and launch of innovative products that redefine the industry standards. You will collaborate with cross-functional teams to define product requirements, set strategic direction, and drive product development from conception to launch.",
+      "applyLink": "https://www.apple.com/jobs/us/",
+      "location": "Cupertino, CA"
+    },
+    {
+      "id": "59",
+      "company": "Google",
+      "position": "Software Engineer",
+      "heading": "Develop innovative search and advertising solutions at Google.",
+      "jobdescription": "As a Software Engineer at Google, you will develop innovative search and advertising solutions and technologies that connect people with information and businesses worldwide. You will work in a dynamic environment, collaborate with a talented team of engineers, and innovate in the field of search and advertising technology.",
+      "applyLink": "https://google.com/careers",
+      "location": "Mountain View, CA"
+    },
+    {
+      "id": "60",
+      "company": "Facebook",
+      "position": "Product Manager",
+      "heading": "Lead product innovation in social networking solutions at Facebook.",
+      "jobdescription": "As a Product Manager at Facebook, you will lead product innovation in social networking solutions and technologies that connect people worldwide. You will define product requirements, prioritize features, and collaborate with cross-functional teams to deliver high-quality and engaging social networking experiences to billions of users worldwide.",
+      "applyLink": "https://www.facebook.com/careers/",
+      "location": "Menlo Park, CA"
+    },
+    {
+      "id": "61",
+      "company": "Netflix",
+      "position": "Software Engineer",
+      "heading": "Develop innovative content delivery solutions at Netflix.",
+      "jobdescription": "As a Software Engineer at Netflix, you will develop innovative content delivery solutions and technologies that deliver high-quality and engaging content to millions of subscribers worldwide. You will work in a dynamic environment, collaborate with a talented team of engineers, and innovate in the field of content delivery technology.",
+      "applyLink": "https://jobs.netflix.com/",
+      "location": "Los Gatos, CA"
+    },
+    {
+      "id": "62",
+      "company": "Uber",
+      "position": "Data Analyst",
+      "heading": "Analyze data to drive transportation strategies at Uber.",
+      "jobdescription": "As a Data Analyst at Uber, you will analyze data to drive transportation strategies, insights, and business strategies across various business units. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://www.uber.com/us/en/careers/",
+      "location": "San Francisco, CA"
+    },
+    {
+      "id": "63",
+      "company": "Airbnb",
+      "position": "Software Engineer",
+      "heading": "Develop innovative travel and hospitality solutions at Airbnb.",
+      "jobdescription": "As a Software Engineer at Airbnb, you will develop innovative travel and hospitality solutions and technologies that enhance user experience and satisfaction. You will work in a dynamic environment, collaborate with a talented team of engineers, and innovate in the field of travel and hospitality technology.",
+      "applyLink": "https://airbnb.com/careers",
+      "location": "San Francisco, CA"
+    },
+    {
+      "id": "64",
+      "company": "LinkedIn",
+      "position": "Product Manager",
+      "heading": "Lead product development in professional networking solutions at LinkedIn.",
+      "jobdescription": "As a Product Manager at LinkedIn, you will lead product development in professional networking solutions and technologies that connect professionals worldwide. You will define product requirements, set strategic direction, and collaborate with cross-functional teams to drive product development from conception to launch.",
+      "applyLink": "https://www.linkedin.com/company/linkedin/jobs/",
+      "location": "Sunnyvale, CA"
+    },
+    {
+      "id": "65",
+      "company": "Spotify",
+      "position": "Software Engineer",
+      "heading": "Develop innovative music streaming technologies at Spotify.",
+      "jobdescription": "As a Software Engineer at Spotify, you will develop innovative music streaming technologies and solutions that deliver high-quality and engaging music experiences to millions of subscribers worldwide. You will work in a dynamic environment, collaborate with a talented team of engineers, and innovate in the field of music streaming technology.",
+      "applyLink": "https://www.spotifyjobs.com/",
+      "location": "New York, NY"
+    },
+    {
+      "id": "66",
+      "company": "Tesla",
+      "position": "Data Analyst",
+      "heading": "Analyze data to drive innovation in sustainable energy solutions at Tesla.",
+      "jobdescription": "As a Data Analyst at Tesla, you will analyze data to drive innovation in sustainable energy solutions, insights, and business strategies across various business units. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://www.tesla.com/careers",
+      "location": "Palo Alto, CA"
+    },
+    {
+      "id": "67",
+      "company": "Microsoft",
+      "position": "Software Engineer",
+      "heading": "Develop innovative software solutions for productivity and business processes at Microsoft.",
+      "jobdescription": "As a Software Engineer at Microsoft, you will develop innovative software solutions and technologies for productivity and business processes. You will work in a dynamic environment, collaborate with a talented team of engineers, and innovate in the field of software development and productivity solutions.",
+      "applyLink": "https://careers.microsoft.com/",
+      "location": "Redmond, WA"
+    },
+    {
+      "id": "68",
+      "company": "Google",
+      "position": "Data Analyst",
+      "heading": "Analyze data to drive advertising strategies at Google.",
+      "jobdescription": "As a Data Analyst at Google, you will analyze data to drive advertising strategies, insights, and business strategies across various business units. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://google.com/careers",
+      "location": "Mountain View, CA"
+    },
+    {
+      "id": "69",
+      "company": "Facebook",
+      "position": "Data Analyst",
+      "heading": "Analyze data to drive user engagement and advertising strategies at Facebook.",
+      "jobdescription": "As a Data Analyst at Facebook, you will analyze data to drive user engagement, advertising strategies, and business strategies across various business units. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://www.facebook.com/careers/",
+      "location": "Menlo Park, CA"
+    },
+    {
+      "id": "70",
+      "company": "Netflix",
+      "position": "Data Analyst",
+      "heading": "Analyze data to drive content acquisition and strategy at Netflix.",
+      "jobdescription": "As a Data Analyst at Netflix, you will analyze data to drive content acquisition, strategy, and business strategies across various business units. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://jobs.netflix.com/",
+      "location": "Los Gatos, CA"
+    },
+    {
+      "id": "71",
+      "company": "Uber",
+      "position": "Software Engineer",
+      "heading": "Develop innovative transportation solutions and technologies at Uber.",
+      "jobdescription": "As a Software Engineer at Uber, you will develop innovative transportation solutions and technologies that enhance user experience and satisfaction. You will work in a dynamic environment, collaborate with a talented team of engineers, and innovate in the field of transportation technology.",
+      "applyLink": "https://www.uber.com/us/en/careers/",
+      "location": "San Francisco, CA"
+    },
+    {
+      "id": "72",
+      "company": "Airbnb",
+      "position": "Data Analyst",
+      "heading": "Analyze data to drive growth and user experience at Airbnb.",
+      "jobdescription": "As a Data Analyst at Airbnb, you will analyze data to drive growth, user experience, and business strategies across various business units. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://airbnb.com/careers",
+      "location": "San Francisco, CA"
+    },
+    {
+      "id": "73",
+      "company": "LinkedIn",
+      "position": "Software Engineer",
+      "heading": "Develop professional networking solutions at LinkedIn.",
+      "jobdescription": "As a Software Engineer at LinkedIn, you will develop and maintain professional networking solutions and technologies that connect professionals worldwide. You will work in a dynamic environment, collaborate with a talented team of engineers, and innovate in the field of professional networking technology.",
+      "applyLink": "https://www.linkedin.com/company/linkedin/jobs/",
+      "location": "Sunnyvale, CA"
+    },
+    {
+      "id": "74",
+      "company": "Spotify",
+      "position": "Data Analyst",
+      "heading": "Analyze data to drive user engagement and content strategy at Spotify.",
+      "jobdescription": "As a Data Analyst at Spotify, you will analyze data to drive user engagement, content strategy, and business strategies across various business units. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://www.spotifyjobs.com/",
+      "location": "New York, NY"
+    },
+    {
+      "id": "75",
+      "company": "Tesla",
+      "position": "Software Engineer",
+      "heading": "Develop innovative software solutions for sustainable transportation at Tesla.",
+      "jobdescription": "As a Software Engineer at Tesla, you will develop innovative software solutions and technologies for sustainable transportation. You will work in a dynamic environment, collaborate with a talented team of engineers, and innovate in the field of software development and transportation technology.",
+      "applyLink": "https://www.tesla.com/careers",
+      "location": "Palo Alto, CA"
+    },
+    {
+      "id": "76",
+      "company": "Microsoft",
+      "position": "Data Analyst",
+      "heading": "Analyze data to drive cloud computing strategies at Microsoft.",
+      "jobdescription": "As a Data Analyst at Microsoft, you will analyze data to drive cloud computing strategies, insights, and business strategies across various business units. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://careers.microsoft.com/",
+      "location": "Redmond, WA"
+    },
+    {
+      "id": "77",
+      "company": "Google",
+      "position": "Software Engineer",
+      "heading": "Develop innovative search and advertising solutions at Google.",
+      "jobdescription": "As a Software Engineer at Google, you will develop innovative search and advertising solutions and technologies that connect people with information and businesses worldwide. You will work in a dynamic environment, collaborate with a talented team of engineers, and innovate in the field of search and advertising technology.",
+      "applyLink": "https://google.com/careers",
+      "location": "Mountain View, CA"
+    },
+    {
+      "id": "78",
+      "company": "Facebook",
+      "position": "Product Manager",
+      "heading": "Lead product innovation in social networking solutions at Facebook.",
+      "jobdescription": "As a Product Manager at Facebook, you will lead product innovation in social networking solutions and technologies that connect people worldwide. You will define product requirements, prioritize features, and collaborate with cross-functional teams to deliver high-quality and engaging social networking experiences to billions of users worldwide.",
+      "applyLink": "https://www.facebook.com/careers/",
+      "location": "Menlo Park, CA"
+    },
+    {
+      "id": "79",
+      "company": "Netflix",
+      "position": "Software Engineer",
+      "heading": "Develop innovative content delivery solutions at Netflix.",
+      "jobdescription": "As a Software Engineer at Netflix, you will develop innovative content delivery solutions and technologies that deliver high-quality and engaging content to millions of subscribers worldwide. You will work in a dynamic environment, collaborate with a talented team of engineers, and innovate in the field of content delivery technology.",
+      "applyLink": "https://jobs.netflix.com/",
+      "location": "Los Gatos, CA"
+    },
+    {
+      "id": "80",
+      "company": "Uber",
+      "position": "Data Analyst",
+      "heading": "Analyze data to drive transportation strategies at Uber.",
+      "jobdescription": "As a Data Analyst at Uber, you will analyze data to drive transportation strategies, insights, and business strategies across various business units. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://www.uber.com/us/en/careers/",
+      "location": "San Francisco, CA"
+    },
+    {
+      "id": "81",
+      "company": "Airbnb",
+      "position": "Software Engineer",
+      "heading": "Develop innovative travel and hospitality solutions at Airbnb.",
+      "jobdescription": "As a Software Engineer at Airbnb, you will develop innovative travel and hospitality solutions and technologies that enhance user experience and satisfaction. You will work in a dynamic environment, collaborate with a talented team of engineers, and innovate in the field of travel and hospitality technology.",
+      "applyLink": "https://airbnb.com/careers",
+      "location": "San Francisco, CA"
+    },
+    {
+      "id": "82",
+      "company": "LinkedIn",
+      "position": "Product Manager",
+      "heading": "Lead product development in professional networking solutions at LinkedIn.",
+      "jobdescription": "As a Product Manager at LinkedIn, you will lead product development in professional networking solutions and technologies that connect professionals worldwide. You will define product requirements, set strategic direction, and collaborate with cross-functional teams to drive product development from conception to launch.",
+      "applyLink": "https://www.linkedin.com/company/linkedin/jobs/",
+      "location": "Sunnyvale, CA"
+    },
+    {
+      "id": "83",
+      "company": "Spotify",
+      "position": "Software Engineer",
+      "heading": "Develop innovative music streaming technologies at Spotify.",
+      "jobdescription": "As a Software Engineer at Spotify, you will develop innovative music streaming technologies and solutions that deliver high-quality and engaging music experiences to millions of subscribers worldwide. You will work in a dynamic environment, collaborate with a talented team of engineers, and innovate in the field of music streaming technology.",
+      "applyLink": "https://www.spotifyjobs.com/",
+      "location": "New York, NY"
+    },
+    {
+      "id": "84",
+      "company": "Tesla",
+      "position": "Data Analyst",
+      "heading": "Analyze data to drive innovation in sustainable energy solutions at Tesla.",
+      "jobdescription": "As a Data Analyst at Tesla, you will analyze data to drive innovation in sustainable energy solutions, insights, and business strategies across various business units. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://www.tesla.com/careers",
+      "location": "Palo Alto, CA"
+    },
+    {
+      "id": "85",
+      "company": "Microsoft",
+      "position": "Software Engineer",
+      "heading": "Develop innovative software solutions for productivity and business processes at Microsoft.",
+      "jobdescription": "As a Software Engineer at Microsoft, you will develop innovative software solutions and technologies for productivity and business processes. You will work in a dynamic environment, collaborate with a talented team of engineers, and innovate in the field of software development and productivity solutions.",
+      "applyLink": "https://careers.microsoft.com/",
+      "location": "Redmond, WA"
+    },
+    {
+      "id": "86",
+      "company": "Google",
+      "position": "Data Analyst",
+      "heading": "Analyze data to drive advertising strategies at Google.",
+      "jobdescription": "As a Data Analyst at Google, you will analyze data to drive advertising strategies, insights, and business strategies across various business units. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://google.com/careers",
+      "location": "Mountain View, CA"
+    },
+    {
+      "id": "87",
+      "company": "Facebook",
+      "position": "Data Analyst",
+      "heading": "Analyze data to drive user engagement and advertising strategies at Facebook.",
+      "jobdescription": "As a Data Analyst at Facebook, you will analyze data to drive user engagement, advertising strategies, and business strategies across various business units. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://www.facebook.com/careers/",
+      "location": "Menlo Park, CA"
+    },
+    {
+      "id": "88",
+      "company": "Netflix",
+      "position": "Data Analyst",
+      "heading": "Analyze data to drive content acquisition and strategy at Netflix.",
+      "jobdescription": "As a Data Analyst at Netflix, you will analyze data to drive content acquisition, strategy, and business strategies across various business units. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://jobs.netflix.com/",
+      "location": "Los Gatos, CA"
+    },
+    {
+      "id": "89",
+      "company": "Uber",
+      "position": "Software Engineer",
+      "heading": "Develop innovative transportation solutions and technologies at Uber.",
+      "jobdescription": "As a Software Engineer at Uber, you will develop innovative transportation solutions and technologies that enhance user experience and satisfaction. You will work in a dynamic environment, collaborate with a talented team of engineers, and innovate in the field of transportation technology.",
+      "applyLink": "https://www.uber.com/us/en/careers/",
+      "location": "San Francisco, CA"
+    },
+    {
+      "id": "90",
+      "company": "Airbnb",
+      "position": "Data Analyst",
+      "heading": "Analyze data to drive growth and user experience at Airbnb.",
+      "jobdescription": "As a Data Analyst at Airbnb, you will analyze data to drive growth, user experience, and business strategies across various business units. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://airbnb.com/careers",
+      "location": "San Francisco, CA"
+    },
+    {
+      "id": "91",
+      "company": "LinkedIn",
+      "position": "Software Engineer",
+      "heading": "Develop professional networking solutions at LinkedIn.",
+      "jobdescription": "As a Software Engineer at LinkedIn, you will develop and maintain professional networking solutions and technologies that connect professionals worldwide. You will work in a dynamic environment, collaborate with a talented team of engineers, and innovate in the field of professional networking technology.",
+      "applyLink": "https://www.linkedin.com/company/linkedin/jobs/",
+      "location": "Sunnyvale, CA"
+    },
+    {
+      "id": "92",
+      "company": "Spotify",
+      "position": "Data Analyst",
+      "heading": "Analyze data to drive user engagement and content strategy at Spotify.",
+      "jobdescription": "As a Data Analyst at Spotify, you will analyze data to drive user engagement, content strategy, and business strategies across various business units. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://www.spotifyjobs.com/",
+      "location": "New York, NY"
+    },
+    {
+      "id": "93",
+      "company": "Tesla",
+      "position": "Software Engineer",
+      "heading": "Develop innovative software solutions for sustainable transportation at Tesla.",
+      "jobdescription": "As a Software Engineer at Tesla, you will develop innovative software solutions and technologies for sustainable transportation. You will work in a dynamic environment, collaborate with a talented team of engineers, and innovate in the field of software development and transportation technology.",
+      "applyLink": "https://www.tesla.com/careers",
+      "location": "Palo Alto, CA"
+    },
+    {
+      "id": "94",
+      "company": "Microsoft",
+      "position": "Data Analyst",
+      "heading": "Analyze data to drive cloud computing strategies at Microsoft.",
+      "jobdescription": "As a Data Analyst at Microsoft, you will analyze data to drive cloud computing strategies, insights, and business strategies across various business units. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://careers.microsoft.com/",
+      "location": "Redmond, WA"
+    },
+  
+    {
+      "id": "95",
+      "company": "Google",
+      "position": "Software Engineer",
+      "heading": "Develop innovative search and advertising solutions at Google.",
+      "jobdescription": "As a Software Engineer at Google, you will develop innovative search and advertising solutions and technologies that connect people with information and businesses worldwide. You will work in a dynamic environment, collaborate with a talented team of engineers, and innovate in the field of search and advertising technology.",
+      "applyLink": "https://google.com/careers",
+      "location": "Mountain View, CA"
+    },
+    {
+      "id": "96",
+      "company": "Facebook",
+      "position": "Product Manager",
+      "heading": "Lead product innovation in social networking solutions at Facebook.",
+      "jobdescription": "As a Product Manager at Facebook, you will lead product innovation in social networking solutions and technologies that connect people worldwide. You will define product requirements, prioritize features, and collaborate with cross-functional teams to deliver high-quality and engaging social networking experiences to billions of users worldwide.",
+      "applyLink": "https://www.facebook.com/careers/",
+      "location": "Menlo Park, CA"
+    },
+    {
+      "id": "97",
+      "company": "Netflix",
+      "position": "Software Engineer",
+      "heading": "Develop innovative content delivery solutions at Netflix.",
+      "jobdescription": "As a Software Engineer at Netflix, you will develop innovative content delivery solutions and technologies that deliver high-quality and engaging content to millions of subscribers worldwide. You will work in a dynamic environment, collaborate with a talented team of engineers, and innovate in the field of content delivery technology.",
+      "applyLink": "https://jobs.netflix.com/",
+      "location": "Los Gatos, CA"
+    },
+    {
+      "id": "98",
+      "company": "Uber",
+      "position": "Data Analyst",
+      "heading": "Analyze data to drive transportation strategies at Uber.",
+      "jobdescription": "As a Data Analyst at Uber, you will analyze data to drive transportation strategies, insights, and business strategies across various business units. You will work with large datasets, utilize data analytics tools and techniques, and collaborate with cross-functional teams to identify trends, insights, and opportunities for growth.",
+      "applyLink": "https://www.uber.com/us/en/careers/",
+      "location": "San Francisco, CA"
+    }
+  ]

@@ -10,29 +10,34 @@ import {
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useState } from "react"
-import { useSearchParams } from "react-router-dom"
+import { useNavigate, useSearchParams } from "react-router-dom"
 import { Toaster } from "@/components/ui/sonner"
 import { toast } from "sonner"
 import useFetch from "../hooks/use-fetch"
 
-
-
-
 function UploadResume() {
-
+    const navigate = useNavigate()
     const [data, setData] = useState(
         {
             aspirationalJob: "",
             resume: ""
         }
     )
+    let userId = ""
     const [searchParams, setSearchParams] = useSearchParams()
-
+    if(searchParams.get("userId")){
+        userId = searchParams.get("userId") || ""
+        console.log("store in localstorage")
+        localStorage.setItem("userId", userId)
+    }
     
+    if(localStorage.getItem("userId") != null) {
+        userId = localStorage.getItem("userId") || ""
+    }
+
     const {val, loading, error} = useFetch(`${import.meta.env.VITE_BACKEND_URL}/aspiration/getAspirations`)
     console.log(val, loading, error)
 
-    const userId = searchParams.get("userId")
     
 
     const handleFileChange = (e: any) => {
@@ -52,11 +57,13 @@ function UploadResume() {
     const handleSubmit = async (e) => {
         e.preventDefault();
        
+        
         const uploadFormData = new FormData();
         uploadFormData.append("resumeFile", data.resume);
         const queryParams = new URLSearchParams();
         queryParams.append("aspiration", data.aspirationalJob);
         const queryString = queryParams.toString();
+    
         const url = `${import.meta.env.VITE_BACKEND_URL}/user/updateUser/${userId}?${queryString}`;
         
         try {
@@ -66,14 +73,18 @@ function UploadResume() {
                 credentials: 'include',
             });
             if (response.ok) {
-                toast.success("Upload successful.")
-                console.log('Upload successful');
+                toast.success("Upload successful, redirecting to the resume.")
+
+                setTimeout(() => {
+                    navigate("/resume")
+                }, 5000)
+             
             } else {
-                console.error('Upload failed');
+                console.log('Upload failed');
             }
         } catch (error) {
             setSearchParams(prev => prev)
-            console.error('Error submitting form', error);
+            console.log('Error submitting form');
         }
     };
     

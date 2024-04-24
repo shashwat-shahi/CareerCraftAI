@@ -1,43 +1,31 @@
-name: CI/CD for Flask App
+name: Deploy Flask App to EC2
 
 on:
-  push:
-    branches: [ test ]
   pull_request:
-    branches: [ test ]
+    branches: [ main ]
 
 jobs:
-  build-and-test:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source
         uses: actions/checkout@v3
-      - name: Set up Python
-        uses: actions/setup-python@v3
-        with:
-          python-version: '3.8'
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-      - name: Run tests
-        run: |
-          export FLASK_APP=app.py
-          flask test
-      - name: Login to Docker Hub
-        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-      - name: Build Docker image
-        run: docker build -t yourusername/flaskapp:latest .
-      - name: Publish image to Docker Hub
-        run: docker push yourusername/flaskapp:latest
-
+      - name: Login to docker hub
+        working-directory: ./ai/ai-server/
+        run: docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
+      - name: Build docker img
+        working-directory: ./ai/ai-server/
+        run: docker build . -t sarveshgaurishankarsawant/careercraftai:aiserver
+      - name: Publish image to docker hub
+        working-directory: ./ai/ai-server/
+        run: docker push sarveshgaurishankarsawant/careercraftai:aiserver
   deploy:
-    needs: build-and-test
+    needs: build
     runs-on: self-hosted
     steps:
-      - name: Pull Image from Docker Hub
-        run: docker pull yourusername/flaskapp:latest
+      - name: Pull Image from docker hub
+        run: docker pull sarveshgaurishankarsawant/careercraftai:aiserver
       - name: Delete old container
-        run: docker rm -f flask-container
-      - name: Run Docker container
-        run: docker run -e "SECRET_KEY=${{ secrets.SECRET_KEY }}" -d -p 5000:5000 --name flask-container yourusername/flaskapp:latest
+        run: docker rm -f swe-careercraftai-aiserver-container
+      - name: Run docker container
+        run: docker run -d -p 8081:5000 --name swe-careercraftai-aiserver-container sarveshgaurishankarsawant/careercraftai:aiserver
