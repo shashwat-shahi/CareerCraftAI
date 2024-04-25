@@ -4,8 +4,10 @@ import java.io.IOException;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import com.edu.neu.careercraftai.models.ResponseModel;
+
 public interface FileUploaderService {
-    public String uploadFile(MultipartFile file) throws IOException;
-    public byte[] downloadFile(String fileName);
-    public String deleteFile(String fileName);
+    public ResponseModel uploadFile(MultipartFile file) throws IOException;
+    public ResponseModel downloadFile(String fileName);
+    public ResponseModel deleteFile(String fileName);
 }

@@ -3,7 +3,8 @@ package com.edu.neu.careercraftai.interfaces;
 import java.util.List;
 
 import com.edu.neu.careercraftai.models.JobDetails;
+import com.edu.neu.careercraftai.models.ResponseModel;
 
 public interface JobPortalService {
-    List<JobDetails> getJobsFromKeyword(String keyword);
+    ResponseModel getJobsFromKeyword(String keyword);
 }
