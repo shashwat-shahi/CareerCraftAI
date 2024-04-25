@@ -1,6 +1,7 @@
 package com.edu.neu.careercraftai.controllers;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.text.ParseException;
 import java.util.List;
 
@@ -25,7 +26,10 @@ import org.springframework.web.multipart.MultipartFile;
 import com.edu.neu.careercraftai.entity.UserEntity;
 import com.edu.neu.careercraftai.interfaces.FileUploaderService;
 import com.edu.neu.careercraftai.interfaces.UserService;
+import com.edu.neu.careercraftai.models.ResponseModel;
 import com.edu.neu.careercraftai.models.UserDetails;
+import com.google.gson.Gson;
+
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -45,9 +49,12 @@ public class UserController {
     @Value("${redirect.link.users.existing}")
     String linkForExistingUsers;
 
+    @Autowired
+    Gson gson;
+
 
     @GetMapping("/createUser")
-    public String createUser(Authentication authentication, HttpServletResponse response) throws ParseException, IOException {
+    public ResponseEntity<String> createUser(Authentication authentication, HttpServletResponse response) throws ParseException, IOException {
         if (authentication != null && authentication.isAuthenticated()) {
             Object principal = authentication.getPrincipal();
              if (principal instanceof OAuth2User) {
@@ -63,18 +70,25 @@ public class UserController {
                     newUser.setFirstName(firstName);
                     newUser.setLastName(lastName);
 
-                    UserEntity userCreated = userService.createUser(newUser);
+                    ResponseModel serviceResponse = userService.createUser(newUser);
+
+                    if(serviceResponse.getResponseStatus() == HttpStatus.OK){
+                        UserEntity userCreated = gson.fromJson(serviceResponse.getResponseBody().toString(), UserEntity.class);
+                        response.sendRedirect(linkForNewUsers+"?userId="+userCreated.getId());
+                    }
+                    else if(serviceResponse.getResponseStatus() == HttpStatus.INTERNAL_SERVER_ERROR){
+                        return ResponseEntity.internalServerError().body(serviceResponse.getResponseMessage());
+                    }
                     
-                    response.sendRedirect(linkForNewUsers+"?userId="+userCreated.getId());
+                    
                 }
                 else {
-                    
                     response.sendRedirect(linkForExistingUsers+"?userId="+user.getId());
                 }
                 
             }
         }
-        return "ID token not found.";
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("ID token not found.");
     }
     
     @GetMapping("/ping")
@@ -84,65 +98,113 @@ public class UserController {
 
     //update user
     @PostMapping(value = "/updateUser/{userId}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<String> updateUser(@PathVariable(name = "userId")Integer userId,
+    public ResponseEntity<ResponseModel> updateUser(@PathVariable(name = "userId")Integer userId,
                                              @RequestParam(name = "aspiration")Integer aspiration,
                                              @RequestPart(name = "resumeFile") @Schema(type = "string", format = "binary") MultipartFile resumeFile
                                              ) throws IOException{
 
-        UserEntity userEntity = userService.getUser(userId);
+        ResponseModel getServiceResponse = userService.getUser(userId);
+        if (getServiceResponse.getResponseStatus() == HttpStatus.NOT_FOUND){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(getServiceResponse);
+        }
+        else if (getServiceResponse.getResponseStatus() == HttpStatus.INTERNAL_SERVER_ERROR){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(getServiceResponse);
+        }
+        UserEntity userEntity = gson.fromJson(getServiceResponse.getResponseBody().toString(), UserEntity.class);                                          
         UserDetails userDetails = new UserDetails();
-        userDetails.setResumeLink(userEntity.getResumeLink());
         userDetails.setLastName(userEntity.getLastName());
         userDetails.setEmailId(userEntity.getEmailId());
         userDetails.setFirstName(userEntity.getFirstName());
         userDetails.setAspiration(aspiration);
-        String resumeLink = fileUploaderService.uploadFile(resumeFile);
+        ResponseModel uploadResumeResponse = fileUploaderService.uploadFile(resumeFile);
+        if (uploadResumeResponse.getResponseStatus() == HttpStatus.INTERNAL_SERVER_ERROR){
+            return ResponseEntity
+            .status(HttpStatus.INTERNAL_SERVER_ERROR)
+            .body(uploadResumeResponse);
+        }
+        String resumeLink = uploadResumeResponse.getResponseBody().toString();
         userDetails.setResumeLink(resumeLink);
-        UserEntity updatedUser = userService.updateUser(Integer.valueOf(userId), userDetails);
+        ResponseModel updateServiceResponse = userService.updateUser(Integer.valueOf(userId), userDetails);
+
+        if (updateServiceResponse.getResponseStatus() == HttpStatus.INTERNAL_SERVER_ERROR){
+            return ResponseEntity
+                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(updateServiceResponse);
+        }
+
         return ResponseEntity
-                .status(HttpStatus.OK)
-                .body("User updated successfully.");
+                    .status(HttpStatus.OK)
+                    .body(updateServiceResponse);
+        
     }
 
 
     //get user
     @GetMapping("/getUser/{userId}")
-    public ResponseEntity<UserEntity> getUserById(@PathVariable(name = "userId")String userId){
-        UserEntity user = userService.getUser(Integer.valueOf(userId));
+    public ResponseEntity<ResponseModel> getUserById(@PathVariable(name = "userId")String userId){
+        ResponseModel serviceResponse = userService.getUser(Integer.valueOf(userId));
+        if (serviceResponse.getResponseStatus() == HttpStatus.INTERNAL_SERVER_ERROR){
+            return ResponseEntity
+                .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(serviceResponse);
+        }
+        else if (serviceResponse.getResponseStatus() == HttpStatus.NOT_FOUND){
+            return ResponseEntity
+                .status(HttpStatus.NOT_FOUND)
+                .body(serviceResponse);
+        }
+        UserEntity userEntity = gson.fromJson(serviceResponse.getResponseBody().toString(), UserEntity.class);
+        serviceResponse.setResponseBody(userEntity);
         return ResponseEntity
-                .status(HttpStatus.OK)
-                .body(user);
+                .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(serviceResponse);
     }
 
 
     //delete user
     @PostMapping("/deleteUser/{userId}")
-    public ResponseEntity<String> deleteUser(@PathVariable(name = "userId")String userId){
-        userService.deleteUser(Integer.valueOf(userId));
-        return ResponseEntity
+    public ResponseEntity<ResponseModel> deleteUser(@PathVariable(name = "userId")String userId){
+        ResponseModel deleteUserResponse = userService.deleteUser(Integer.valueOf(userId));
+        if (deleteUserResponse.getResponseStatus() == HttpStatus.OK){
+            return ResponseEntity
                 .status(HttpStatus.OK)
-                .body("User deleted successfully.");
+                .body(deleteUserResponse);
+        }
+        return ResponseEntity
+                .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(deleteUserResponse);
     }
 
     // get resume file
     @GetMapping("/getResume")
-    public ResponseEntity<ByteArrayResource> downloadResume(@RequestParam(name = "fileName") String fileName){
-        byte[] fileContent = fileUploaderService.downloadFile(fileName);
-        return ResponseEntity
-                .status(HttpStatus.OK)
-                .contentLength(fileContent.length)
-                .header("Content-type", "application/octet-stream")
-                .header("Content-disposition", "attachment; filename=\""+fileName+"\"")
-                .body(new ByteArrayResource(fileContent));
+    public <T> ResponseEntity<T> downloadResume(@RequestParam(name = "fileName") String fileName){
+        ResponseModel serviceResponse = fileUploaderService.downloadFile(fileName);
+        if (serviceResponse.getResponseStatus() == HttpStatus.OK){
+            byte[] fileContent = serviceResponse.getResponseBody().toString().getBytes(StandardCharsets.UTF_8);
+            return ResponseEntity
+                    .status(HttpStatus.OK)
+                    // .contentLength(fileContent.length)
+                    .header("Content-type", "application/octet-stream")
+                    .header("Content-disposition", "attachment; filename=\""+fileName+"\"")
+                    .body((T)new ByteArrayResource(fileContent));
+        }
+        else{
+            return ResponseEntity.internalServerError().body((T)serviceResponse);
+        }
     }
 
     // get all users
     @GetMapping("/getAllUsers")
-    public ResponseEntity<List<UserEntity>> getAllUsers(){
-        List<UserEntity> users = userService.getAllUsers();
-        return ResponseEntity
+    public ResponseEntity<ResponseModel> getAllUsers(){
+        ResponseModel serviceResponse = userService.getAllUsers();
+        if (serviceResponse.getResponseStatus() == HttpStatus.OK){
+            return ResponseEntity
                 .status(HttpStatus.OK)
-                .body(users);
+                .body(serviceResponse);
+        }
+        return ResponseEntity
+                .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(serviceResponse);
     }
 
 }
