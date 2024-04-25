@@ -29,8 +29,3 @@ def read_pdf_from_s3(file_name):
         extracted_text += page.extract_text()
 
     return extracted_text
-
-
-file_name = '1707918673455_TejashreeGore_Resume.pdf'
-text = read_pdf_from_s3(file_name)
-print(text)
