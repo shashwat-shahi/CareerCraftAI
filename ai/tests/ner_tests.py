@@ -1,6 +1,6 @@
 import unittest
 
-from resume_entity_recognition import NamedEntityRecognizer
+from resume_entity_extraction import NamedEntityRecognizer
  
 class TestNamedEntityRecognizer(unittest.TestCase):
  

@@ -57,10 +57,7 @@ def extract_details_from_resume_with_bard(preprocessed_text):
     model = set_model_config()
     prompt = f"Extract the skills and work details given in the resume below:\n{preprocessed_text} and return it with two key values: 'skills' and 'work_details' with property values be enclosed in double quotes and the values to these keys should be in form of a list. Don't enclose it withing ```"
     user_json = model.generate_content(prompt)
-    # print("---`user_json`---")
-    # print(type(user_json.text))
-    # print(str(user_json.text))
-    # print("---`user_json ends`---")
+
     if user_json.text:
         try:
             return json.loads(user_json.text)
@@ -119,16 +116,27 @@ def write_json_to_file(final_user_details_json, output_dir_path, filepath):
     # Write the final JSON to a file
     with open(os.path.join(output_dir_path, filename), "w") as file:
         json.dump(final_user_details_json, file, indent=4)
-              
-if __name__ == "__main__":
-    filepath = 'ai/resume_entity_recognition/sample_resume_data/SarveshGaurishankar_Sawant_resume.pdf'
-    output_dir_path = 'ai/resume_entity_recognition/extracted_resume_data/'
-    
+
+# Extract details from the resume
+def extract_details_from_resume(filepath):
     extracted_text = extract_text_from_PDF(filepath)
     preprocessed_text = preprocess_extracted_text(extracted_text)
     resume_details_from_custom_ner = extract_details_from_resume_with_ner(filepath)
-    resume_details_from_bard = extract_details_from_resume_with_bard(extracted_text)
+    resume_details_from_bard = extract_details_from_resume_with_bard(preprocessed_text)
 
     final_user_details_json = process_jsons_for_final_json(resume_details_from_custom_ner, resume_details_from_bard)
-    write_json_to_file(final_user_details_json, output_dir_path, filepath)
-    print("JSON file written successfully!")
+    return final_user_details_json
+
+
+# if __name__ == "__main__":
+#     filepath = 'ai/resume_entity_recognition/sample_resume_data/SarveshGaurishankar_Sawant_resume.pdf'
+#     output_dir_path = 'ai/resume_entity_recognition/extracted_resume_data/'
+    
+#     extracted_text = extract_text_from_PDF(filepath)
+#     preprocessed_text = preprocess_extracted_text(extracted_text)
+#     resume_details_from_custom_ner = extract_details_from_resume_with_ner(filepath)
+#     resume_details_from_bard = extract_details_from_resume_with_bard(extracted_text)
+
+#     final_user_details_json = process_jsons_for_final_json(resume_details_from_custom_ner, resume_details_from_bard)
+#     write_json_to_file(final_user_details_json, output_dir_path, filepath)
+#     print("JSON file written successfully!")

@@ -2,3 +2,5 @@ env
 config/config.ini
 extracted_resume_data/
 sample_resume_data/
+data/
+__pycache__/
