@@ -10,21 +10,12 @@ import {
 
 import { Link } from "react-router-dom"
 import { Skeleton } from "@/components/ui/skeleton"
+import resume_details from "../data/resume_details.json"
 
 
 function Courses() {
   
-  let keywords = [
-    { courseId: 1, courseName: 'Python' },
-    { courseId: 2, courseName: 'Machine Learning' },
-    { courseId: 3, courseName: 'Statistics' },
-    { courseId: 4, courseName: 'Probability' },
-    { courseId: 5, courseName: 'CPP' },
-    { courseId: 6, courseName: 'Python' },
-    { courseId: 7, courseName: 'Machine Learning' },
-    { courseId: 8, courseName: 'Statistics' },
-    { courseId: 9, courseName: 'Probability' }
-  ]
+  let keywords = resume_details.skills;
 
   const [activeCourse, setActiveCourse] = useState(null)
 
@@ -51,7 +42,7 @@ function Courses() {
       <div className="flex flex-wrap justify-between w-8/12 my-9">
         {
           keywords.map((keyword) => {
-            return <Button key={keyword.courseId} onClick={() => fetchCourseDetails(keyword.courseName)}>{keyword.courseName}</Button>
+            return <Button key={keyword} onClick={() => fetchCourseDetails(keyword)}>{keyword}</Button>
           })
         }
         
