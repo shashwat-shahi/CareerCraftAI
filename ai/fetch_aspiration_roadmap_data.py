@@ -62,7 +62,8 @@ def fetch_roadmap_data_on_aspiration(driver, aspiration_name):
     return all_skills_for_a_role_dict
 
 
-# if __name__ == "__main__":
+if __name__ == "__main__":
+    pass
     
 #     # Read Neo4j AuraDB credentials from config.ini
 #     config = configparser.ConfigParser()

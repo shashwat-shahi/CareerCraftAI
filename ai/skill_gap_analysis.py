@@ -4,7 +4,7 @@ import configparser
 from nltk.corpus import stopwords
 import re
 from fetch_aspiration_roadmap_data import fetch_roadmap_data_on_aspiration
-from ai.resume_entity_extraction.resume_entity_extraction import extract_details_from_resume
+from resume_entity_extraction import extract_details_from_resume
 import itertools
 import time
 import json
@@ -106,6 +106,7 @@ def compute_skill_gaps(all_skills_for_a_role_dict, resume_details_json):
         try:
             # Try to parse the response as JSON
             json.loads(response.text)
+            print(response.text)
             # If parsing was successful, break the loop
             break
         except json.JSONDecodeError:
@@ -117,12 +118,10 @@ def compute_skill_gaps(all_skills_for_a_role_dict, resume_details_json):
         print("Failed to get a valid JSON response for computing skill gaps after 3 attempts")
         return None
     else:
-        return response.text
+        return json.loads(response.text)
     
 
-    
 if __name__ == "__main__":
-    
     # Read Neo4j AuraDB credentials from config.ini
     config = configparser.ConfigParser()
     config.read('ai/config/config.ini')
@@ -137,8 +136,8 @@ if __name__ == "__main__":
     
     ASPIRATION_NAME = "MLOps"
     # ASPIRATION_NAME = "Data Scientist"
-    file_path = 'ai/data/sample_resume_data/SarveshGaurishankar_Sawant_resume.pdf'
-    resume_details_json = extract_details_from_resume(file_path)
+    filename = '1707918673455_TejashreeGore_Resume.pdf'
+    resume_details_json = extract_details_from_resume(filename)
     all_skills_for_a_role_dict = fetch_roadmap_data_on_aspiration(driver, ASPIRATION_NAME)
     skill_gap_dict = compute_skill_gaps(all_skills_for_a_role_dict, resume_details_json)
     print(skill_gap_dict)
