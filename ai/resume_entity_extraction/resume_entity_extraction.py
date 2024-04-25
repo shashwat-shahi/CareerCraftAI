@@ -118,8 +118,8 @@ def write_json_to_file(final_user_details_json, output_dir_path, filepath):
         json.dump(final_user_details_json, file, indent=4)
 
 # Extract details from the resume
-def extract_details_from_resume(filepath):
-    extracted_text = extract_text_from_PDF(filepath)
+def extract_details_from_resume(extracted_text):
+    # extracted_text = extract_text_from_PDF(filepath)
     preprocessed_text = preprocess_extracted_text(extracted_text)
     resume_details_from_custom_ner = extract_details_from_resume_with_ner(filepath)
     resume_details_from_bard = extract_details_from_resume_with_bard(preprocessed_text)

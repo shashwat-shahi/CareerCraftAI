@@ -4,7 +4,7 @@ import configparser
 from nltk.corpus import stopwords
 import re
 from fetch_aspiration_roadmap_data import fetch_roadmap_data_on_aspiration
-from resume_entity_extraction import extract_details_from_resume
+from ai.resume_entity_extraction.resume_entity_extraction import extract_details_from_resume
 import itertools
 import time
 import json
