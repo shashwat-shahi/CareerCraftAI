@@ -25,13 +25,13 @@ import com.google.gson.JsonObject;
 public class UserServiceImpl implements UserService{
 
     @Autowired
-    UserRepository userRepository;
+    public UserRepository userRepository;
 
     @Autowired
-    AspirationRepository aspirationRepository;
+    public AspirationRepository aspirationRepository;
 
     @Autowired
-    Gson gson;
+    public Gson gson;
 
     @Override
 	public ResponseModel createUser(UserDetails userDetails) {
@@ -212,9 +212,8 @@ public class UserServiceImpl implements UserService{
                 return response;
             }
             UserEntity user = optionalUser.get();
-            skillGapJson = "{'fundamentals': ['Programming Languages', 'Scripting Languages', 'Version Control Systems', 'Cloud Computing', 'Containerization', 'Container Orchestration', 'Data Pipelines', 'Data Housing', 'Pipeline Craft', 'Continuous Integration/Continuous Deployment (CI/CD)', 'Cloud ML', 'Engineering Models', 'Database', 'Looping', 'Monitoring', 'Pioneer'], 'intermediate': ['Database', 'Looping', 'Pioneer', 'Machination', 'Ecosystem', 'Security', 'Fulmination'], 'advanced': ['Machine Learning', 'Data Versioning', 'AutoML', 'Explainability', 'Drift Detection', 'Hyperparameter Optimization', 'A/B Testing', 'Model Serving', 'Feature Store', 'Data Governance']}";
             String s = skillGapJson.replaceAll("\'", "\"");
-            System.out.println(skillGapJson);
+            // System.out.println(s);
             JsonObject skillGapJsonObject = gson.fromJson(s, JsonObject.class);
             JsonArray fundamentalGapsJson = skillGapJsonObject.get("fundamentals").getAsJsonArray();
             JsonArray intermediateGapsJson = skillGapJsonObject.get("intermediate").getAsJsonArray();
