@@ -16,3 +16,7 @@ AWS_SECRET_KEY = 'k0B9azpFxsEsgxI4VYmkyzLV9Vb4E0q1eMTkjfgb'
 AWS_REGION = 'us-east-2'
 AWS_STACK_AUTO = False
 AWS_BUCKET_NAME = 'ccresumes'
+
+# Environment
+ENV = 'development'
+# ENV = 'production'
