@@ -5,16 +5,24 @@ from PyPDF2 import PdfReader
 import re
 import json
 import os
+import shutil
+from fetch_from_server import get_aws_credentials
+import boto3
+import time
+import config
 
 
 # Set up the model
 def set_model_config():
-    # Fetch API key from config.ini
-    config = configparser.ConfigParser()
-    config.read("ai/config/config.ini")
+    # # Fetch API key from config.ini
+    # config = configparser.ConfigParser()
+    # config.read("ai/config/config.ini")
 
-    # Set up the API key
-    genai.configure(api_key=config["API"]["key"])
+    # # Set up the API key
+    # genai.configure(api_key=config["API"]["key"])
+
+    genai.configure(api_key=config.API_KEY)
+
 
     # Set up the model
     generation_config = {
@@ -49,26 +57,61 @@ def set_model_config():
 
     return model
 
-def extract_details_from_resume_with_ner(resume_path):
-    data = ResumeParser(resume_path).get_extracted_data()
+def get_file_in_temp_dir_from_s3(filename):
+    # Create a temporary working directory
+    temp_dir = 'temp_dir'
+    os.makedirs(temp_dir, exist_ok=True)
+    
+    # Download the file from S3 to the temporary directory
+    local_file_path = os.path.join(temp_dir, filename)
+    
+    # Get the AWS credentials
+    aws_access_key_id, aws_secret_access_key, bucket_name = get_aws_credentials()
+    s3 = boto3.resource('s3', aws_access_key_id=aws_access_key_id, aws_secret_access_key=aws_secret_access_key)
+    
+    # Download the file from S3
+    s3.Bucket(bucket_name).download_file(filename, local_file_path)
+    
+    return local_file_path, temp_dir
+    
+def extract_details_from_resume_with_ner(local_file_path):
+    
+    # Extract the details from the resume
+    data = ResumeParser(local_file_path).get_extracted_data()
+    
+    # Return the extracted details
     return data
 
 def extract_details_from_resume_with_bard(preprocessed_text):
+    # Set up the model
     model = set_model_config()
+    
+    # Generate the content
     prompt = f"Extract the skills and work details given in the resume below:\n{preprocessed_text} and return it with two key values: 'skills' and 'work_details' with property values be enclosed in double quotes and the values to these keys should be in form of a list. Don't enclose it withing ```"
-    user_json = model.generate_content(prompt)
+    
+    attempt_count = 0
 
-    if user_json.text:
+    while attempt_count < 3:
+        user_json = model.generate_content(prompt)
         try:
-            return json.loads(user_json.text)
+            # Try to parse the response as JSON
+            json.loads(user_json.text)
+            # If parsing was successful, break the loop
+            break
         except json.JSONDecodeError:
-            print("Invalid JSON string:", user_json.text)
+            # If parsing failed, increment the attempt count, wait for 10 seconds and then try again
+            attempt_count += 1
+            time.sleep(10)
+    
+    # If the model fails to generate a valid JSON response after 3 attempts, return None
+    if attempt_count == 3:
+        print("Failed to get a valid JSON response for extracting resume details after 3 attempts")
+        return None
     else:
-        print("Empty response text")
-
-    return None
+        return json.loads(user_json.text)
 
 def extract_text_from_PDF(resume_path):
+    # Extract text from the PDF
     extracted_text = ""
     reader = PdfReader(resume_path)
     
@@ -118,25 +161,24 @@ def write_json_to_file(final_user_details_json, output_dir_path, filepath):
         json.dump(final_user_details_json, file, indent=4)
 
 # Extract details from the resume
-def extract_details_from_resume(filepath):
-    extracted_text = extract_text_from_PDF(filepath)
+def extract_details_from_resume(filename):
+    local_file_path, temp_dir = get_file_in_temp_dir_from_s3(filename)
+    extracted_text = extract_text_from_PDF(local_file_path)
     preprocessed_text = preprocess_extracted_text(extracted_text)
-    resume_details_from_custom_ner = extract_details_from_resume_with_ner(filepath)
-    resume_details_from_bard = extract_details_from_resume_with_bard(preprocessed_text)
-
+    resume_details_from_custom_ner = extract_details_from_resume_with_ner(local_file_path)
+    resume_details_from_bard = extract_details_from_resume_with_bard(extracted_text)
     final_user_details_json = process_jsons_for_final_json(resume_details_from_custom_ner, resume_details_from_bard)
+    shutil.rmtree(temp_dir)
     return final_user_details_json
 
 
-# if __name__ == "__main__":
-#     filepath = 'ai/resume_entity_recognition/sample_resume_data/SarveshGaurishankar_Sawant_resume.pdf'
-#     output_dir_path = 'ai/resume_entity_recognition/extracted_resume_data/'
-    
-#     extracted_text = extract_text_from_PDF(filepath)
-#     preprocessed_text = preprocess_extracted_text(extracted_text)
-#     resume_details_from_custom_ner = extract_details_from_resume_with_ner(filepath)
-#     resume_details_from_bard = extract_details_from_resume_with_bard(extracted_text)
+if __name__ == "__main__":
+    pass
+    # output_dir_path = 'ai/resume_entity_recognition/extracted_resume_data/'
+    # filename = '1707918673455_TejashreeGore_Resume.pdf'
 
-#     final_user_details_json = process_jsons_for_final_json(resume_details_from_custom_ner, resume_details_from_bard)
-#     write_json_to_file(final_user_details_json, output_dir_path, filepath)
-#     print("JSON file written successfully!")
+
+
+    # final_user_details_json = extract_details_from_resume(filename)
+    # write_json_to_file(final_user_details_json, output_dir_path, filename)
+    # print("JSON file written successfully!")

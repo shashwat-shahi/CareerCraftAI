@@ -105,6 +105,7 @@ def compute_skill_gaps(all_skills_for_a_role_dict, resume_details_json):
         response = model.generate_content(prompt)
         try:
             # Try to parse the response as JSON
+            print(response.text)
             json.loads(response.text)
             # If parsing was successful, break the loop
             break
@@ -117,32 +118,31 @@ def compute_skill_gaps(all_skills_for_a_role_dict, resume_details_json):
         print("Failed to get a valid JSON response for computing skill gaps after 3 attempts")
         return None
     else:
-        return response.text
+        return json.loads(response.text)
     
 
-    
 if __name__ == "__main__":
+    pass
+    # # Read Neo4j AuraDB credentials from config.ini
+    # config = configparser.ConfigParser()
+    # config.read('ai/config/config.ini')
     
-    # Read Neo4j AuraDB credentials from config.ini
-    config = configparser.ConfigParser()
-    config.read('ai/config/config.ini')
+    # # Neo4J AuraDB credentials
+    # uri = config.get('neo4j', 'uri')
+    # username = config.get('neo4j', 'username')
+    # password = config.get('neo4j', 'password')
     
-    # Neo4J AuraDB credentials
-    uri = config.get('neo4j', 'uri')
-    username = config.get('neo4j', 'username')
-    password = config.get('neo4j', 'password')
+    # # Connect to Neo4j AuraDB
+    # driver = GraphDatabase.driver(uri, auth=(username, password))
     
-    # Connect to Neo4j AuraDB
-    driver = GraphDatabase.driver(uri, auth=(username, password))
-    
-    ASPIRATION_NAME = "MLOps"
-    # ASPIRATION_NAME = "Data Scientist"
-    file_path = 'ai/data/sample_resume_data/SarveshGaurishankar_Sawant_resume.pdf'
-    resume_details_json = extract_details_from_resume(file_path)
-    all_skills_for_a_role_dict = fetch_roadmap_data_on_aspiration(driver, ASPIRATION_NAME)
-    skill_gap_dict = compute_skill_gaps(all_skills_for_a_role_dict, resume_details_json)
-    print(skill_gap_dict)
-    # print(all_skills_for_a_role_dict)
+    # ASPIRATION_NAME = "Springboot developer"
+    # # ASPIRATION_NAME = "Data Scientist"
+    # filename = '1707918673455_TejashreeGore_Resume.pdf'
+    # resume_details_json = extract_details_from_resume(filename)
+    # all_skills_for_a_role_dict = fetch_roadmap_data_on_aspiration(driver, ASPIRATION_NAME)
+    # skill_gap_dict = compute_skill_gaps(all_skills_for_a_role_dict, resume_details_json)
+    # print(skill_gap_dict)
+    # # print(all_skills_for_a_role_dict)
 
-    driver.session().close()
-    driver.close()
+    # driver.session().close()
+    # driver.close()
