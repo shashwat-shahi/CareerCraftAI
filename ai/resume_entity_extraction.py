@@ -9,16 +9,20 @@ import shutil
 from fetch_from_server import get_aws_credentials
 import boto3
 import time
+import config
 
 
 # Set up the model
 def set_model_config():
-    # Fetch API key from config.ini
-    config = configparser.ConfigParser()
-    config.read("ai/config/config.ini")
+    # # Fetch API key from config.ini
+    # config = configparser.ConfigParser()
+    # config.read("ai/config/config.ini")
 
-    # Set up the API key
-    genai.configure(api_key=config["API"]["key"])
+    # # Set up the API key
+    # genai.configure(api_key=config["API"]["key"])
+
+    genai.configure(api_key=config.API_KEY)
+
 
     # Set up the model
     generation_config = {
