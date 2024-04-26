@@ -45,6 +45,8 @@ const Dashboard = () => {
 
   const userJson:any = useSelector((state: RootState) => state.user.value)
 
+  console.log("sarvesh ", userJson)
+
   const url = `${import.meta.env.VITE_BACKEND_URL}/user/getResume?fileName=${userJson?.resumeLink}`; 
   
   const [response, setResponse] = useState(null);
