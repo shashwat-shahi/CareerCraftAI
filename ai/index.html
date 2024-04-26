@@ -6,6 +6,21 @@
     <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <style type="text/css">
+                body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        select {
+            margin: 0 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
         #mynetwork {
             position: relative;
             width: 100%;
@@ -16,12 +31,12 @@
 
         #legend {
             position: absolute;
-            top: 100px;
+            top: 200px;
             right: 40px;
             padding: 10px;
             border: 1px solid black;
             background-color: white;
-            height: 120px;
+            height: 150px;
             width: 200px;
             z-index: 0;
         }
@@ -34,34 +49,57 @@
         }
 
         .fundamentals {
-            background-color: pink;
+            background-color: #FFCCCC;
             width: 20px;
             height: 15px;
 
         }
 
         .intermediate {
-            background-color: orange;
+            background-color: #CCFFFF;
             width: 20px;
             height: 15px;
         }
 
         .advanced {
-            background-color: blue;
+            background-color: #E6E6FA;
             width: 20px;
             height: 15px;
         }
+
+        .special{
+            background-color: lightgreen;
+            width: 20px;
+            height: 15px;
+        }
+
+        #dropdowns {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        #dropdowns label {
+            font-weight: bold; 
+        }
+
+        #dropdowns select {
+            padding: 5px 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #f8f8f8;
+            font-weight: bold;
+        }
+        
     </style>
 </head>
 
 <body>
     <h1 id="aspirationName"></h1>
-    <div id="legend">
-        <h2>Legend:</h2>
-        <div><span class="legend-box fundamentals"></span> Fundamentals</div>
-        <div><span class="legend-box intermediate"></span> Intermediate</div>
-        <div><span class="legend-box advanced"></span> Advanced</div>
-    </div>
+    <div id="dropdowns">
     <label for="hierarchical">Hierarchical:</label>
     <select id="hierarchical">
         <option value="false">Disabled</option>
@@ -75,6 +113,14 @@
         <option value="LR">Left-Right</option>
         <option value="RL">Right-Left</option>
     </select>
+    </div>
+    <div id="legend">
+        <h2>Legend:</h2>
+        <div><span class="legend-box fundamentals"></span> Fundamentals</div>
+        <div><span class="legend-box intermediate"></span> Intermediate</div>
+        <div><span class="legend-box advanced"></span> Advanced</div>
+        <div><span class="legend-box special"></span> Skills you already have</div>
+    </div>
     <div id="mynetwork">
         <!-- <div> -->
     </div>
@@ -93,11 +139,11 @@
                 for (var key in data[level][j]) {
                     var color;
                     if (special_data.fundamentals.includes(key)) {
-                        color = 'pink';
+                        color = '#FFCCCC';
                     } else if (special_data.intermediate.includes(key)) {
-                        color = 'orange';
+                        color = '#CCFFFF';
                     } else if (special_data.advanced.includes(key)) {
-                        color = 'yellow';
+                        color = '#E6E6FA';
                     } else {
                         color = 'lightgreen';
                     }
