@@ -13,11 +13,16 @@ import { Link, useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/state/store";
 import { getUserAsync } from "@/state/user/userSlice";
+import { useNavigate } from 'react-router-dom';
+
 
 
 
 const Dashboard = () => {
-  
+  const navigate = useNavigate();
+  const handleViewCoursesClick = () => {
+    navigate('/courses');
+  };
   const [fetchedUserData, setFetchedUserData] = useState(false)
   const [loading, setLoading] = useState(false)
   const [fault, setFault] = useState(false)
@@ -132,7 +137,9 @@ const Dashboard = () => {
         <Skills skills={response?.skills} />
         <WorkExperience workDetails={response?.work_details} />
         <CardFooter className="flex justify-center mt-4">
-          <Button className="w-full">View Suggested Courses</Button>
+            <Button className="w-full" onClick={handleViewCoursesClick}>
+              View Suggested Courses
+            </Button>
         </CardFooter>
       </Card>}
     </div>
