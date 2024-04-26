@@ -53,19 +53,15 @@ function Resume() {
   
 
   useEffect(() => {
-    const maxRetries = 3; // Maximum number of refetch attempts
-    let retryCount = 0; // Counter for refetch attempts
-    let refetchInterval = null; // Variable to store the refetch interval
-  
     const fetchData = async () => {
       setLoading(true);
       setError(null);
   
       try {
-        if(!userJson?.resumeLink){
-          throw new Error("Please upload a resume first")
+        if (!userJson?.resumeLink) {
+          throw new Error("Please upload a resume first");
         }
-
+  
         const response = await fetch(url, {
           method: 'GET',
           credentials: 'include' // Ensures cookies are sent with the request
@@ -79,23 +75,14 @@ function Resume() {
         const fileBlob = new Blob([blob], { type: 'application/pdf' });
         setFile(URL.createObjectURL(fileBlob)); // Create a URL for the blob object
         setLoading(false);
-        retryCount = 0; // Reset the retry count on successful fetch
-  
-        // Clear the refetch interval on successful fetch
-        if (refetchInterval) {
-          clearInterval(refetchInterval);
-          refetchInterval = null;
-        }
       } catch (e) {
         setError(`Error fetching PDF: ${e.message}`);
         setLoading(false);
-        retryCount++; // Increment the retry count on error
       }
     };
   
     fetchData();
-
-  }, [error]);
+  }, [url, userJson?.resumeLink]);
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);

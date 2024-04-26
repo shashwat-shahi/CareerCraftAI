@@ -11,8 +11,23 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@/components/ui/avatar"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import { removeJSessionIdCookie } from "@/utils/jsession-token"
+import { useNavigate } from 'react-router-dom';
+
 
 function NavigationBar() {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/');
+  };
+
   return (
     <NavigationMenu>
         <Link to="/">
@@ -52,25 +67,48 @@ function NavigationBar() {
           </NavigationMenuItem>
           <NavigationMenuItem>
               <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
-                <Link to="profile">
-                  Profile
-                </Link>
-              </NavigationMenuLink> 
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
                 <Link to="courses">
                   Courses
                 </Link>
               </NavigationMenuLink> 
           </NavigationMenuItem>
           <NavigationMenuItem>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
-                <Link to="resume">
-                  Resume
-                </Link>
-              </NavigationMenuLink> 
-          </NavigationMenuItem>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                Resume
+              </NavigationMenuLink>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem>
+                <Link to="resume">View Resume</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link to="/">Change Resume</Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </NavigationMenuItem>
+          <NavigationMenuItem>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                Profile
+              </NavigationMenuLink>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem
+                className="text-destructive focus:text-destructive-foreground"
+                onClick={() => {
+                  removeJSessionIdCookie();
+                  handleClick();
+                }}
+              >
+                <strong>Logout</strong>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </NavigationMenuItem>
         </NavigationMenuList>
     </NavigationMenu>
   )

@@ -76,7 +76,7 @@ function UploadResume() {
                 toast.success("Upload successful, redirecting to the resume.")
 
                 setTimeout(() => {
-                    navigate("/resume")
+                    navigate("/dashboard")
                 }, 5000)
              
             } else {
@@ -100,14 +100,15 @@ function UploadResume() {
                 <form onSubmit={handleSubmit}>
                     <div className="grid w-full items-center gap-4">
                         <div className="flex flex-col space-y-1.5">
-                        <Label htmlFor="resume">Resume</Label>
+                        <Label htmlFor="resume">Resume - upload only pdf</Label>
                         <Input
                             id="resume"
                             name="resume"
                             type="file"
                             className="bg-secondary"
+                            accept=".pdf"
                             onChange={handleFileChange}
-                        />
+                            />
                         </div>
                         <div className="flex flex-col space-y-1.5">
                         <Label htmlFor="jobs">Jobs</Label>
