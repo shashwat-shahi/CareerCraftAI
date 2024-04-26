@@ -23,12 +23,12 @@ function App() {
           <Route element={<AuthRequired />}> 
             <Route path="/" element={<SiteLayout />}>
               <Route index element={<UploadResume />} /> 
-              <Route path="dashboard" element={<Dashboard />} />     
               <Route path="roadmap" element={<Roadmap />} />
               <Route path="profile" element={<Profile />} />
               <Route path="courses" element={<Courses />} />
               <Route path="resume" element={<Resume />} />
               <Route path="jobboard" element={<Jobboard />} />
+              <Route path="/dashboard" element={<Dashboard />} /> 
             </Route> 
           </Route>  
         </Routes>

@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import useFetch from "../hooks/use-fetch"
 import "react-pdf/dist/esm/Page/TextLayer.css";
+import 'react-pdf/dist/Page/AnnotationLayer.css';
 
 // Setup the PDF.js worker
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
@@ -28,8 +29,8 @@ function Resume() {
   const [file, setFile] = useState(null);
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
-  const [loader, setLoading] = useState(true);
-  const [fault, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   let userId = ""
     const [searchParams, setSearchParams] = useSearchParams()
@@ -47,34 +48,54 @@ function Resume() {
     }, [])
 
   const userJson:any = useSelector((state: RootState) => state.user.value)
-
-  console.log("userJson dashboard", JSON.stringify(userJson))
   
   const url = `${import.meta.env.VITE_BACKEND_URL}/user/getResume?fileName=${userJson?.resumeLink}`; 
-  console.log(url)
-  const {val, loading, error} = useFetch(url)
-  console.log(val, loading, error)
+  
+
   useEffect(() => {
-    fetch(url, {
-      method: 'GET',
-      credentials: 'include' // Ensures cookies are sent with the request
-    })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+    const maxRetries = 3; // Maximum number of refetch attempts
+    let retryCount = 0; // Counter for refetch attempts
+    let refetchInterval = null; // Variable to store the refetch interval
+  
+    const fetchData = async () => {
+      setLoading(true);
+      setError(null);
+  
+      try {
+        if(!userJson?.resumeLink){
+          throw new Error("Please upload a resume first")
+        }
+
+        const response = await fetch(url, {
+          method: 'GET',
+          credentials: 'include' // Ensures cookies are sent with the request
+        });
+  
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+  
+        const blob = await response.blob();
+        const fileBlob = new Blob([blob], { type: 'application/pdf' });
+        setFile(URL.createObjectURL(fileBlob)); // Create a URL for the blob object
+        setLoading(false);
+        retryCount = 0; // Reset the retry count on successful fetch
+  
+        // Clear the refetch interval on successful fetch
+        if (refetchInterval) {
+          clearInterval(refetchInterval);
+          refetchInterval = null;
+        }
+      } catch (e) {
+        setError(`Error fetching PDF: ${e.message}`);
+        setLoading(false);
+        retryCount++; // Increment the retry count on error
       }
-      return response.blob();
-    })
-    .then(blob => {
-      const fileBlob = new Blob([blob], { type: 'application/pdf' });
-      setFile(URL.createObjectURL(fileBlob)); // Create a URL for the blob object
-      setLoading(false);
-    })
-    .catch(e => {
-      setError(`Error fetching PDF: ${e.message}`);
-      setLoading(false);
-    });
-  }, []);
+    };
+  
+    fetchData();
+
+  }, [error]);
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
@@ -87,10 +108,34 @@ function Resume() {
 
   return (
     <div className="flex justify-center items-center min-h-screen">
-      {loader && <p>Loading PDF...</p>}
-      {fault && <p>{fault}</p>}
-
-     
+      {loading && <p><svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="animate-spin"
+      >
+        <path d="M21 12a9 9 0 1 1-6.219-8.56" />
+      </svg></p>}
+      {error && <p><svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="animate-spin"
+      >
+        <path d="M21 12a9 9 0 1 1-6.219-8.56" />
+      </svg></p>}
       {file && (
         <Document
           file={file}
