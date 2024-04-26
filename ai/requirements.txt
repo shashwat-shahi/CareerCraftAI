@@ -98,3 +98,4 @@ weasel==0.3.4
 Werkzeug==3.0.2
 xxhash==3.4.1
 yarl==1.9.4
+flask_cors==4.0.0
