@@ -1,5 +1,6 @@
 package com.edu.neu.careercraftai.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,6 +17,9 @@ import com.edu.neu.careercraftai.models.UserDetails;
 import com.edu.neu.careercraftai.repositories.AspirationRepository;
 import com.edu.neu.careercraftai.repositories.UserRepository;
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 
 @Service
 public class UserServiceImpl implements UserService{
@@ -167,5 +171,83 @@ public class UserServiceImpl implements UserService{
             return response;
         }
 	}
+
+    @Override
+    public ResponseModel updateUserSkills(Integer userId, List<String> skillset) {
+        try {
+            Optional<UserEntity> optionalUser = userRepository.findById(userId);
+            if(!optionalUser.isPresent()){
+                ResponseModel response = new ResponseModel();
+                response.setResponseMessage("User doesn't exist");
+                response.setResponseStatus(HttpStatus.NOT_FOUND);
+                return response;
+            }
+            UserEntity user = optionalUser.get();
+            user.setSkillset(skillset);
+            userRepository.save(user);
+            ResponseModel response = new ResponseModel();
+            response.setResponseMessage("User skillset updated successfully.");
+            response.setResponseStatus(HttpStatus.OK);
+            response.setResponseBody(user);
+            return response;
+            
+        } catch (Exception e) {
+            ResponseModel response = new ResponseModel();
+            response.setResponseMessage("User skillset could not be updated.");
+            response.setResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR);
+            response.setExceptionMessage(e.getMessage());
+            return response;
+        }
+        
+    }
+
+    @Override
+    public ResponseModel updateUserSkillGaps(Integer userId, String skillGapJson) {
+        try {
+            Optional<UserEntity> optionalUser = userRepository.findById(userId);
+            if(!optionalUser.isPresent()){
+                ResponseModel response = new ResponseModel();
+                response.setResponseMessage("User doesn't exist");
+                response.setResponseStatus(HttpStatus.NOT_FOUND);
+                return response;
+            }
+            UserEntity user = optionalUser.get();
+            skillGapJson = "{'fundamentals': ['Programming Languages', 'Scripting Languages', 'Version Control Systems', 'Cloud Computing', 'Containerization', 'Container Orchestration', 'Data Pipelines', 'Data Housing', 'Pipeline Craft', 'Continuous Integration/Continuous Deployment (CI/CD)', 'Cloud ML', 'Engineering Models', 'Database', 'Looping', 'Monitoring', 'Pioneer'], 'intermediate': ['Database', 'Looping', 'Pioneer', 'Machination', 'Ecosystem', 'Security', 'Fulmination'], 'advanced': ['Machine Learning', 'Data Versioning', 'AutoML', 'Explainability', 'Drift Detection', 'Hyperparameter Optimization', 'A/B Testing', 'Model Serving', 'Feature Store', 'Data Governance']}";
+            String s = skillGapJson.replaceAll("\'", "\"");
+            System.out.println(skillGapJson);
+            JsonObject skillGapJsonObject = gson.fromJson(s, JsonObject.class);
+            JsonArray fundamentalGapsJson = skillGapJsonObject.get("fundamentals").getAsJsonArray();
+            JsonArray intermediateGapsJson = skillGapJsonObject.get("intermediate").getAsJsonArray();
+            JsonArray advancedGapsJson = skillGapJsonObject.get("advanced").getAsJsonArray();
+            List<String> fundamentalGaps = new ArrayList<String>();
+            for (JsonElement gapJson : fundamentalGapsJson) {
+                fundamentalGaps.add(gapJson.getAsString());
+            }
+            List<String> intermediateGaps = new ArrayList<String>();
+            for (JsonElement gapJson : intermediateGapsJson) {
+                intermediateGaps.add(gapJson.getAsString());
+            }
+            List<String> advancedGaps = new ArrayList<String>();
+            for (JsonElement gapJson : advancedGapsJson) {
+                advancedGaps.add(gapJson.getAsString());
+            }
+            user.setFundamentalsGap(fundamentalGaps);
+            user.setIntermediateGap(intermediateGaps);
+            user.setAdvancedGap(advancedGaps);
+            userRepository.save(user);
+            ResponseModel response = new ResponseModel();
+            response.setResponseMessage("User skillset updated successfully.");
+            response.setResponseStatus(HttpStatus.OK);
+            response.setResponseBody(user);
+            return response;
+            
+        } catch (Exception e) {
+            ResponseModel response = new ResponseModel();
+            response.setResponseMessage("User skillset could not be updated.");
+            response.setResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR);
+            response.setExceptionMessage(e.getMessage());
+            return response;
+        }
+    }
     
 }

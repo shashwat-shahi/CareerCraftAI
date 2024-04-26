@@ -14,4 +14,6 @@ public interface UserService {
     public boolean isUserPresent(String email);
     public UserEntity getUserByEmail(String email);
     public ResponseModel getAllUsers();
+    public ResponseModel updateUserSkills(Integer userId, List<String> skillset);
+    public ResponseModel updateUserSkillGaps(Integer userId, String skillGapJson);
 }

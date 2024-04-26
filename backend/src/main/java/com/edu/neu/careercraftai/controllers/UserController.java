@@ -138,6 +138,19 @@ public class UserController {
         
     }
 
+    //update user skillset
+    @PostMapping(value = "/updateUserSkillset/{userId}")
+    public ResponseEntity<ResponseModel> updateUserSkillset(@PathVariable(name = "userId")Integer userId, @RequestBody List<String> skills){
+        ResponseModel serviceResponse = userService.updateUserSkills(userId, skills);
+        return ResponseEntity.status(serviceResponse.getResponseStatus().value()).body(serviceResponse);
+    }
+
+    //update user skill gaps
+    @PostMapping(value = "/updateUserSkillGaps/{userId}")
+    public ResponseEntity<ResponseModel> updateUserSkillset(@PathVariable(name = "userId")Integer userId, @RequestBody String skillGapJson){
+        ResponseModel serviceResponse = userService.updateUserSkillGaps(userId, skillGapJson);
+        return ResponseEntity.status(serviceResponse.getResponseStatus().value()).body(serviceResponse);
+    }
 
     //get user
     @GetMapping("/getUser/{userId}")
