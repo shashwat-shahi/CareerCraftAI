@@ -1,5 +1,6 @@
 # Google Bard API key
-API_KEY = 'AIzaSyAA3BQfehEelyg9cz9PZZGKGrfQ1PlK2XA'
+# API_KEY = 'AIzaSyAA3BQfehEelyg9cz9PZZGKGrfQ1PlK2XA'
+API_KEY = 'AIzaSyCrAqqPuQbX_wFFfqSi5tc2D-ZhjF7YzbA'
 
 # Neo4j database connection
 NEO4J_URI = 'neo4j+s://aa36fcd8.databases.neo4j.io'
@@ -15,3 +16,7 @@ AWS_SECRET_KEY = 'k0B9azpFxsEsgxI4VYmkyzLV9Vb4E0q1eMTkjfgb'
 AWS_REGION = 'us-east-2'
 AWS_STACK_AUTO = False
 AWS_BUCKET_NAME = 'ccresumes'
+
+# Environment
+ENV = 'development'
+# ENV = 'production'
