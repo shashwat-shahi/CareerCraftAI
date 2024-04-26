@@ -25,13 +25,13 @@ import com.google.gson.JsonObject;
 public class UserServiceImpl implements UserService{
 
     @Autowired
-    UserRepository userRepository;
+    public UserRepository userRepository;
 
     @Autowired
-    AspirationRepository aspirationRepository;
+    public AspirationRepository aspirationRepository;
 
     @Autowired
-    Gson gson;
+    public Gson gson;
 
     @Override
 	public ResponseModel createUser(UserDetails userDetails) {
