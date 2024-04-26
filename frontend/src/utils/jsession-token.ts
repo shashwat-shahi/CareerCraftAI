@@ -11,6 +11,7 @@ export const isJSessionIdPresent = () => {
 };
 
 export const removeJSessionIdCookie = () => {
+    console.log("sarvesh " + document.cookie)
     document.cookie = 'JSESSIONID=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/'; // Set the expiration date in the past
 };
 
