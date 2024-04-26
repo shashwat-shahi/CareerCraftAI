@@ -27,7 +27,7 @@ function NavigationBar() {
   const handleClick = () => {
     navigate('/');
   };
-
+  
   return (
     <NavigationMenu>
         <Link to="/">

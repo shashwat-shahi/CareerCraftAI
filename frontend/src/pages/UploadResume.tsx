@@ -73,7 +73,7 @@ function UploadResume() {
                 credentials: 'include',
             });
             if (response.ok) {
-                toast.success("Upload successful, redirecting to the resume.")
+                toast.success("Upload successful, redirecting to the dashboard.")
 
                 setTimeout(() => {
                     navigate("/dashboard")
@@ -123,7 +123,7 @@ function UploadResume() {
                             </SelectContent>
                         </Select>
                         </div>
-                        <Button type="submit">Submit</Button>
+                        <Button type="submit">Analyze your resume</Button>
                     </div>
                 </form>
             </CardContent>
