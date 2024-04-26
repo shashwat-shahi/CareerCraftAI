@@ -93,7 +93,7 @@ function Resume() {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
-  
+        
         const blob = await response.blob();
         const fileBlob = new Blob([blob], { type: 'application/pdf' });
         setFile(URL.createObjectURL(fileBlob)); // Create a URL for the blob object
