@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Interactive Graph</title>
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <style type="text/css">
+        #mynetwork {
+            position: relative;
+            width: 100%;
+            height: 80vh;
+            border: 1px solid lightgray;
+            z-index: 1;
+        }
+
+        #legend {
+            position: absolute;
+            top: 100px;
+            right: 40px;
+            padding: 10px;
+            border: 1px solid black;
+            background-color: white;
+            height: 120px;
+            width: 200px;
+            z-index: 0;
+        }
+
+        .legend-box {
+            display: inline-block;
+            width: 100px;
+            height: 20px;
+            margin-right: 5px;
+        }
+
+        .fundamentals {
+            background-color: pink;
+            width: 20px;
+            height: 15px;
+
+        }
+
+        .intermediate {
+            background-color: orange;
+            width: 20px;
+            height: 15px;
+        }
+
+        .advanced {
+            background-color: blue;
+            width: 20px;
+            height: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="aspirationName"></h1>
+    <div id="legend">
+        <h2>Legend:</h2>
+        <div><span class="legend-box fundamentals"></span> Fundamentals</div>
+        <div><span class="legend-box intermediate"></span> Intermediate</div>
+        <div><span class="legend-box advanced"></span> Advanced</div>
+    </div>
+    <label for="hierarchical">Hierarchical:</label>
+    <select id="hierarchical">
+        <option value="false">Disabled</option>
+        <option value="true">Enabled</option>
+    </select>
+
+    <label for="direction">Direction:</label>
+    <select id="direction">
+        <option value="UD">Up-Down</option>
+        <option value="DU">Down-Up</option>
+        <option value="LR">Left-Right</option>
+        <option value="RL">Right-Left</option>
+    </select>
+    <div id="mynetwork">
+        <!-- <div> -->
+    </div>
+    <script type="text/javascript">
+        var aspirationName = 'MLOps RoadMap';
+        document.getElementById('aspirationName').innerText = aspirationName;
+        // Parse your JSON data into nodes and edges
+        var nodes = [];
+        var edges = [];
+        var data = { 'fundamentals': [{ 'Programming Languages': ['Java'] }, { 'Dependency Injection': ['Spring AOP'] }, { 'Security Frameworks': ['Spring Security'] }, { 'Database Access': ['Spring Data MongoDB'] }, { 'Web Development': ['JSP'] }, { 'Essential Tools': ['Victory Starters'] }, { 'Testing': ['JPA Test'] }, { 'Database Concepts': ['Hibernate'] }, { 'Service Discovery': ['Eureka'] }, { 'Circuit Breaker': ['Hystrix'] }, { 'API Gateway': ['Spring Cloud Gateway'] }, { 'Distributed Tracing': ['Zipkin'] }, { 'Database Migration': ['Flyway'] }, { 'Development Platform': ['JHipster'] }, { 'Monitoring': ['Micrometer'] }, { 'Container Orchestration': ['Spring Cloud Kubernetes'] }, { 'API Client': ['Spring Cloud OpenFeign'] }], 'intermediate': [{ 'Programming Languages': ['Kotlin'] }, { 'Security Frameworks': ['Spring Security OAuth'] }, { 'Database Access': ['JOOQ'] }, { 'Essential Tools': ['Spring Boot Admin'] }, { 'Distributed Tracing': ['Spring Cloud Sleuth'] }, { 'Configuration Management': ['Spring Cloud Config'] }, { 'Microservices': ['Spring Cloud Netflix'] }, { 'Stream Processing': ['Spring Cloud Stream'] }, { 'Integration Framework': ['Spring Integration'] }, { 'Batch Processing': ['Spring Batch'] }, { 'Documentation': ['Spring REST Docs'] }, { 'Reactive Programming': ['Spring WebFlux'] }, { 'Template Engine': ['Thymeleaf'] }], 'advanced': [{ 'Monitoring': ['Real Twitch Concerts'] }, { 'Microservices': ['Crm Architecture'] }, { 'Architectural Framework': ['Stands'] }, { 'Cloud Computing': ['Whale Concept'] }, { 'Security': ['Security'] }, { 'Finance': ['Direct Holding'] }, { 'Construction': ['Flank Loppers'] }] };
+        var special_data = { 'fundamentals': ['Dependency Injection', 'Security Frameworks', 'Database Access', 'Web Development', 'Essential Tools', 'Testing', 'Database Concepts', 'Service Discovery', 'Circuit Breaker', 'API Gateway', 'Distributed Tracing', 'Database Migration', 'Development Platform', 'Monitoring', 'Container Orchestration', 'API Client'], 'intermediate': ['Security Frameworks', 'Database Access', 'Essential Tools', 'Distributed Tracing', 'Configuration Management', 'Microservices', 'Stream Processing', 'Integration Framework', 'Batch Processing', 'Documentation', 'Reactive Programming', 'Template Engine'], 'advanced': ['Monitoring', 'Microservices', 'Architectural Framework', 'Cloud Computing', 'Security', 'Finance', 'Construction'] };
+        var levels = ['fundamentals', 'intermediate', 'advanced'];
+        for (var i = 0; i < levels.length; i++) {
+            var level = levels[i];
+            for (var j = 0; j < data[level].length; j++) {
+                for (var key in data[level][j]) {
+                    var color;
+                    if (special_data.fundamentals.includes(key)) {
+                        color = 'pink';
+                    } else if (special_data.intermediate.includes(key)) {
+                        color = 'orange';
+                    } else if (special_data.advanced.includes(key)) {
+                        color = 'yellow';
+                    } else {
+                        color = 'lightgreen';
+                    }
+                    nodes.push({ id: nodes.length, label: key, title: data[level][j][key].join(', '), group: level, color: color });
+                    if (nodes.length > 1) {
+                        edges.push({ from: nodes.length - 2, to: nodes.length - 1, arrows: 'to' });
+                    }
+                }
+            }
+        }
+
+        // Get the dropdowns
+        var hierarchicalDropdown = document.getElementById('hierarchical');
+        var directionDropdown = document.getElementById('direction');
+
+        // Function to create the network
+        function createNetwork() {
+            var hierarchical = hierarchicalDropdown.value === 'true';
+            var direction = directionDropdown.value;
+
+            var options = {
+                nodes: {
+                    shape: 'box',
+                    font: {
+                        color: 'black',
+                        size: 18
+                    },
+                    size: 70
+                },
+                edges: {
+                    color: 'black',
+                    arrows: {
+                        to: {
+                            enabled: true,
+                            scaleFactor: 1
+                        }
+                    },
+                    smooth: {
+                        type: 'cubicBezier',
+                        forceDirection: 'horizontal',
+                    }
+                },
+                layout: {
+                    improvedLayout: true,
+                    randomSeed: undefined,
+                    hierarchical: {
+                        enabled: hierarchical,
+                        levelSeparation: 200,
+                        nodeSpacing: 150,
+                        treeSpacing: 200,
+                        blockShifting: false,
+                        edgeMinimization: false,
+                        parentCentralization: true,
+                        direction: direction,
+                        sortMethod: 'hubsize'
+                    }
+                },
+                interaction: {
+                    hover: true
+                }
+            };
+
+            var container = document.getElementById('mynetwork');
+            var data = {
+                nodes: nodes,
+                edges: edges
+            };
+
+            var network = new vis.Network(container, data, options);
+
+            // Add an event listener for click events on the nodes
+            network.on('click', function (params) {
+                if (params.nodes.length > 0) {
+                    swal("List of Topics", nodes[params.nodes[0]].title);
+                }
+            });
+        }
+
+        // Create the network when the page loads
+        createNetwork();
+
+        // Recreate the network when the dropdowns change
+        hierarchicalDropdown.addEventListener('change', createNetwork);
+        directionDropdown.addEventListener('change', createNetwork);
+
+        // Add an event listener for click events on the nodes
+        network.on('click', function (params) {
+            if (params.nodes.length > 0) {
+                swal("List of Topics", nodes[params.nodes[0]].title);
+            }
+        });
+    </script>
+</body>
+
+</html>

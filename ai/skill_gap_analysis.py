@@ -134,7 +134,7 @@ if __name__ == "__main__":
     # Connect to Neo4j AuraDB
     driver = GraphDatabase.driver(uri, auth=(username, password))
     
-    ASPIRATION_NAME = "MLOps"
+    ASPIRATION_NAME = "Springboot developer"
     # ASPIRATION_NAME = "Data Scientist"
     filename = '1707918673455_TejashreeGore_Resume.pdf'
     resume_details_json = extract_details_from_resume(filename)
