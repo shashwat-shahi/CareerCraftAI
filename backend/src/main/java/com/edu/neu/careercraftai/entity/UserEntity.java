@@ -1,5 +1,7 @@
 package com.edu.neu.careercraftai.entity;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -34,5 +36,16 @@ public class UserEntity {
     @ManyToOne
     @JoinColumn(name = "aspiration_id")
     private AspirationEntity aspiration;
-    
+
+    @Column(name = "fundamentals_gap")
+    List<String> fundamentalsGap;
+
+    @Column(name = "intermediate_gap")
+    List<String> intermediateGap;
+
+    @Column(name = "advanced_gap")
+    List<String> advancedGap;
+
+    @Column(name = "skillset")
+    List<String> skillset;
 }

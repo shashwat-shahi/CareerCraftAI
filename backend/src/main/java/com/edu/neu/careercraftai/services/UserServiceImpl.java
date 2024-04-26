@@ -1,5 +1,6 @@
 package com.edu.neu.careercraftai.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,18 +17,21 @@ import com.edu.neu.careercraftai.models.UserDetails;
 import com.edu.neu.careercraftai.repositories.AspirationRepository;
 import com.edu.neu.careercraftai.repositories.UserRepository;
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 
 @Service
 public class UserServiceImpl implements UserService{
 
     @Autowired
-    UserRepository userRepository;
+    public UserRepository userRepository;
 
     @Autowired
-    AspirationRepository aspirationRepository;
+    public AspirationRepository aspirationRepository;
 
     @Autowired
-    Gson gson;
+    public Gson gson;
 
     @Override
 	public ResponseModel createUser(UserDetails userDetails) {
@@ -167,5 +171,82 @@ public class UserServiceImpl implements UserService{
             return response;
         }
 	}
+
+    @Override
+    public ResponseModel updateUserSkills(Integer userId, List<String> skillset) {
+        try {
+            Optional<UserEntity> optionalUser = userRepository.findById(userId);
+            if(!optionalUser.isPresent()){
+                ResponseModel response = new ResponseModel();
+                response.setResponseMessage("User doesn't exist");
+                response.setResponseStatus(HttpStatus.NOT_FOUND);
+                return response;
+            }
+            UserEntity user = optionalUser.get();
+            user.setSkillset(skillset);
+            userRepository.save(user);
+            ResponseModel response = new ResponseModel();
+            response.setResponseMessage("User skillset updated successfully.");
+            response.setResponseStatus(HttpStatus.OK);
+            response.setResponseBody(user);
+            return response;
+            
+        } catch (Exception e) {
+            ResponseModel response = new ResponseModel();
+            response.setResponseMessage("User skillset could not be updated.");
+            response.setResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR);
+            response.setExceptionMessage(e.getMessage());
+            return response;
+        }
+        
+    }
+
+    @Override
+    public ResponseModel updateUserSkillGaps(Integer userId, String skillGapJson) {
+        try {
+            Optional<UserEntity> optionalUser = userRepository.findById(userId);
+            if(!optionalUser.isPresent()){
+                ResponseModel response = new ResponseModel();
+                response.setResponseMessage("User doesn't exist");
+                response.setResponseStatus(HttpStatus.NOT_FOUND);
+                return response;
+            }
+            UserEntity user = optionalUser.get();
+            String s = skillGapJson.replaceAll("\'", "\"");
+            // System.out.println(s);
+            JsonObject skillGapJsonObject = gson.fromJson(s, JsonObject.class);
+            JsonArray fundamentalGapsJson = skillGapJsonObject.get("fundamentals").getAsJsonArray();
+            JsonArray intermediateGapsJson = skillGapJsonObject.get("intermediate").getAsJsonArray();
+            JsonArray advancedGapsJson = skillGapJsonObject.get("advanced").getAsJsonArray();
+            List<String> fundamentalGaps = new ArrayList<String>();
+            for (JsonElement gapJson : fundamentalGapsJson) {
+                fundamentalGaps.add(gapJson.getAsString());
+            }
+            List<String> intermediateGaps = new ArrayList<String>();
+            for (JsonElement gapJson : intermediateGapsJson) {
+                intermediateGaps.add(gapJson.getAsString());
+            }
+            List<String> advancedGaps = new ArrayList<String>();
+            for (JsonElement gapJson : advancedGapsJson) {
+                advancedGaps.add(gapJson.getAsString());
+            }
+            user.setFundamentalsGap(fundamentalGaps);
+            user.setIntermediateGap(intermediateGaps);
+            user.setAdvancedGap(advancedGaps);
+            userRepository.save(user);
+            ResponseModel response = new ResponseModel();
+            response.setResponseMessage("User skillset updated successfully.");
+            response.setResponseStatus(HttpStatus.OK);
+            response.setResponseBody(user);
+            return response;
+            
+        } catch (Exception e) {
+            ResponseModel response = new ResponseModel();
+            response.setResponseMessage("User skillset could not be updated.");
+            response.setResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR);
+            response.setExceptionMessage(e.getMessage());
+            return response;
+        }
+    }
     
 }
