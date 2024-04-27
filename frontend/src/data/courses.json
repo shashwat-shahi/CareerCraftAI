@@ -1,0 +1,39 @@
+{
+    "fundamentals": [
+      "Select",
+      "Scripting Languages",
+      "Version Control Systems",
+      "Cloud Computing",
+      "Container Orchestration",
+      "Data Pipelines",
+      "Data Housing",
+      "Pipeline Craft",
+      "Continuous Integration/Continuous Deployment (CI/CD)",
+      "Cloud ML",
+      "Engineering Models",
+      "Looping",
+      "Monitoring",
+      "Pioneer"
+    ],
+    "intermediate": [
+      "Select",
+      "Database",
+      "Machination",
+      "Ecosystem",
+      "Security",
+      "Fulmination"
+    ],
+    "advanced": [
+      "Select",
+      "Machine Learning",
+      "Data Versioning",
+      "AutoML",
+      "Explainability",
+      "Drift Detection",
+      "Hyperparameter Optimization",
+      "A/B Testing",
+      "Model Serving",
+      "Feature Store",
+      "Data Governance"
+    ]
+  }

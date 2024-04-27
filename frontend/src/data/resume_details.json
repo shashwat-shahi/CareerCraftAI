@@ -1,102 +1,201 @@
 {
-    "name": "SHASHWAT SHAHI",
+
     "email": "shahi.sh@northeastern.edu",
+  
     "mobile_number": "8574235879",
+  
+    "name": "SHASHWAT SHAHI",
+  
     "skills": [
-        "Github",
-        "Operating systems",
-        "Programming",
-        "HTML",
-        "NoSQL",
-        "Spark",
-        "Sql",
-        "Html",
-        "Content",
-        "CSS",
-        "System",
-        "Css",
-        "Azure",
-        "SQL",
-        "Ux",
-        "Version Control (Git)",
-        "Modeling",
-        "Shell",
-        "Analytics",
-        "Data Analysis",
-        "Multimodal ML",
-        "Data analysis",
-        "Javascript",
-        "Aws",
-        "Relational  and Graph Databases",
-        "Statistical Modeling",
-        "Opencv",
-        "Machine learning",
-        "Spacy",
-        "Python",
-        "Generative AI",
-        "PyTorch",
-        "Research",
-        "Nltk",
-        "Airflow",
-        "Natural Language Processing (NLP)",
-        "Tableau",
-        "Deep learning",
-        "CI/CD",
-        "Nosql",
-        "Pytorch",
-        "Health",
-        "Unix",
-        "Architecture",
-        "Docker",
-        "Pandas",
-        "Algorithms",
-        "Database",
-        "Cypher Query Language (CQL)",
-        "Jenkins",
-        "Audio",
-        "Image Processing  (OpenCV)",
-        "Acquisition",
-        "AWS",
-        "GitHub actions",
-        "Machine Learning  (ML)",
-        "Deep Learning  (DL)",
-        "Filing",
-        "Hadoop",
-        "C++",
-        "Ai",
-        "Tensorflow",
-        "Analysis",
-        "Datasets",
-        "Segmentation",
-        "React",
-        "Snowflake",
-        "Reinforcement Learning  (RL)",
-        "TensorFlow",
-        "LLM",
-        "Flask",
-        "Numpy",
-        "JavaScript",
-        "Software engineering",
-        "Neo4J",
-        "Design",
-        "Engineering",
-        "Spar k",
-        "Neural Networks"
+  
+      "Multimodal ML",
+  
+      "JavaScript",
+  
+      "Image Processing  (OpenCV )",
+  
+      "Engineering",
+  
+      "Unix",
+  
+      "Neural Networks",
+  
+      "System",
+  
+      "Natural Language Processing (NLP)",
+  
+      "Version Control (Git)",
+  
+      "Design",
+  
+      "C++",
+  
+      "Jenkins",
+  
+      "Machine Learning  (ML)",
+  
+      "Programming",
+  
+      "Algorithms",
+  
+      "Hadoop",
+  
+      "Software engineering",
+  
+      "Reinforcement  Learning  (RL)",
+  
+      "Python",
+  
+      "Spar k",
+  
+      "Aws",
+  
+      "Shell",
+  
+      "TensorFlow",
+  
+      "PyTorch",
+  
+      "Deep Learning  (DL)",
+  
+      "Javascript",
+  
+      "Analytics",
+  
+      "Research",
+  
+      "Architecture",
+  
+      "Pytorch",
+  
+      "Generative AI",
+  
+      "Health",
+  
+      "Opencv",
+  
+      "Spark",
+  
+      "Pandas",
+  
+      "Css",
+  
+      "Tensorflow",
+  
+      "Spacy",
+  
+      "Cypher Query Language (CQL)",
+  
+      "GitHub actions",
+  
+      "Relational  and Graph Databases",
+  
+      "Statistical Modeling",
+  
+      "Modeling",
+  
+      "Database",
+  
+      "Neo4J",
+  
+      "Docker",
+  
+      "Numpy",
+  
+      "SQL",
+  
+      "Airflow",
+  
+      "Nosql",
+  
+      "Audio",
+  
+      "Sql",
+  
+      "Snowflake",
+  
+      "Filing",
+  
+      "Ux",
+  
+      "HTML",
+  
+      "Tableau",
+  
+      "Ai",
+  
+      "Html",
+  
+      "Content",
+  
+      "Nltk",
+  
+      "Github",
+  
+      "Datasets",
+  
+      "CI/CD",
+  
+      "Segmentation",
+  
+      "Data analysis",
+  
+      "Azure",
+  
+      "CSS",
+  
+      "AWS",
+  
+      "LLM",
+  
+      "Deep learning",
+  
+      "Analysis",
+  
+      "Operating systems",
+  
+      "React",
+  
+      "NoSQL",
+  
+      "Data Analysis",
+  
+      "Flask",
+  
+      "Machine learning",
+  
+      "Acquisition"
+  
     ],
+  
     "work_details": [
-        {
-            "company_name": "Tata Consultancy Services Ltd.",
-            "location": "Bengaluru, India",
-            "job_title": "Software Developer \u2013 ML (Research, and Innovation)",
-            "start_date": "Aug 2021",
-            "end_date": "Aug 2023",
-            "responsibilities": [
-                "Worked on building innovative machine learning solutions to solve challenging problem statements",
-                "Invented Domain Knowledge Infused Adaptive Neuro Fuzzy Inference System (DKI -ANFIS), an architecture, for assessing welding joint quality from images, achieving a state -of-the-art accuracy of 82.4% and generating revenue of ~$100k",
-                "Developed Priority Weighted Graph Neural Networks (PW -GNN), a novel architecture, which can fetch semantic search results from knowledge graph databases and can be customized to domain specific needs with accuracy > 90%",
-                "Designed a module for automating the prediction of ICD -10 disease diagnostic codes (codes used by health insurance companies for disbursement) from a patient\u2019s medical records using NLP techniques and Neo4J's KG, with ~90% accuracy",
-                "Demonstrated exceptional problem -solving skills by deriving critical insights to reduce carbon emissions in the aspirational net -zero emission project"
-            ]
-        }
+  
+      {
+  
+        "description": [
+  
+          "Worked on building innovative machine learning solutions to solve challenging problem statements",
+  
+          "Invented Domain Knowledge Infused Adaptive Neuro Fuzzy Inference System (DKI -ANFIS), an architecture, for assessing welding joint quality from images, achieving a state -of-the-art accuracy of 82.4% and generating revenue of ~$100k",
+  
+          "Developed Priority Weighted Graph Neural Networks (PW -GNN), a novel architecture, which can fetch semantic search results from knowledge graph databases and can be customized to domain specific needs with accuracy > 90%",
+  
+          "Designed a module for automating the prediction of ICD -10 disease diagnostic codes (codes used by health insurance companies for disbursement) from a patient\u2019s medical records using NLP techniques and Neo4J's KG, with ~90% accuracy",
+  
+          "Demonstrated exceptional problem -solving skills by deriving critical insights to reduce carbon emissions in the aspirational net -zero emission project"
+  
+        ],
+  
+        "duration": "Aug 2021 \u2013 Aug 2023",
+  
+        "employer": "Tata Consultancy Services Ltd.",
+  
+        "location": "Bengaluru, India",
+  
+        "title": "Software Developer \u2013 ML (Research, and Innovation)"
+  
+      }
+  
     ]
-}
+  
+  }

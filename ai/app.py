@@ -50,22 +50,22 @@ def extractResumeDetails():
     # session['user_details'] = user_details
     
     # Define the URL of the other endpoint
-    if app.config['ENV'] == 'development':
-        url = f"http://localhost:8080/user/updateUserSkillset/{user_id}"
-    else:
-        url = f"https://api.careercraftai.sarveshsawant.com/user/updateUserSkillset/{user_id}"
+    # if app.config['ENV'] == 'development':
+    #     url = f"http://localhost:8080/user/updateUserSkillset/{user_id}"
+    # else:
+    #     url = f"https://api.careercraftai.sarveshsawant.com/user/updateUserSkillset/{user_id}"
         
     # Define the headers for the request
     headers = {
         "Content-Type": "application/json"
     }
     # Send a POST request to the other endpoint
-    response = requests.post(url, headers=headers, json=user_details_json['skills'])
+    # response = requests.post(url, headers=headers, json=user_details_json['skills'])
     
-    if response.status_code == 200:
-        logging.info("User skillset updated successfully")
-    else:
-        logging.error("Error updating user skillset")
+    # if response.status_code == 200:
+    #     logging.info("User skillset updated successfully")
+    # else:
+    #     logging.error("Error updating user skillset")
     
     return jsonify(user_details_json)
 

@@ -14,7 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/state/store";
 import { getUserAsync } from "@/state/user/userSlice";
 import { useNavigate } from 'react-router-dom';
-
+import resume_details from '../data/resume_details.json'
 
 
 
@@ -24,69 +24,17 @@ const Dashboard = () => {
     navigate('/courses');
   };
   const [fetchedUserData, setFetchedUserData] = useState(false)
-  const [loading, setLoading] = useState(false)
-  const [fault, setFault] = useState(false)
-
-  let userId = ""
-    const [searchParams, setSearchParams] = useSearchParams()
-    if(searchParams.get("userId")){
-        userId = searchParams.get("userId") || ""
-        localStorage.setItem("userId", userId)
-    }
-    
-    if(localStorage.getItem("userId") != null) {
-        userId = localStorage.getItem("userId") || ""
-    }
-    const dispatch = useDispatch<AppDispatch>();
-     useEffect(() => {
-    dispatch(getUserAsync(userId))
-    setFetchedUserData(true)
-    }, [])
-
-  const userJson:any = useSelector((state: RootState) => state.user.value)
-
-  console.log("sarvesh ", userJson)
-
-  const url = `${import.meta.env.VITE_BACKEND_URL}/user/getResume?fileName=${userJson?.resumeLink}`; 
+  const [loading, setLoading] = useState(true)
+  const [fault, setFault] = useState(false);
   
-  const [response, setResponse] = useState(null);
-
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true)
-        const formData = new FormData();
-
-        console.log("inside useeffect " + userJson?.resumeLink + " userId "+userId)
-        formData.append("filename", userJson?.resumeLink);
-        formData.append("user_id", userId);
-
-        const result = await fetch(
-          `${import.meta.env.VITE_AI_URL}/extractResumeDetails`,
-          {
-            method: 'POST',
-            body: formData
-          }
-        );
-        const jsonResponse = await result.json();
-        setResponse(jsonResponse);
-      } catch (error) {
-        console.error('Error:', error);
-      } finally{
-        setFault(false)
-        setLoading(false)
-      }
-    };
-
-    if(userJson?.resumeLink){
-      fetchData();
-    }else {
-      setFault(true)
-    }
- 
-  }, [userJson]);
-
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 8000);
   
+    return () => clearTimeout(timer);
+  }, []);
+
   if(loading){
     return <div className="min-h-screen flex flex-col items-center justify-center space-y-4">
     <svg
@@ -132,12 +80,13 @@ const Dashboard = () => {
     <p className="text-lg font-semibold"><Link to="/" className="text-blue-500 underline">Please Upload Your Resume</Link></p>
   </div>
   }
+
   return (
     <div className="flex justify-center mt-5">
-      {response && <Card className="w-[750px] p-8">
-        <PersonalInfo name={response?.name} email={response?.email} mobileNumber={response?.mobile_number} />
-        <Skills skills={response?.skills} />
-        <WorkExperience workDetails={response?.work_details} />
+      {resume_details && <Card className="w-[750px] p-8">
+        <PersonalInfo name={resume_details?.name} email={resume_details?.email} mobileNumber={resume_details?.mobile_number} />
+        <Skills skills={resume_details?.skills} />
+        <WorkExperience workDetails={resume_details?.work_details} />
         <CardFooter className="flex justify-center mt-4">
             <Button className="w-full" onClick={handleViewCoursesClick}>
               View Suggested Courses

@@ -25,7 +25,7 @@ function NavigationBar() {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate('/');
+    navigate('/login');
   };
   
   return (
@@ -100,7 +100,6 @@ function NavigationBar() {
               <DropdownMenuItem
                 className="text-destructive focus:text-destructive-foreground"
                 onClick={() => {
-                  removeJSessionIdCookie();
                   handleClick();
                 }}
               >

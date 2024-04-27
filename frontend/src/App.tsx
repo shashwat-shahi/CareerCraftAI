@@ -20,17 +20,15 @@ function App() {
     <BrowserRouter >
         <Routes>
           <Route path="/login" element={<Auth />} />
-          <Route element={<AuthRequired />}> 
-            <Route path="/" element={<SiteLayout />}>
-              <Route index element={<UploadResume />} /> 
-              <Route path="roadmap" element={<Roadmap />} />
-              <Route path="profile" element={<Profile />} />
-              <Route path="courses" element={<Courses />} />
-              <Route path="resume" element={<Resume />} />
-              <Route path="jobboard" element={<Jobboard />} />
-              <Route path="/dashboard" element={<Dashboard />} /> 
-            </Route> 
-          </Route>  
+          <Route path="/" element={<SiteLayout />}>
+            <Route index element={<UploadResume />} /> 
+            <Route path="roadmap" element={<Roadmap />} />
+            <Route path="profile" element={<Profile />} />
+            <Route path="courses" element={<Courses />} />
+            <Route path="resume" element={<Resume />} />
+            <Route path="jobboard" element={<Jobboard />} />
+            <Route path="/dashboard" element={<Dashboard />} /> 
+          </Route> 
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
