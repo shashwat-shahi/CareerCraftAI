@@ -16,7 +16,7 @@ app.config['ENV'] = config.ENV  # or 'production'
 # app.secret_key = secrets.token_urlsafe(16)
 
 # Configure CORS to allow access only from specific origins
-CORS(app, resources={r"/*": {"origins": ["http://localhost:5173", "https://careercraftai.sarveshsawant.com"]}})
+CORS(app, resources={r"/*": {"origins": ["http://localhost:5173", "https://careercraftai.sarveshsawant.com", "http://careercraftai.sarveshsawant.com"]}})
 
 # Neo4J AuraDB credentials
 uri = config.NEO4J_URI
