@@ -9,36 +9,83 @@ import {
   } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { useNavigate } from "react-router-dom"
+import { useState } from "react"
+import { useNavigate, useSearchParams } from "react-router-dom"
 import { Toaster } from "@/components/ui/sonner"
 import { toast } from "sonner"
+import useFetch from "../hooks/use-fetch"
 
 function UploadResume() {
     const navigate = useNavigate()
+    const [data, setData] = useState(
+        {
+            aspirationalJob: "",
+            resume: ""
+        }
+    )
+    let userId = ""
+    const [searchParams, setSearchParams] = useSearchParams()
+    if(searchParams.get("userId")){
+        userId = searchParams.get("userId") || ""
+        console.log("store in localstorage")
+        localStorage.setItem("userId", userId)
+    }
+    
+    if(localStorage.getItem("userId") != null) {
+        userId = localStorage.getItem("userId") || ""
+    }
 
-    let roles = [
-        "Data Scientist",
-        "Software Architect",
-        "Frontend Developer",
-        "Data Analyst",
-        "Backend Developer",
-        "Blockchain Developer",
-        "Devops Engineer",
-        "MLOps",
-        "Springboot Developer",
-        "Software Quality Assurance Engineer",
-        "PostgreSQL Database Administrator",
-        "ASP .NET Developer",
-        "Full Stack Developer",
-        "Game Developer",
-        "Android Developer"
-        ];
+    const {val, loading, error} = useFetch(`${import.meta.env.VITE_BACKEND_URL}/aspiration/getAspirations`)
+    console.log(val, loading, error)
+
+    
+
+    const handleFileChange = (e: any) => {
+        setData({
+            ...data,
+            resume: e.target.files[0]
+        })
+    }
+
+    const handleSelectChange = (selectedValue) => {
+        setData({
+            ...data,
+            aspirationalJob: selectedValue
+        });
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+       
+        
+        const uploadFormData = new FormData();
+        uploadFormData.append("resumeFile", data.resume);
+        const queryParams = new URLSearchParams();
+        queryParams.append("aspiration", data.aspirationalJob);
+        const queryString = queryParams.toString();
+    
+        const url = `${import.meta.env.VITE_BACKEND_URL}/user/updateUser/${userId}?${queryString}`;
+        
+        try {
+            const response = await fetch(url, {
+                method: 'POST',
+                body: uploadFormData,
+                credentials: 'include',
+            });
+            if (response.ok) {
+                toast.success("Upload successful, redirecting to the dashboard.")
 
-        toast.success("Upload successful, redirecting to the dashboard.")
-        navigate("/dashboard")
+                setTimeout(() => {
+                    navigate("/dashboard")
+                }, 5000)
+             
+            } else {
+                console.log('Upload failed');
+            }
+        } catch (error) {
+            setSearchParams(prev => prev)
+            console.log('Error submitting form');
+        }
     };
     
   return (
@@ -60,17 +107,18 @@ function UploadResume() {
                             type="file"
                             className="bg-secondary"
                             accept=".pdf"
+                            onChange={handleFileChange}
                             />
                         </div>
                         <div className="flex flex-col space-y-1.5">
                         <Label htmlFor="jobs">Jobs</Label>
-                        <Select>
+                        <Select onValueChange={(value) => handleSelectChange(value)}>
                             <SelectTrigger id="jobs">
                                 <SelectValue placeholder="Select" />
                             </SelectTrigger>
                             <SelectContent position="popper">
                                 {
-                                    roles && roles.map(asp => <SelectItem key={asp} value={asp}>{asp}</SelectItem>)
+                                    val && val.map(asp => <SelectItem key={asp.id} value={asp.id.toString()}>{asp.name}</SelectItem>)
                                 }
                             </SelectContent>
                         </Select>
