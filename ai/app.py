@@ -9,14 +9,12 @@ from skill_gap_analysis import compute_skill_gaps
 import json
 from flask_cors import CORS
 import requests
-# import secrets
 
 app = Flask(__name__)
-app.config['ENV'] = config.ENV  # or 'production'
-# app.secret_key = secrets.token_urlsafe(16)
+# Configure CORS to allow access from all origins
+CORS(app, resources={r"/*": {"origins": "*"}})
 
-# Configure CORS to allow access only from specific origins
-CORS(app, resources={r"/*": {"origins": ["http://localhost:5173", "https://careercraftai.sarveshsawant.com", "http://careercraftai.sarveshsawant.com"]}})
+app.config['ENV'] = config.ENV  # or 'production'
 
 # Neo4J AuraDB credentials
 uri = config.NEO4J_URI
@@ -42,23 +40,24 @@ def hello():
 def extractResumeDetails():
     global user_details_json
     global user_id
+    
     # Get the filename and user id from the request data
     filename = request.form.get('filename')
     user_id = request.form.get('user_id')
-    # logging.info("API KEY " + config.API_KEY)
+    
     user_details_json = extract_details_from_resume(filename)
-    # session['user_details'] = user_details
     
     # Define the URL of the other endpoint
     if app.config['ENV'] == 'development':
         url = f"http://localhost:8080/user/updateUserSkillset/{user_id}"
     else:
         url = f"https://api.careercraftai.sarveshsawant.com/user/updateUserSkillset/{user_id}"
-        
+    
     # Define the headers for the request
     headers = {
         "Content-Type": "application/json"
     }
+    
     # Send a POST request to the other endpoint
     response = requests.post(url, headers=headers, json=user_details_json['skills'])
     
@@ -66,6 +65,7 @@ def extractResumeDetails():
         logging.info("User skillset updated successfully")
     else:
         logging.error("Error updating user skillset")
+    
     response = jsonify(user_details_json)
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
@@ -76,10 +76,11 @@ def fetchSkillGap():
     global all_skills_for_a_role_json
     global skill_gaps_json
     global user_id
+    
     all_skills_for_a_role_json = fetch_roadmap_data_on_aspiration(driver, "Springboot developer")
     skill_gaps_json = compute_skill_gaps(all_skills_for_a_role_json, user_details_json)
+    
     return jsonify(skill_gaps_json)
-
 
 @app.route("/fetchRoadmap", methods=['POST', 'GET'])
 def fetchRoadmap():
@@ -91,12 +92,12 @@ def fetchRoadmap():
     
     data_json = json.dumps(all_skills_for_a_role_json)
     specialData_json = json.dumps(skill_gaps_json)
+    
     # Replace the placeholders with the data and specialData
     html = html.replace('var data = JSON.parse(\'{{ data|tojson|safe }}\');', f'var data = {data_json};')
     html = html.replace('var special_data = JSON.parse(\'{{ specialData|tojson|safe }}\');', f'var special_data = {specialData_json};')
+    
     return html
 
-
 if __name__ == "__main__":
-    # app.run(host='0.0.0.0', port=5000)
     app.run(host='0.0.0.0', port=5000, debug=True)

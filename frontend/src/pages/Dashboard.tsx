@@ -57,37 +57,38 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        setLoading(true)
+        setLoading(true);
         const formData = new FormData();
-
-        console.log("inside useeffect " + userJson?.resumeLink + " userId "+userId)
+        console.log("inside useeffect " + userJson?.resumeLink + " userId " + userId);
         formData.append("filename", userJson?.resumeLink);
         formData.append("user_id", userId);
-
         const result = await fetch(
           `${import.meta.env.VITE_AI_URL}/extractResumeDetails`,
           {
             method: 'POST',
-            body: formData
+            body: formData,
+            headers: {
+              'Content-Type': 'application/json',
+              'Access-Control-Allow-Origin': '*'
+            }
           }
         );
         const jsonResponse = await result.json();
-        console.log("jsonResponse ", jsonResponse)
+        console.log("jsonResponse ", jsonResponse);
         setResponse(jsonResponse);
       } catch (error) {
         console.error('Error:', error);
-      } finally{
-        setFault(false)
-        setLoading(false)
+      } finally {
+        setFault(false);
+        setLoading(false);
       }
     };
-
-    if(userJson?.resumeLink){
+  
+    if (userJson?.resumeLink) {
       fetchData();
-    }else {
-      setFault(true)
+    } else {
+      setFault(true);
     }
- 
   }, [userJson]);
 
   
