@@ -22,10 +22,20 @@ function Courses() {
   const [activeCourse, setActiveCourse] = useState("Select")
 
   const handleSelectChange = (selectedValue) => {
-    setActiveCourse(selectedValue)
+    setLoading(true);
+    setActiveCourse(selectedValue);
+  
+    setTimeout(() => {
+      setLoading(false);
+    }, 5000);
   };
 
   const [coursesArray, setCoursesArray] = useState([]);
+
+
+  const [loading, setLoading] = useState(false)
+  const [fault, setFault] = useState(false);
+  
 
   return (
     <div className="flex w-screen items-center flex-col">
@@ -84,8 +94,31 @@ function Courses() {
       <div>
       {!activeCourse && <h1>Select a keyword from the list</h1>} 
       </div>
+
+      {loading ? (
+      <div className="flex flex-col items-center justify-center space-y-4">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="48"
+          height="48"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="animate-pulse"
+        >
+          <path d="M4 5h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z" />
+          <path d="M8 11h8v6H8z" />
+          <path d="M8 7v4" />
+          <path d="M16 7v4" />
+        </svg>
+        <p className="text-lg font-semibold">Fetching Course Details...</p>
+      </div>
+    ) :
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-items-center">
-  {
+  {  
     activeCourse === "Cloud ML" ? cloudml_skill.map(course => (
       <div key={course.id} className="w-full max-w-[250px]">
         <Card className="h-full">
@@ -127,7 +160,7 @@ function Courses() {
         </Card>
       </div>))
   }
-</div>
+</div>}
     </div>
   )
 }

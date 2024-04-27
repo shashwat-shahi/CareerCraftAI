@@ -1,4 +1,43 @@
+import { useEffect, useState } from "react";
+
 const Roadmap = () => {
+
+
+    const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center space-y-4">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="48"
+          height="48"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="animate-pulse"
+        >
+          <path d="M4 5h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z" />
+          <path d="M8 11h8v6H8z" />
+          <path d="M8 7v4" />
+          <path d="M16 7v4" />
+        </svg>
+        <p className="text-lg font-semibold">Generating Roadmap...</p>
+      </div>
+    );
+  }
+
   const htmlBundle = `
   <!DOCTYPE html>
   <html>
