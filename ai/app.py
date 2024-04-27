@@ -66,8 +66,9 @@ def extractResumeDetails():
         logging.info("User skillset updated successfully")
     else:
         logging.error("Error updating user skillset")
-    
-    return jsonify(user_details_json)
+    response = jsonify(user_details_json)
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 @app.route("/fetchSkillGap", methods=['POST', 'GET'])
 def fetchSkillGap():
