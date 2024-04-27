@@ -17,7 +17,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { removeJSessionIdCookie } from "@/utils/jsession-token"
 import { useNavigate } from 'react-router-dom';
 
 
