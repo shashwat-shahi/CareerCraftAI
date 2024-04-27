@@ -19,10 +19,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Dashboard = () => {
-  const navigate = useNavigate();
-  const handleViewCoursesClick = () => {
-    navigate('/courses');
-  };
+  
   const [fetchedUserData, setFetchedUserData] = useState(false)
   const [loading, setLoading] = useState(false)
   const [fault, setFault] = useState(false)
@@ -51,6 +48,12 @@ const Dashboard = () => {
   
   const [response, setResponse] = useState(null);
 
+
+  const navigate = useNavigate();
+  const handleViewCoursesClick = () => {
+    navigate('/courses');
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -69,6 +72,7 @@ const Dashboard = () => {
           }
         );
         const jsonResponse = await result.json();
+        console.log("jsonResponse ", jsonResponse)
         setResponse(jsonResponse);
       } catch (error) {
         console.error('Error:', error);
